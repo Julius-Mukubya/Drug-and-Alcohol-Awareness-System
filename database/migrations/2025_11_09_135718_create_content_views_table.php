@@ -13,9 +13,16 @@ class CreateContentViewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('content_views', function (Blueprint $table) {
+       Schema::create('content_views', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->foreignId('content_id')->constrained('educational_contents')->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
+            $table->string('ip_address')->nullable();
+            $table->string('user_agent')->nullable();
+            $table->timestamp('viewed_at');
+            
+            $table->index(['content_id', 'user_id']);
+            $table->index('viewed_at');
         });
     }
 

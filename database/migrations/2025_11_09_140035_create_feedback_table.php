@@ -15,6 +15,12 @@ class CreateFeedbackTable extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
+            $table->enum('type', ['suggestion', 'complaint', 'compliment', 'bug_report']);
+            $table->string('subject');
+            $table->text('message');
+            $table->integer('rating')->nullable();
+            $table->boolean('is_anonymous')->default(false);
             $table->timestamps();
         });
     }

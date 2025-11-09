@@ -13,10 +13,19 @@ class CreateForumPostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('forum_posts', function (Blueprint $table) {
+         Schema::create('forum_posts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->constrained('forum_categories')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('title');
+            $table->longText('content');
+            $table->boolean('is_anonymous')->default(false);
+            $table->boolean('is_pinned')->default(false);
+            $table->boolean('is_locked')->default(false);
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
+
     }
 
     /**

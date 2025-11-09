@@ -15,8 +15,13 @@ class CreateForumCategoriesTable extends Migration
     {
         Schema::create('forum_categories', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->string('icon')->nullable();
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
+
     }
 
     /**

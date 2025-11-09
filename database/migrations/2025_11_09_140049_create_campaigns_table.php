@@ -15,7 +15,20 @@ class CreateCampaignsTable extends Migration
     {
         Schema::create('campaigns', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('created_by')->constrained('users')->onDelete('cascade');
+            $table->string('title');
+            $table->text('description');
+            $table->longText('content')->nullable();
+            $table->string('banner_image')->nullable();
+            $table->enum('type', ['awareness', 'event', 'workshop', 'webinar'])->default('awareness');
+            $table->timestamp('start_date');
+            $table->timestamp('end_date');
+            $table->string('location')->nullable();
+            $table->integer('max_participants')->nullable();
+            $table->enum('status', ['draft', 'active', 'completed', 'cancelled'])->default('draft');
+            $table->boolean('is_featured')->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -13,8 +13,15 @@ class CreateCounselingSessionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('counseling_sessions', function (Blueprint $table) {
+         Schema::create('counseling_sessions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('student_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('counselor_id')->nullable()->constrained('users')->onDelete('set null');
+            $table->string('subject');
+            $table->text('description');
+            $table->enum('status', ['pending', 'active', 'completed', 'cancelled'])->default('pending');
+            $table->boolean('is_anonymous')->default(false);
+            $table->timestamp('scheduled_at')->nullable();
             $table->timestamps();
         });
     }

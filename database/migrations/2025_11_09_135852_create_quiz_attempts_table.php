@@ -12,9 +12,17 @@ class CreateQuizAttemptsTable extends Migration
      * @return void
      */
     public function up()
-    {
+    { 
         Schema::create('quiz_attempts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('quiz_id')->constrained()->onDelete('cascade');
+            $table->integer('score')->nullable();
+            $table->integer('total_questions');
+            $table->integer('correct_answers')->default(0);
+            $table->boolean('passed')->default(false);
+            $table->timestamp('started_at');
+            $table->timestamp('completed_at')->nullable();
             $table->timestamps();
         });
     }

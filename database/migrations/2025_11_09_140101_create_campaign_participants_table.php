@@ -13,9 +13,18 @@ class CreateCampaignParticipantsTable extends Migration
      */
     public function up()
     {
-        Schema::create('campaign_participants', function (Blueprint $table) {
+       Schema::create('campaign_participants', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('campaign_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->enum('status', ['registered', 'attended', 'cancelled'])->default('registered');
+            $table->timestamp('registered_at');
+            $table->timestamp('attended_at')->nullable();
+            $table->text('feedback')->nullable();
+            $table->integer('rating')->nullable();
             $table->timestamps();
+            
+            $table->unique(['campaign_id', 'user_id']);
         });
     }
 

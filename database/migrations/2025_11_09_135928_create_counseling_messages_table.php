@@ -13,8 +13,12 @@ class CreateCounselingMessagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('counseling_messages', function (Blueprint $table) {
+         Schema::create('counseling_messages', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('session_id')->constrained('counseling_sessions')->onDelete('cascade');
+            $table->foreignId('sender_id')->constrained('users')->onDelete('cascade');
+            $table->text('message');
+            $table->boolean('is_read')->default(false);
             $table->timestamps();
         });
     }

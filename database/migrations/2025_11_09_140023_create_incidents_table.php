@@ -13,8 +13,16 @@ class CreateIncidentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('incidents', function (Blueprint $table) {
+         Schema::create('incidents', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('reported_by')->nullable()->constrained('users')->onDelete('set null');
+            $table->string('incident_type');
+            $table->text('description');
+            $table->string('location')->nullable();
+            $table->timestamp('incident_date')->nullable();
+            $table->enum('status', ['pending', 'investigating', 'resolved', 'closed'])->default('pending');
+            $table->boolean('is_anonymous')->default(false);
+            $table->text('admin_notes')->nullable();
             $table->timestamps();
         });
     }

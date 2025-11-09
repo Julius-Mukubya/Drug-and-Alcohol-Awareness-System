@@ -13,8 +13,13 @@ class CreateQuizQuestionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('quiz_questions', function (Blueprint $table) {
+            Schema::create('quiz_questions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('quiz_id')->constrained()->onDelete('cascade');
+            $table->text('question');
+            $table->enum('type', ['multiple_choice', 'true_false', 'text']);
+            $table->integer('points')->default(1);
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }

@@ -15,6 +15,12 @@ class CreateQuizzesTable extends Migration
     {
         Schema::create('quizzes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->integer('duration_minutes')->nullable();
+            $table->integer('passing_score')->default(70);
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

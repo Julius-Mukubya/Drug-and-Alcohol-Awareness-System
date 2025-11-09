@@ -13,8 +13,11 @@ class CreateQuizOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('quiz_options', function (Blueprint $table) {
+          Schema::create('quiz_options', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('question_id')->constrained('quiz_questions')->onDelete('cascade');
+            $table->string('option_text');
+            $table->boolean('is_correct')->default(false);
             $table->timestamps();
         });
     }

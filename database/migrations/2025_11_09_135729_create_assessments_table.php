@@ -15,6 +15,12 @@ class CreateAssessmentsTable extends Migration
     {
         Schema::create('assessments', function (Blueprint $table) {
             $table->id();
+            $table->string('name'); // AUDIT or DUDIT
+            $table->string('full_name'); // Alcohol Use Disorders Identification Test
+            $table->text('description');
+            $table->enum('type', ['audit', 'dudit'])->unique();
+            $table->json('scoring_guidelines'); // JSON with risk level thresholds
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

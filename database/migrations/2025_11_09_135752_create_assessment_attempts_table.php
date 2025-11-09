@@ -13,9 +13,18 @@ class CreateAssessmentAttemptsTable extends Migration
      */
     public function up()
     {
-        Schema::create('assessment_attempts', function (Blueprint $table) {
+         Schema::create('assessment_attempts', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('assessment_id')->constrained()->onDelete('cascade');
+            $table->integer('total_score');
+            $table->enum('risk_level', ['low', 'medium', 'high']);
+            $table->text('recommendation')->nullable();
+            $table->boolean('is_anonymous')->default(false);
+            $table->timestamp('taken_at');
             $table->timestamps();
+            
+            $table->index(['user_id', 'assessment_id', 'taken_at']);
         });
     }
 
