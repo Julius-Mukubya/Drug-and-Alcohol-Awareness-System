@@ -15,14 +15,20 @@ return new class extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->longText('content');
-            $table->enum('type', ['article', 'video', 'infographic', 'document']);
+            $table->enum('type', ['article', 'video', 'infographic', 'document'])->default('article');
             $table->string('featured_image')->nullable();
             $table->string('video_url')->nullable();
             $table->string('file_path')->nullable();
             $table->integer('views')->default(0);
+            $table->integer('reading_time')->nullable(); // in minutes
             $table->boolean('is_published')->default(false);
+            $table->boolean('is_featured')->default(false);
             $table->timestamp('published_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
+            
+            $table->index(['is_published', 'published_at']);
+            $table->index(['type', 'is_published']);
         });
     }
 
