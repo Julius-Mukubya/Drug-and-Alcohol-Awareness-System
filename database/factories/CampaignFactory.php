@@ -11,19 +11,19 @@ class CampaignFactory extends Factory
     {
         return [
             'created_by' => User::where('role', 'admin')->inRandomOrder()->first()->id ?? User::factory()->admin(),
-            'title' => fake()->sentence(),
-            'description' => fake()->paragraph(),
-            'content' => fake()->paragraphs(4, true),
-            'type' => fake()->randomElement(['awareness', 'event', 'workshop', 'webinar']),
-            'start_date' => now()->addDays(fake()->numberBetween(1, 30)),
-            'end_date' => now()->addDays(fake()->numberBetween(31, 60)),
-            'max_participants' => fake()->randomElement([50, 100, 200, null]),
+            'title' => $this->faker->sentence(),
+            'description' => $this->faker->paragraph(),
+            'content' => $this->faker->paragraphs(4, true),
+            'type' => $this->faker->randomElement(['awareness', 'event', 'workshop', 'webinar']),
+            'start_date' => now()->addDays($this->faker->numberBetween(1, 30)),
+            'end_date' => now()->addDays($this->faker->numberBetween(31, 60)),
+            'max_participants' => $this->faker->randomElement([50, 100, 200, null]),
             'status' => 'active',
-            'is_featured' => fake()->boolean(30),
+            'is_featured' => $this->faker->boolean(30),
         ];
     }
 
-    public function active(): static
+    public function active()
     {
         return $this->state(fn (array $attributes) => [
             'status' => 'active',
@@ -32,7 +32,7 @@ class CampaignFactory extends Factory
         ]);
     }
 
-    public function upcoming(): static
+    public function upcoming()
     {
         return $this->state(fn (array $attributes) => [
             'status' => 'active',

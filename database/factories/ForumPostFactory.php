@@ -12,17 +12,17 @@ class ForumPostFactory extends Factory
         return [
             'category_id' => ForumCategory::inRandomOrder()->first()->id ?? ForumCategory::factory(),
             'user_id' => User::where('role', 'student')->inRandomOrder()->first()->id ?? User::factory(),
-            'title' => fake()->sentence(),
-            'content' => fake()->paragraphs(3, true),
-            'is_anonymous' => fake()->boolean(20),
+            'title' => $this->faker->sentence(),
+            'content' => $this->faker->paragraphs(3, true),
+            'is_anonymous' => $this->faker->boolean(20),
             'is_pinned' => false,
             'is_locked' => false,
-            'views' => fake()->numberBetween(0, 200),
-            'upvotes' => fake()->numberBetween(0, 50),
+            'views' => $this->faker->numberBetween(0, 200),
+            'upvotes' => $this->faker->numberBetween(0, 50),
         ];
     }
 
-    public function withComments(int $count = 3): static
+    public function withComments(int $count = 3)
     {
         return $this->afterCreating(function ($post) use ($count) {
             ForumComment::factory()->count($count)->create(['post_id' => $post->id]);

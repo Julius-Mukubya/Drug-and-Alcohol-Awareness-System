@@ -17,7 +17,10 @@ class ForumCategorySeeder extends Seeder
         ];
 
         foreach ($categories as $category) {
-            ForumCategory::create($category);
+            ForumCategory::firstOrCreate(
+                ['slug' => \Illuminate\Support\Str::slug($category['name'])],
+                $category
+            );
         }
     }
 }

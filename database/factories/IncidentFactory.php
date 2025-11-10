@@ -11,13 +11,13 @@ class IncidentFactory extends Factory
     {
         return [
             'reported_by' => User::where('role', 'student')->inRandomOrder()->first()->id ?? User::factory(),
-            'incident_type' => fake()->randomElement(['Substance Abuse', 'Violence', 'Harassment', 'Other']),
-            'description' => fake()->paragraph(),
-            'location' => fake()->randomElement(['Main Campus', 'Library', 'Hostel', 'Parking Lot']),
-            'incident_date' => fake()->dateTimeBetween('-1 month', 'now'),
-            'severity' => fake()->randomElement(['low', 'medium', 'high', 'critical']),
-            'status' => fake()->randomElement(['pending', 'investigating', 'resolved']),
-            'is_anonymous' => fake()->boolean(40),
+            'incident_type' => $this->faker->randomElement(['Substance Abuse', 'Violence', 'Harassment', 'Other']),
+            'description' => $this->faker->paragraph(),
+            'location' => $this->faker->randomElement(['Main Campus', 'Library', 'Hostel', 'Parking Lot']),
+            'incident_date' => $this->faker->dateTimeBetween('-1 month', 'now'),
+            'severity' => $this->faker->randomElement(['low', 'medium', 'high', 'critical']),
+            'status' => $this->faker->randomElement(['pending', 'investigating', 'resolved']),
+            'is_anonymous' => $this->faker->boolean(40),
         ];
     }
 }

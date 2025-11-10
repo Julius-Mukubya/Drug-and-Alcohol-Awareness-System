@@ -18,7 +18,10 @@ class EmergencyContactSeeder extends Seeder
         ];
 
         foreach ($contacts as $contact) {
-            EmergencyContact::create($contact);
+            EmergencyContact::firstOrCreate(
+                ['phone' => $contact['phone']],
+                $contact
+            );
         }
     }
 }

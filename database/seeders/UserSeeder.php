@@ -11,15 +11,17 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         // Admin
-        User::create([
-            'name' => 'Admin User',
-            'email' => 'admin@mubs.ac.ug',
-            'password' => Hash::make('password123'),
-            'registration_number' => 'ADM001',
-            'phone' => '+256700000001',
-            'role' => 'admin',
-            'email_verified_at' => now(),
-        ]);
+        User::firstOrCreate(
+            ['email' => 'admin@mubs.ac.ug'],
+            [
+                'name' => 'Admin User',
+                'password' => Hash::make('password123'),
+                'registration_number' => 'ADM001',
+                'phone' => '+256700000001',
+                'role' => 'admin',
+                'email_verified_at' => now(),
+            ]
+        );
 
         // Counselors
         $counselors = [
@@ -29,11 +31,14 @@ class UserSeeder extends Seeder
         ];
 
         foreach ($counselors as $counselor) {
-            User::create(array_merge($counselor, [
-                'password' => Hash::make('password123'),
-                'role' => 'counselor',
-                'email_verified_at' => now(),
-            ]));
+            User::firstOrCreate(
+                ['email' => $counselor['email']],
+                array_merge($counselor, [
+                    'password' => Hash::make('password123'),
+                    'role' => 'counselor',
+                    'email_verified_at' => now(),
+                ])
+            );
         }
 
         // Students (Project Team)
@@ -46,11 +51,14 @@ class UserSeeder extends Seeder
         ];
 
         foreach ($students as $student) {
-            User::create(array_merge($student, [
-                'password' => Hash::make('password123'),
-                'role' => 'student',
-                'email_verified_at' => now(),
-            ]));
+            User::firstOrCreate(
+                ['email' => $student['email']],
+                array_merge($student, [
+                    'password' => Hash::make('password123'),
+                    'role' => 'student',
+                    'email_verified_at' => now(),
+                ])
+            );
         }
 
         // Generate additional sample students using factory

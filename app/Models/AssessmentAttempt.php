@@ -47,21 +47,29 @@ class AssessmentAttempt extends Model
     // Accessors
     public function getRiskLevelColorAttribute()
     {
-        return match($this->risk_level) {
-            'low' => 'green',
-            'medium' => 'yellow',
-            'high' => 'red',
-            default => 'gray',
-        };
+        switch($this->risk_level) {
+            case 'low':
+                return 'green';
+            case 'medium':
+                return 'yellow';
+            case 'high':
+                return 'red';
+            default:
+                return 'gray';
+        }
     }
 
     public function getRiskLevelBadgeAttribute()
     {
-        return match($this->risk_level) {
-            'low' => 'Low Risk',
-            'medium' => 'Medium Risk',
-            'high' => 'High Risk',
-            default => 'Unknown',
-        };
+        switch($this->risk_level) {
+            case 'low':
+                return 'Low Risk';
+            case 'medium':
+                return 'Medium Risk';
+            case 'high':
+                return 'High Risk';
+            default:
+                return 'Unknown';
+        }
     }
 }

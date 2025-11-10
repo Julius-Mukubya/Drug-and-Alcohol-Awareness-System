@@ -74,13 +74,19 @@ class Notification extends Model
 
     public function getIconAttribute()
     {
-        return match($this->type) {
-            'quiz_result' => '🎯',
-            'counseling_message' => '💬',
-            'campaign_reminder' => '📅',
-            'new_content' => '📚',
-            'forum_reply' => '💭',
-            default => '🔔',
-        };
+        switch($this->type) {
+            case 'quiz_result':
+                return '🎯';
+            case 'counseling_message':
+                return '💬';
+            case 'campaign_reminder':
+                return '📅';
+            case 'new_content':
+                return '📚';
+            case 'forum_reply':
+                return '💭';
+            default:
+                return '🔔';
+        }
     }
 }

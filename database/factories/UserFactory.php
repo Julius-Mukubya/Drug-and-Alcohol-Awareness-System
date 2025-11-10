@@ -13,36 +13,36 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => fake()->name(),
-            'email' => fake()->unique()->safeEmail(),
+            'name' => $this->faker->name(),
+            'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password123'),
-            'registration_number' => '23/U/' . fake()->unique()->numberBetween(10000, 99999) . '/EVE',
-            'phone' => '+2567' . fake()->numberBetween(00000000, 99999999),
+            'registration_number' => '23/U/' . $this->faker->unique()->numberBetween(10000, 99999) . '/EVE',
+            'phone' => '+2567' . $this->faker->numberBetween(00000000, 99999999),
             'role' => 'student',
             'is_active' => true,
             'remember_token' => Str::random(10),
         ];
     }
 
-    public function unverified(): static
+    public function unverified()
     {
         return $this->state(fn (array $attributes) => [
             'email_verified_at' => null,
         ]);
     }
 
-    public function student(): static
+    public function student()
     {
         return $this->state(fn (array $attributes) => ['role' => 'student']);
     }
 
-    public function counselor(): static
+    public function counselor()
     {
         return $this->state(fn (array $attributes) => ['role' => 'counselor']);
     }
 
-    public function admin(): static
+    public function admin()
     {
         return $this->state(fn (array $attributes) => ['role' => 'admin']);
     }

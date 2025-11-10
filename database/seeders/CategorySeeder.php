@@ -19,7 +19,10 @@ class CategorySeeder extends Seeder
         ];
 
         foreach ($categories as $category) {
-            Category::create($category);
+            Category::firstOrCreate(
+                ['slug' => \Illuminate\Support\Str::slug($category['name'])],
+                $category
+            );
         }
     }
 }

@@ -86,11 +86,15 @@ class Quiz extends Model
 
     public function getDifficultyBadgeAttribute()
     {
-        return match($this->difficulty) {
-            'easy' => ['text' => 'Easy', 'color' => 'green'],
-            'medium' => ['text' => 'Medium', 'color' => 'yellow'],
-            'hard' => ['text' => 'Hard', 'color' => 'red'],
-            default => ['text' => 'Unknown', 'color' => 'gray'],
-        };
+        switch($this->difficulty) {
+            case 'easy':
+                return ['text' => 'Easy', 'color' => 'green'];
+            case 'medium':
+                return ['text' => 'Medium', 'color' => 'yellow'];
+            case 'hard':
+                return ['text' => 'Hard', 'color' => 'red'];
+            default:
+                return ['text' => 'Unknown', 'color' => 'gray'];
+        }
     }
 }

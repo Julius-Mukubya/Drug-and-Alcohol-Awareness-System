@@ -12,9 +12,9 @@ class ForumCommentFactory extends Factory
         return [
             'post_id' => ForumPost::inRandomOrder()->first()->id ?? ForumPost::factory(),
             'user_id' => User::where('role', 'student')->inRandomOrder()->first()->id ?? User::factory(),
-            'comment' => fake()->paragraph(),
-            'is_anonymous' => fake()->boolean(20),
-            'upvotes' => fake()->numberBetween(0, 20),
+            'comment' => $this->faker->paragraph(),
+            'is_anonymous' => $this->faker->boolean(20),
+            'upvotes' => $this->faker->numberBetween(0, 20),
         ];
     }
 }

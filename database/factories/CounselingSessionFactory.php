@@ -12,12 +12,12 @@ class CounselingSessionFactory extends Factory
         return [
             'student_id' => User::where('role', 'student')->inRandomOrder()->first()->id ?? User::factory(),
             'counselor_id' => User::where('role', 'counselor')->inRandomOrder()->first()->id ?? User::factory()->counselor(),
-            'subject' => fake()->sentence(),
-            'description' => fake()->paragraph(),
-            'status' => fake()->randomElement(['pending', 'active', 'completed']),
-            'priority' => fake()->randomElement(['low', 'medium', 'high']),
-            'is_anonymous' => fake()->boolean(50),
-            'scheduled_at' => fake()->optional()->dateTimeBetween('now', '+1 week'),
+            'subject' => $this->faker->sentence(),
+            'description' => $this->faker->paragraph(),
+            'status' => $this->faker->randomElement(['pending', 'active', 'completed']),
+            'priority' => $this->faker->randomElement(['low', 'medium', 'high']),
+            'is_anonymous' => $this->faker->boolean(50),
+            'scheduled_at' => $this->faker->optional()->dateTimeBetween('now', '+1 week'),
         ];
     }
 }

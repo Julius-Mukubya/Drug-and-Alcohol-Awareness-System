@@ -17,7 +17,8 @@ class CreateQuizQuestionsTable extends Migration
             $table->id();
             $table->foreignId('quiz_id')->constrained()->onDelete('cascade');
             $table->text('question');
-            $table->enum('type', ['multiple_choice', 'true_false', 'text']);
+            $table->enum('type', ['multiple_choice', 'true_false', 'text'])->default('multiple_choice');
+            $table->text('explanation')->nullable(); // Shown after answering
             $table->integer('points')->default(1);
             $table->integer('order')->default(0);
             $table->timestamps();

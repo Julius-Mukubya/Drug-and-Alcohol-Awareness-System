@@ -55,13 +55,19 @@ class EmergencyContact extends Model
     // Methods
     public function getTypeBadgeAttribute()
     {
-        return match($this->type) {
-            'hotline' => ['text' => 'Hotline', 'color' => 'red'],
-            'hospital' => ['text' => 'Hospital', 'color' => 'blue'],
-            'counseling' => ['text' => 'Counseling', 'color' => 'green'],
-            'police' => ['text' => 'Police', 'color' => 'purple'],
-            'other' => ['text' => 'Other', 'color' => 'gray'],
-            default => ['text' => 'Unknown', 'color' => 'gray'],
-        };
+        switch($this->type) {
+            case 'hotline':
+                return ['text' => 'Hotline', 'color' => 'red'];
+            case 'hospital':
+                return ['text' => 'Hospital', 'color' => 'blue'];
+            case 'counseling':
+                return ['text' => 'Counseling', 'color' => 'green'];
+            case 'police':
+                return ['text' => 'Police', 'color' => 'purple'];
+            case 'other':
+                return ['text' => 'Other', 'color' => 'gray'];
+            default:
+                return ['text' => 'Unknown', 'color' => 'gray'];
+        }
     }
 }

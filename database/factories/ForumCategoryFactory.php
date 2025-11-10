@@ -9,15 +9,15 @@ class ForumCategoryFactory extends Factory
 {
     public function definition(): array
     {
-        $name = fake()->words(2, true);
+        $name = $this->faker->words(2, true);
         
         return [
             'name' => $name,
             'slug' => Str::slug($name),
-            'description' => fake()->paragraph(),
-            'icon' => fake()->randomElement(['💬', '🌟', '🤝', '❓', '💡', '🎯']),
-            'color' => fake()->hexColor(),
-            'order' => fake()->numberBetween(1, 10),
+            'description' => $this->faker->paragraph(),
+            'icon' => $this->faker->randomElement(['💬', '🌟', '🤝', '❓', '💡', '🎯']),
+            'color' => $this->faker->hexColor(),
+            'order' => $this->faker->numberBetween(1, 10),
             'is_active' => true,
         ];
     }

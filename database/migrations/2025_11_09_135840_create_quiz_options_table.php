@@ -18,6 +18,7 @@ class CreateQuizOptionsTable extends Migration
             $table->foreignId('question_id')->constrained('quiz_questions')->onDelete('cascade');
             $table->string('option_text');
             $table->boolean('is_correct')->default(false);
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }

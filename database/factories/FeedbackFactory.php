@@ -11,12 +11,12 @@ class FeedbackFactory extends Factory
     {
         return [
             'user_id' => User::where('role', 'student')->inRandomOrder()->first()->id ?? User::factory(),
-            'type' => fake()->randomElement(['suggestion', 'complaint', 'compliment', 'bug_report']),
-            'subject' => fake()->sentence(),
-            'message' => fake()->paragraph(),
-            'rating' => fake()->optional()->numberBetween(1, 5),
-            'is_anonymous' => fake()->boolean(30),
-            'status' => fake()->randomElement(['pending', 'reviewed', 'resolved']),
+            'type' => $this->faker->randomElement(['suggestion', 'complaint', 'compliment', 'bug_report']),
+            'subject' => $this->faker->sentence(),
+            'message' => $this->faker->paragraph(),
+            'rating' => $this->faker->optional()->numberBetween(1, 5),
+            'is_anonymous' => $this->faker->boolean(30),
+            'status' => $this->faker->randomElement(['pending', 'reviewed', 'resolved']),
         ];
     }
 }

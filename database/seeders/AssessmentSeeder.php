@@ -10,15 +10,20 @@ class AssessmentSeeder extends Seeder
 {
     public function run(): void
     {
+        // Skip if assessments already exist
+        if (Assessment::count() > 0) {
+            return;
+        }
+
         // AUDIT Assessment
-        $audit = Assessment::create([
-            'name' => 'AUDIT',
-            'full_name' => 'Alcohol Use Disorders Identification Test',
-            'description' => 'A 10-question screening tool to assess alcohol consumption patterns.',
-            'type' => 'audit',
-            'scoring_guidelines' => ['low_risk_threshold' => 0, 'medium_risk_threshold' => 8, 'high_risk_threshold' => 16, 'max_score' => 40],
-            'is_active' => true,
-        ]);
+        $audit = new Assessment();
+        $audit->name = 'AUDIT';
+        $audit->full_name = 'Alcohol Use Disorders Identification Test';
+        $audit->description = 'A 10-question screening tool to assess alcohol consumption patterns.';
+        $audit->type = 'audit';
+        $audit->scoring_guidelines = json_encode(['low_risk_threshold' => 0, 'medium_risk_threshold' => 8, 'high_risk_threshold' => 16, 'max_score' => 40]);
+        $audit->is_active = true;
+        $audit->save();
 
         $auditQuestions = [
             ['question' => 'How often do you have a drink containing alcohol?', 'options' => [
@@ -33,18 +38,23 @@ class AssessmentSeeder extends Seeder
         ];
 
         foreach ($auditQuestions as $index => $q) {
-            AssessmentQuestion::create(['assessment_id' => $audit->id, 'question' => $q['question'], 'options' => $q['options'], 'order' => $index + 1]);
+            $question = new AssessmentQuestion();
+            $question->assessment_id = $audit->id;
+            $question->question = $q['question'];
+            $question->options = json_encode($q['options']);
+            $question->order = $index + 1;
+            $question->save();
         }
 
         // DUDIT Assessment
-        $dudit = Assessment::create([
-            'name' => 'DUDIT',
-            'full_name' => 'Drug Use Disorders Identification Test',
-            'description' => 'An 11-item screening tool to identify drug-related problems.',
-            'type' => 'dudit',
-            'scoring_guidelines' => ['low_risk_threshold' => 0, 'medium_risk_threshold' => 6, 'high_risk_threshold' => 25, 'max_score' => 44],
-            'is_active' => true,
-        ]);
+        $dudit = new Assessment();
+        $dudit->name = 'DUDIT';
+        $dudit->full_name = 'Drug Use Disorders Identification Test';
+        $dudit->description = 'An 11-item screening tool to identify drug-related problems.';
+        $dudit->type = 'dudit';
+        $dudit->scoring_guidelines = json_encode(['low_risk_threshold' => 0, 'medium_risk_threshold' => 6, 'high_risk_threshold' => 25, 'max_score' => 44]);
+        $dudit->is_active = true;
+        $dudit->save();
 
         $duditQuestions = [
             ['question' => 'How often do you use drugs other than alcohol?', 'options' => [
@@ -56,7 +66,12 @@ class AssessmentSeeder extends Seeder
         ];
 
         foreach ($duditQuestions as $index => $q) {
-            AssessmentQuestion::create(['assessment_id' => $dudit->id, 'question' => $q['question'], 'options' => $q['options'], 'order' => $index + 1]);
+            $question = new AssessmentQuestion();
+            $question->assessment_id = $dudit->id;
+            $question->question = $q['question'];
+            $question->options = json_encode($q['options']);
+            $question->order = $index + 1;
+            $question->save();
         }
     }
 }
