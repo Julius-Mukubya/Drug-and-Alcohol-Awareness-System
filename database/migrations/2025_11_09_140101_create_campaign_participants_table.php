@@ -18,7 +18,7 @@ class CreateCampaignParticipantsTable extends Migration
             $table->foreignId('campaign_id')->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->enum('status', ['registered', 'attended', 'cancelled'])->default('registered');
-            $table->timestamp('registered_at');
+            $table->timestamp('registered_at')->nullable();
             $table->timestamp('attended_at')->nullable();
             $table->text('feedback')->nullable();
             $table->integer('rating')->nullable();

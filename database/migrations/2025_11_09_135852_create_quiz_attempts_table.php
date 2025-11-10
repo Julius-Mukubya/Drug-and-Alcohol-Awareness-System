@@ -21,7 +21,7 @@ class CreateQuizAttemptsTable extends Migration
             $table->integer('total_questions');
             $table->integer('correct_answers')->default(0);
             $table->boolean('passed')->default(false);
-            $table->timestamp('started_at');
+            $table->timestamp('started_at')->nullable();
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();
         });

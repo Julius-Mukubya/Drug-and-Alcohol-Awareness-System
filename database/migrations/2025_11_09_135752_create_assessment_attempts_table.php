@@ -21,7 +21,7 @@ class CreateAssessmentAttemptsTable extends Migration
             $table->enum('risk_level', ['low', 'medium', 'high']);
             $table->text('recommendation')->nullable();
             $table->boolean('is_anonymous')->default(false);
-            $table->timestamp('taken_at');
+            $table->timestamp('taken_at')->nullable();
             $table->timestamps();
             
             $table->index(['user_id', 'assessment_id', 'taken_at']);

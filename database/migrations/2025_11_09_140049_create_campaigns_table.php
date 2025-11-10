@@ -21,8 +21,8 @@ class CreateCampaignsTable extends Migration
             $table->longText('content')->nullable();
             $table->string('banner_image')->nullable();
             $table->enum('type', ['awareness', 'event', 'workshop', 'webinar'])->default('awareness');
-            $table->timestamp('start_date');
-            $table->timestamp('end_date');
+            $table->timestamp('start_date')->nullable();
+            $table->timestamp('end_date')->nullable();
             $table->string('location')->nullable();
             $table->integer('max_participants')->nullable();
             $table->enum('status', ['draft', 'active', 'completed', 'cancelled'])->default('draft');
