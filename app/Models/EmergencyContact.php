@@ -22,14 +22,11 @@ class EmergencyContact extends Model
         'order',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_24_7' => 'boolean',
             'is_active' => 'boolean',
             'order' => 'integer',
         ];
-    }
 
     // Scopes
     public function scopeActive($query)

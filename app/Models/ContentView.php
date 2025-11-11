@@ -19,12 +19,9 @@ class ContentView extends Model
         'viewed_at',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'viewed_at' => 'datetime',
         ];
-    }
 
     // Relationships
     public function content()

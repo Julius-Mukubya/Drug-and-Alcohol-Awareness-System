@@ -20,10 +20,13 @@ class CreateIncidentsTable extends Migration
             $table->text('description');
             $table->string('location')->nullable();
             $table->timestamp('incident_date')->nullable();
+            $table->enum('severity', ['low', 'medium', 'high', 'critical'])->default('medium');
             $table->enum('status', ['pending', 'investigating', 'resolved', 'closed'])->default('pending');
             $table->boolean('is_anonymous')->default(false);
             $table->text('admin_notes')->nullable();
+            $table->foreignId('assigned_to')->nullable()->constrained('users')->onDelete('set null');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

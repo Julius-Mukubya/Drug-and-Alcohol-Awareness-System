@@ -133,7 +133,7 @@ class ReportController extends Controller
                                 $attempt->quiz->title,
                                 $attempt->score . '%',
                                 $attempt->passed ? 'Passed' : 'Failed',
-                                $attempt->completed_at?->format('Y-m-d'),
+                                $attempt->completed_at ? $attempt->completed_at->format('Y-m-d') : 'N/A',
                             ]);
                         }
                     });
@@ -147,7 +147,7 @@ class ReportController extends Controller
                                 $incident->incident_type,
                                 $incident->severity,
                                 $incident->status,
-                                $incident->is_anonymous ? 'Anonymous' : $incident->reporter?->name,
+                                $incident->is_anonymous ? 'Anonymous' : ($incident->reporter ? $incident->reporter->name : 'Unknown'),
                                 $incident->created_at->format('Y-m-d'),
                             ]);
                         }

@@ -36,15 +36,11 @@ class User extends Authenticatable
         'two_factor_secret',
     ];
 
-    protected function casts(): array
-    {
-        return [
-            'email_verified_at' => 'datetime',
-            'password' => 'hashed',
-            'last_login_at' => 'datetime',
-            'is_active' => 'boolean',
-        ];
-    }
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'last_login_at' => 'datetime',
+        'is_active' => 'boolean',
+    ];
 
     protected $appends = [
         'profile_photo_url',
@@ -184,3 +180,4 @@ class User extends Authenticatable
             : asset('images/default-avatar.png');
     }
 }
+

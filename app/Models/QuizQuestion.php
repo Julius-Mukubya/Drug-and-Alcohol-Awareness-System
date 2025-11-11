@@ -18,13 +18,10 @@ class QuizQuestion extends Model
         'order',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'points' => 'integer',
             'order' => 'integer',
         ];
-    }
 
     // Relationships
     public function quiz()

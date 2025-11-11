@@ -27,16 +27,13 @@ class EducationalContent extends Model
         'published_at',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_published' => 'boolean',
             'is_featured' => 'boolean',
             'published_at' => 'datetime',
             'views' => 'integer',
             'reading_time' => 'integer',
         ];
-    }
 
     // Relationships
     public function category()

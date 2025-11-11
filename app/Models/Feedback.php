@@ -21,14 +21,11 @@ class Feedback extends Model
         'responded_at',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_anonymous' => 'boolean',
             'rating' => 'integer',
             'responded_at' => 'datetime',
         ];
-    }
 
     // Relationships
     public function user()
@@ -50,17 +47,22 @@ class Feedback extends Model
     // Methods
     public function getTypeBadgeAttribute()
     {
-        return match($this->type) {
-            'suggestion' => ['text' => 'Suggestion', 'color' => 'blue'],
-            'complaint' => ['text' => 'Complaint', 'color' => 'red'],
-            'compliment' => ['text' => 'Compliment', 'color' => 'green'],
-            'bug_report' => ['text' => 'Bug Report', 'color' => 'orange'],
-            default => ['text' => 'Unknown', 'color' => 'gray'],
-        };
+        switch($this->type) {
+            case 'suggestion':
+                return ['text' => 'Suggestion', 'color' => 'blue'];
+            case 'complaint':
+                return ['text' => 'Complaint', 'color' => 'red'];
+            case 'compliment':
+                return ['text' => 'Compliment', 'color' => 'green'];
+            case 'bug_report':
+                return ['text' => 'Bug Report', 'color' => 'orange'];
+            default:
+                return ['text' => 'Unknown', 'color' => 'gray'];
+        }
     }
 
     public function getSubmitterNameAttribute()
     {
-        return $this->is_anonymous ? 'Anonymous' : $this->user?->name;
+        return $this->is_anonymous ? 'Anonymous' : ($this->user ? $this->user->name : 'Unknown');
     }
 }

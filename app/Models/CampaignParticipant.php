@@ -19,14 +19,11 @@ class CampaignParticipant extends Model
         'rating',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'registered_at' => 'datetime',
             'attended_at' => 'datetime',
             'rating' => 'integer',
         ];
-    }
 
     // Relationships
     public function campaign()

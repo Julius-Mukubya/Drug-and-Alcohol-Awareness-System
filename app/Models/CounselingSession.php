@@ -27,16 +27,13 @@ class CounselingSession extends Model
         'feedback',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_anonymous' => 'boolean',
             'scheduled_at' => 'datetime',
             'started_at' => 'datetime',
             'completed_at' => 'datetime',
             'rating' => 'integer',
         ];
-    }
 
     // Relationships
     public function student()
@@ -81,23 +78,33 @@ class CounselingSession extends Model
 
     public function getStatusBadgeAttribute()
     {
-        return match($this->status) {
-            'pending' => ['text' => 'Pending', 'color' => 'yellow'],
-            'active' => ['text' => 'Active', 'color' => 'blue'],
-            'completed' => ['text' => 'Completed', 'color' => 'green'],
-            'cancelled' => ['text' => 'Cancelled', 'color' => 'red'],
-            default => ['text' => 'Unknown', 'color' => 'gray'],
-        };
+        switch($this->status) {
+            case 'pending':
+                return ['text' => 'Pending', 'color' => 'yellow'];
+            case 'active':
+                return ['text' => 'Active', 'color' => 'blue'];
+            case 'completed':
+                return ['text' => 'Completed', 'color' => 'green'];
+            case 'cancelled':
+                return ['text' => 'Cancelled', 'color' => 'red'];
+            default:
+                return ['text' => 'Unknown', 'color' => 'gray'];
+        }
     }
 
     public function getPriorityBadgeAttribute()
     {
-        return match($this->priority) {
-            'low' => ['text' => 'Low', 'color' => 'gray'],
-            'medium' => ['text' => 'Medium', 'color' => 'blue'],
-            'high' => ['text' => 'High', 'color' => 'orange'],
-            'urgent' => ['text' => 'Urgent', 'color' => 'red'],
-            default => ['text' => 'Normal', 'color' => 'gray'],
-        };
+        switch($this->priority) {
+            case 'low':
+                return ['text' => 'Low', 'color' => 'gray'];
+            case 'medium':
+                return ['text' => 'Medium', 'color' => 'blue'];
+            case 'high':
+                return ['text' => 'High', 'color' => 'orange'];
+            case 'urgent':
+                return ['text' => 'Urgent', 'color' => 'red'];
+            default:
+                return ['text' => 'Normal', 'color' => 'gray'];
+        }
     }
 }

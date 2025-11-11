@@ -25,15 +25,12 @@ class Campaign extends Model
         'is_featured',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'start_date' => 'datetime',
             'end_date' => 'datetime',
             'is_featured' => 'boolean',
             'max_participants' => 'integer',
         ];
-    }
 
     // Relationships
     public function creator()
@@ -91,13 +88,18 @@ class Campaign extends Model
 
     public function getStatusBadgeAttribute()
     {
-        return match($this->status) {
-            'draft' => ['text' => 'Draft', 'color' => 'gray'],
-            'active' => ['text' => 'Active', 'color' => 'green'],
-            'completed' => ['text' => 'Completed', 'color' => 'blue'],
-            'cancelled' => ['text' => 'Cancelled', 'color' => 'red'],
-            default => ['text' => 'Unknown', 'color' => 'gray'],
-        };
+        switch($this->status) {
+            case 'draft':
+                return ['text' => 'Draft', 'color' => 'gray'];
+            case 'active':
+                return ['text' => 'Active', 'color' => 'green'];
+            case 'completed':
+                return ['text' => 'Completed', 'color' => 'blue'];
+            case 'cancelled':
+                return ['text' => 'Cancelled', 'color' => 'red'];
+            default:
+                return ['text' => 'Unknown', 'color' => 'gray'];
+        }
     }
 
     public function getBannerUrlAttribute()

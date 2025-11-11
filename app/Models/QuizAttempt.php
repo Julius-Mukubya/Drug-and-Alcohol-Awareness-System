@@ -23,9 +23,7 @@ class QuizAttempt extends Model
         'time_taken',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'score' => 'decimal:2',
             'passed' => 'boolean',
             'started_at' => 'datetime',
@@ -36,7 +34,6 @@ class QuizAttempt extends Model
             'earned_points' => 'integer',
             'time_taken' => 'integer',
         ];
-    }
 
     // Relationships
     public function user()

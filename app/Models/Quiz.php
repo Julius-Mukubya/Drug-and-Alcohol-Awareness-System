@@ -24,9 +24,7 @@ class Quiz extends Model
         'max_attempts',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_active' => 'boolean',
             'shuffle_questions' => 'boolean',
             'show_correct_answers' => 'boolean',
@@ -34,7 +32,6 @@ class Quiz extends Model
             'passing_score' => 'integer',
             'max_attempts' => 'integer',
         ];
-    }
 
     // Relationships
     public function category()

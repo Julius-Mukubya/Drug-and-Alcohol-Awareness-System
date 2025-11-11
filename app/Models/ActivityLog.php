@@ -20,12 +20,9 @@ class ActivityLog extends Model
         'user_agent',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'properties' => 'array',
         ];
-    }
 
     // Relationships
     public function user()

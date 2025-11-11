@@ -16,13 +16,10 @@ class QuizOption extends Model
         'order',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_correct' => 'boolean',
             'order' => 'integer',
         ];
-    }
 
     // Relationships
     public function question()

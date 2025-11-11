@@ -22,8 +22,11 @@ class CreateForumPostsTable extends Migration
             $table->boolean('is_anonymous')->default(false);
             $table->boolean('is_pinned')->default(false);
             $table->boolean('is_locked')->default(false);
+            $table->boolean('is_reported')->default(false);
             $table->integer('views')->default(0);
+            $table->integer('upvotes')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
 
     }

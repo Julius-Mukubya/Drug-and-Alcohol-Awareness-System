@@ -19,7 +19,9 @@ class CreateContentViewsTable extends Migration
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null');
             $table->string('ip_address')->nullable();
             $table->string('user_agent')->nullable();
+            $table->integer('duration')->nullable()->comment('Time spent in seconds');
             $table->timestamp('viewed_at')->nullable();
+            $table->timestamps();
             
             $table->index(['content_id', 'user_id']);
             $table->index('viewed_at');

@@ -20,13 +20,10 @@ class Category extends Model
         'is_active',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_active' => 'boolean',
             'order' => 'integer',
         ];
-    }
 
     // Relationships
     public function contents()

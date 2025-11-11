@@ -18,13 +18,10 @@ class CounselingMessage extends Model
         'read_at',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_read' => 'boolean',
             'read_at' => 'datetime',
         ];
-    }
 
     // Relationships
     public function session()

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MUBS Awareness - Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#10b77f",
+              "background-light": "#f6f8f7",
+              "background-dark": "#10221c",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full">
+<!-- SideNavBar -->
+<aside class="sticky top-0 h-screen flex-col bg-white dark:bg-background-dark dark:border-r dark:border-gray-700 w-64 hidden lg:flex">
+<div class="flex h-full flex-col justify-between p-4">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3 px-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="MUBS Awareness logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDOlqqrnn7gUspf7G--ZfEAHfhFEmJb11poCmQ-Z4Zft45BLCVKpHj8Z31-CHMgkQcNe9ElWNbPm3X-593kkxtwcTHNIgMBzkAF6g-sEoJSy8Nv-8hIrnQthnN73ECoGjM7NBMhiQsRAHWYZzbtxEHIGfyIxZQHtYhjUOR4H8CASI3M-pOsBMKeP72jZ7Ude7mhcX7OfYRh8kMKavkZjjkB_vWiM2JmewfBrRt3-AZ-JKAlmx8crQT3_lUiarlATmnRdGR-OXMGXA");'></div>
+<div class="flex flex-col">
+<h1 class="text-gray-900 dark:text-white text-base font-medium leading-normal">MUBS Awareness</h1>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Admin Panel</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 dark:bg-primary/30" href="#">
+<span class="material-symbols-outlined text-primary dark:text-primary">dashboard</span>
+<p class="text-gray-900 dark:text-white text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">article</span>
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Content</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">quiz</span>
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Quizzes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">group</span>
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Users</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">support_agent</span>
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Counseling</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">report</span>
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Incidents</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">summarize</span>
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Reports</p>
+</a>
+</nav>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10" href="#">
+<span class="material-symbols-outlined text-gray-700 dark:text-gray-300">settings</span>
+<p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col">
+<!-- ToolBar -->
+<header class="sticky top-0 z-10 flex justify-between items-center gap-2 px-4 md:px-8 py-3 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
+<div class="flex items-center gap-4">
+<button class="p-2 text-gray-700 dark:text-gray-300 lg:hidden">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="w-full max-w-xs pl-10 pr-4 py-2 text-sm text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary focus:border-primary" placeholder="Search..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-white/10">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-gray-700 dark:text-gray-300 rounded-full hover:bg-gray-200 dark:hover:bg-white/10">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</header>
+<div class="flex-1 p-4 md:p-8 space-y-8 overflow-y-auto">
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between items-center gap-3">
+<div class="flex flex-col gap-1">
+<p class="text-gray-900 dark:text-white text-3xl font-bold tracking-tight">Admin Dashboard</p>
+<p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Welcome back, Admin! Here's an overview of the platform's activity.</p>
+</div>
+<button class="bg-primary text-white text-sm font-medium px-4 py-2 rounded-lg flex items-center gap-2 hover:opacity-90">
+<span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+                        Create Report
+                    </button>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">Total Student Users</p>
+<p class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight">1,250</p>
+<p class="text-green-600 dark:text-green-500 text-sm font-medium leading-normal">+12% this month</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">Published Content</p>
+<p class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight">88</p>
+<p class="text-green-600 dark:text-green-500 text-sm font-medium leading-normal">+5 new pieces</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">Active Counseling</p>
+<p class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight">15</p>
+<p class="text-red-600 dark:text-red-500 text-sm font-medium leading-normal">-2 from yesterday</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">Pending Incidents</p>
+<p class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight">4</p>
+<p class="text-yellow-600 dark:text-yellow-500 text-sm font-medium leading-normal">Needs review</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+<p class="text-gray-800 dark:text-gray-200 text-base font-medium leading-normal">Engagement Rate</p>
+<p class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight">76%</p>
+<p class="text-green-600 dark:text-green-500 text-sm font-medium leading-normal">+3.5% this week</p>
+</div>
+</div>
+<!-- Charts -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 flex flex-col gap-2 rounded-xl border border-gray-200 dark:border-gray-700 p-6 bg-white dark:bg-gray-800">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">User Engagement</p>
+<p class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight truncate">1.1k Active Users</p>
+<div class="flex gap-1">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-normal leading-normal">Last 30 Days</p>
+<p class="text-green-600 dark:text-green-500 text-sm font-medium leading-normal">+15.2%</p>
+</div>
+<div class="flex min-h-[240px] flex-1 flex-col justify-end pt-4">
+<svg class="h-full w-full" fill="none" preserveaspectratio="none" viewbox="0 0 472 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#paint0_linear_chart)"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#10b77f" stroke-linecap="round" stroke-width="3"></path>
+<defs>
+<lineargradient gradientunits="userSpaceOnUse" id="paint0_linear_chart" x1="236" x2="236" y1="1" y2="149">
+<stop stop-color="#10b77f" stop-opacity="0.3"></stop>
+<stop offset="1" stop-color="#10b77f" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+<div class="flex flex-col gap-2 rounded-xl border border-gray-200 dark:border-gray-700 p-6 bg-white dark:bg-gray-800">
+<p class="text-gray-900 dark:text-white text-base font-medium leading-normal">Risk Assessment</p>
+<p class="text-gray-900 dark:text-white tracking-light text-3xl font-bold leading-tight truncate">1,250 Students</p>
+<div class="flex min-h-[240px] flex-1 items-center justify-center py-4">
+<div class="relative w-48 h-48">
+<svg class="w-full h-full" viewbox="0 0 36 36">
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#2563eb" stroke-dasharray="60, 100" stroke-width="4"></path>
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#f59e0b" stroke-dasharray="30, 100" stroke-dashoffset="-60" stroke-width="4"></path>
+<path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#ef4444" stroke-dasharray="10, 100" stroke-dashoffset="-90" stroke-width="4"></path>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="text-2xl font-bold text-gray-900 dark:text-white">10%</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">High Risk</span>
+</div>
+</div>
+</div>
+<div class="flex justify-center gap-4 text-xs">
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-blue-600"></span><span class="text-gray-600 dark:text-gray-300">Low (60%)</span></div>
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-yellow-500"></span><span class="text-gray-600 dark:text-gray-300">Medium (30%)</span></div>
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-red-500"></span><span class="text-gray-600 dark:text-gray-300">High (10%)</span></div>
+</div>
+</div>
+</div>
+<!-- Data Tables & Management -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+<div class="xl:col-span-2 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white">Recent User Registrations</h3>
+<a class="text-sm font-medium text-primary hover:underline" href="#">View All</a>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+<thead class="text-xs text-gray-700 dark:text-gray-300 uppercase bg-gray-50 dark:bg-gray-700">
+<tr>
+<th class="px-6 py-3" scope="col">Name</th>
+<th class="px-6 py-3" scope="col">Email</th>
+<th class="px-6 py-3" scope="col">Date</th>
+<th class="px-6 py-3" scope="col">Status</th>
+<th class="px-6 py-3" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">John Doe</td>
+<td class="px-6 py-4">john.doe@mubs.ac.ug</td>
+<td class="px-6 py-4">2023-10-27</td>
+<td class="px-6 py-4"><span class="px-2 py-1 text-xs font-medium text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-300">Approved</span></td>
+<td class="px-6 py-4"><button class="text-primary hover:underline">View</button></td>
+</tr>
+<tr class="bg-white dark:bg-gray-800 border-b dark:border-gray-700">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">Jane Smith</td>
+<td class="px-6 py-4">jane.smith@mubs.ac.ug</td>
+<td class="px-6 py-4">2023-10-26</td>
+<td class="px-6 py-4"><span class="px-2 py-1 text-xs font-medium text-yellow-800 bg-yellow-100 rounded-full dark:bg-yellow-900 dark:text-yellow-300">Pending</span></td>
+<td class="px-6 py-4"><button class="text-primary hover:underline">View</button></td>
+</tr>
+<tr class="bg-white dark:bg-gray-800">
+<td class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">Peter Jones</td>
+<td class="px-6 py-4">peter.jones@mubs.ac.ug</td>
+<td class="px-6 py-4">2023-10-25</td>
+<td class="px-6 py-4"><span class="px-2 py-1 text-xs font-medium text-red-800 bg-red-100 rounded-full dark:bg-red-900 dark:text-red-300">Declined</span></td>
+<td class="px-6 py-4"><button class="text-primary hover:underline">View</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="space-y-6">
+<div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 flex flex-col justify-between">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Content Management</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Oversee all articles, videos, and informational content.</p>
+<button class="w-full bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary text-sm font-medium py-2 rounded-lg hover:bg-primary/30 dark:hover:bg-primary/40">Manage Content</button>
+</div>
+<div class="bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 p-6 flex flex-col justify-between">
+<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Quizzes &amp; Assessments</h3>
+<p class="text-sm text-gray-500 dark:text-gray-400 mb-4">Create, review, and manage student quizzes.</p>
+<button class="w-full bg-primary/20 text-primary dark:bg-primary/30 dark:text-primary text-sm font-medium py-2 rounded-lg hover:bg-primary/30 dark:hover:bg-primary/40">Review Quizzes</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

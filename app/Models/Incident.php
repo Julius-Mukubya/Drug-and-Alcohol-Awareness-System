@@ -26,15 +26,12 @@ class Incident extends Model
         'attachments',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'incident_date' => 'datetime',
             'resolved_at' => 'datetime',
             'is_anonymous' => 'boolean',
             'attachments' => 'array',
         ];
-    }
 
     // Relationships
     public function reporter()
@@ -66,28 +63,38 @@ class Incident extends Model
     // Methods
     public function getStatusBadgeAttribute()
     {
-        return match($this->status) {
-            'pending' => ['text' => 'Pending', 'color' => 'yellow'],
-            'investigating' => ['text' => 'Investigating', 'color' => 'blue'],
-            'resolved' => ['text' => 'Resolved', 'color' => 'green'],
-            'closed' => ['text' => 'Closed', 'color' => 'gray'],
-            default => ['text' => 'Unknown', 'color' => 'gray'],
-        };
+        switch($this->status) {
+            case 'pending':
+                return ['text' => 'Pending', 'color' => 'yellow'];
+            case 'investigating':
+                return ['text' => 'Investigating', 'color' => 'blue'];
+            case 'resolved':
+                return ['text' => 'Resolved', 'color' => 'green'];
+            case 'closed':
+                return ['text' => 'Closed', 'color' => 'gray'];
+            default:
+                return ['text' => 'Unknown', 'color' => 'gray'];
+        }
     }
 
     public function getSeverityBadgeAttribute()
     {
-        return match($this->severity) {
-            'low' => ['text' => 'Low', 'color' => 'green'],
-            'medium' => ['text' => 'Medium', 'color' => 'yellow'],
-            'high' => ['text' => 'High', 'color' => 'orange'],
-            'critical' => ['text' => 'Critical', 'color' => 'red'],
-            default => ['text' => 'Unknown', 'color' => 'gray'],
-        };
+        switch($this->severity) {
+            case 'low':
+                return ['text' => 'Low', 'color' => 'green'];
+            case 'medium':
+                return ['text' => 'Medium', 'color' => 'yellow'];
+            case 'high':
+                return ['text' => 'High', 'color' => 'orange'];
+            case 'critical':
+                return ['text' => 'Critical', 'color' => 'red'];
+            default:
+                return ['text' => 'Unknown', 'color' => 'gray'];
+        }
     }
 
     public function getReporterNameAttribute()
     {
-        return $this->is_anonymous ? 'Anonymous' : $this->reporter?->name;
+        return $this->is_anonymous ? 'Anonymous' : ($this->reporter ? $this->reporter->name : 'Unknown');
     }
 }

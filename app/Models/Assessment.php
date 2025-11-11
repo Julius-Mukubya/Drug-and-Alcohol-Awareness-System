@@ -18,13 +18,10 @@ class Assessment extends Model
         'is_active',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'scoring_guidelines' => 'array',
             'is_active' => 'boolean',
         ];
-    }
 
     // Relationships
     public function questions()

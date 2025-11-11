@@ -20,14 +20,11 @@ class ForumComment extends Model
         'upvotes',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_anonymous' => 'boolean',
             'is_reported' => 'boolean',
             'upvotes' => 'integer',
         ];
-    }
 
     // Relationships
     public function post()

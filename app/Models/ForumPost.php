@@ -23,9 +23,7 @@ class ForumPost extends Model
         'upvotes',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_anonymous' => 'boolean',
             'is_pinned' => 'boolean',
             'is_locked' => 'boolean',
@@ -33,7 +31,6 @@ class ForumPost extends Model
             'views' => 'integer',
             'upvotes' => 'integer',
         ];
-    }
 
     // Relationships
     public function category()

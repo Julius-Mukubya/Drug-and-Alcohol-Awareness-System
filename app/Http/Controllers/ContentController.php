@@ -38,7 +38,7 @@ class ContentController extends Controller
     public function show(EducationalContent $content)
     {
         // Check if published or user is admin
-        if (!$content->is_published && !auth()->user()?->isAdmin()) {
+        if (!$content->is_published && !(auth()->user() && auth()->user()->isAdmin())) {
             abort(404);
         }
 

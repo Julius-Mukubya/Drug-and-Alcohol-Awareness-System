@@ -16,13 +16,10 @@ class AssessmentResponse extends Model
         'score',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'selected_option_index' => 'integer',
             'score' => 'integer',
         ];
-    }
 
     // Relationships
     public function attempt()

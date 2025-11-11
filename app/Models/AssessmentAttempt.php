@@ -19,14 +19,11 @@ class AssessmentAttempt extends Model
         'taken_at',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_anonymous' => 'boolean',
             'taken_at' => 'datetime',
             'total_score' => 'integer',
         ];
-    }
 
     // Relationships
     public function user()

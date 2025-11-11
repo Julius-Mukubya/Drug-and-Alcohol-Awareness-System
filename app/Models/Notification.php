@@ -19,14 +19,11 @@ class Notification extends Model
         'read_at',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'data' => 'array',
             'is_read' => 'boolean',
             'read_at' => 'datetime',
         ];
-    }
 
     // Relationships
     public function user()

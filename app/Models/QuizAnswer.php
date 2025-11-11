@@ -18,13 +18,10 @@ class QuizAnswer extends Model
         'points_earned',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'is_correct' => 'boolean',
             'points_earned' => 'integer',
         ];
-    }
 
     // Relationships
     public function attempt()

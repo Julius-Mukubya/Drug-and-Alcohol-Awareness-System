@@ -17,9 +17,13 @@ class CreateForumCommentsTable extends Migration
             $table->id();
             $table->foreignId('post_id')->constrained('forum_posts')->onDelete('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('parent_id')->nullable()->constrained('forum_comments')->onDelete('cascade');
             $table->text('comment');
             $table->boolean('is_anonymous')->default(false);
+            $table->boolean('is_reported')->default(false);
+            $table->integer('upvotes')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -17,13 +17,10 @@ class Role extends Model
         'is_active',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'permissions' => 'array',
             'is_active' => 'boolean',
         ];
-    }
 
     // Scopes
     public function scopeActive($query)

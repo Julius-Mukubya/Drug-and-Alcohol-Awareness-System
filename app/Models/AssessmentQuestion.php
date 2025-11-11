@@ -16,13 +16,10 @@ class AssessmentQuestion extends Model
         'order',
     ];
 
-    protected function casts(): array
-    {
-        return [
+    protected $casts = [
             'options' => 'array',
             'order' => 'integer',
         ];
-    }
 
     // Relationships
     public function assessment()
