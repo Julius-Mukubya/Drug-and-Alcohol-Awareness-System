@@ -10,39 +10,64 @@ class SessionController extends Controller
 {
     public function index()
     {
-        $pendingSessions = CounselingSession::pending()
-            ->with('student')
-            ->latest()
-            ->get();
+        $user = auth()->user();
+        
+        // Admins can see all sessions, counselors only see their own
+        if ($user->role === 'admin') {
+            $pendingSessions = CounselingSession::pending()
+                ->with('student')
+                ->latest()
+                ->get();
 
-        $activeSessions = auth()->user()->counselingAsProvider()
-            ->active()
-            ->with('student')
-            ->latest()
-            ->get();
+            $activeSessions = CounselingSession::active()
+                ->with(['student', 'counselor'])
+                ->latest()
+                ->get();
 
-        $completedSessions = auth()->user()->counselingAsProvider()
-            ->completed()
-            ->with('student')
-            ->latest()
-            ->paginate(10);
+            $completedSessions = CounselingSession::completed()
+                ->with(['student', 'counselor'])
+                ->latest()
+                ->paginate(10);
+        } else {
+            $pendingSessions = CounselingSession::pending()
+                ->with('student')
+                ->latest()
+                ->get();
+
+            $activeSessions = $user->counselingAsProvider()
+                ->active()
+                ->with('student')
+                ->latest()
+                ->get();
+
+            $completedSessions = $user->counselingAsProvider()
+                ->completed()
+                ->with('student')
+                ->latest()
+                ->paginate(10);
+        }
 
         return view('counselor.sessions.index', compact('pendingSessions', 'activeSessions', 'completedSessions'));
     }
 
     public function show(CounselingSession $session)
     {
-        if ($session->counselor_id !== auth()->id() && $session->status !== 'pending') {
+        $user = auth()->user();
+        
+        // Allow admins to view all sessions, counselors only their own or pending
+        if ($user->role !== 'admin' && $session->counselor_id !== $user->id && $session->status !== 'pending') {
             abort(403);
         }
 
-        $session->load(['student', 'messages.sender']);
+        $session->load(['student', 'counselor', 'messages.sender']);
 
-        // Mark messages as read
-        $session->messages()
-            ->where('sender_id', '!=', auth()->id())
-            ->where('is_read', false)
-            ->each(fn($msg) => $msg->markAsRead());
+        // Mark messages as read (only for counselors, not admins viewing)
+        if ($user->role === 'counselor' && $session->counselor_id === $user->id) {
+            $session->messages()
+                ->where('sender_id', '!=', $user->id)
+                ->where('is_read', false)
+                ->each(fn($msg) => $msg->markAsRead());
+        }
 
         return view('counselor.sessions.show', compact('session'));
     }

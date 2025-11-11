@@ -4,13 +4,13 @@
 
 @section('content')
 <!-- PageHeading -->
-<div class="flex flex-wrap justify-between items-center gap-3">
+<div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-6">
     <div class="flex flex-col gap-1">
-        <p class="text-gray-900 dark:text-white text-3xl font-bold tracking-tight">Admin Dashboard</p>
-        <p class="text-gray-500 dark:text-gray-400 text-base font-normal leading-normal">Welcome back, {{ auth()->user()->name }}! Here's an overview of the platform's activity.</p>
+        <p class="text-gray-900 dark:text-white text-2xl sm:text-3xl font-bold tracking-tight">Admin Dashboard</p>
+        <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base">Welcome back, {{ auth()->user()->name }}!</p>
     </div>
-    <a href="{{ route('admin.reports.index') }}" class="bg-primary text-white text-sm font-medium px-4 py-2 rounded-lg flex items-center gap-2 hover:opacity-90">
-        <span class="material-symbols-outlined" style="font-size: 20px;">add</span>
+    <a href="{{ route('admin.reports.index') }}" class="bg-gradient-to-r from-emerald-500 to-teal-600 text-white text-sm font-semibold px-6 py-3 rounded-xl flex items-center justify-center gap-2 hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-200 w-full sm:w-auto">
+        <span class="material-symbols-outlined text-lg">summarize</span>
         View Reports
     </a>
 </div>

@@ -73,8 +73,25 @@
 
             <div>
                 <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Campaign Banner</label>
-                <input type="file" name="banner" accept="image/*"
-                    class="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white">
+                
+                <!-- Image Preview -->
+                <div id="banner_preview_container" class="hidden mb-4">
+                    <div class="relative w-full h-64 rounded-lg overflow-hidden border-2 border-primary bg-gray-100 dark:bg-gray-900">
+                        <img id="banner_preview" src="" alt="Banner Preview" class="w-full h-full object-cover">
+                        <button type="button" onclick="clearBannerPreview()" class="absolute top-2 right-2 bg-red-500 hover:bg-red-600 text-white rounded-full p-2 shadow-lg transition-all">
+                            <span class="material-symbols-outlined text-sm">close</span>
+                        </button>
+                    </div>
+                </div>
+
+                <input type="file" name="banner" accept="image/*" id="banner_input" onchange="previewBanner(event)"
+                    class="block w-full text-sm text-gray-500 dark:text-gray-400
+                    file:mr-4 file:py-2 file:px-4
+                    file:rounded-lg file:border-0
+                    file:text-sm file:font-semibold
+                    file:bg-primary file:text-white
+                    hover:file:opacity-90 file:cursor-pointer">
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Recommended size: 1200x400px. Max 2MB</p>
                 @error('banner')<p class="text-red-500 text-sm mt-1">{{ $message }}</p>@enderror
             </div>
 
@@ -93,3 +110,32 @@
     </form>
 </div>
 @endsection
+
+@push('scripts')
+<script>
+function previewBanner(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const preview = document.getElementById('banner_preview');
+            const container = document.getElementById('banner_preview_container');
+            
+            preview.src = e.target.result;
+            container.classList.remove('hidden');
+        }
+        reader.readAsDataURL(file);
+    }
+}
+
+function clearBannerPreview() {
+    const input = document.getElementById('banner_input');
+    const preview = document.getElementById('banner_preview');
+    const container = document.getElementById('banner_preview_container');
+    
+    input.value = '';
+    preview.src = '';
+    container.classList.add('hidden');
+}
+</script>
+@endpush

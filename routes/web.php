@@ -21,7 +21,8 @@ use App\Http\Controllers\Admin\{
     QuizController as AdminQuizController,
     CampaignController as AdminCampaignController,
     IncidentController as AdminIncidentController,
-    ReportController as AdminReportController
+    ReportController as AdminReportController,
+    SettingsController as AdminSettingsController
 };
 use App\Http\Controllers\Counselor\SessionController as CounselorSessionController;
 
@@ -73,7 +74,7 @@ Route::middleware([
     Route::prefix('notifications')->name('notifications.')->group(function () {
         Route::get('/', [NotificationController::class, 'index'])->name('index');
         Route::patch('/{id}/read', [NotificationController::class, 'markAsRead'])->name('read');
-        Route::patch('/read-all', [NotificationController::class, 'markAllAsRead'])->name('read-all');
+        Route::patch('/mark-all-read', [NotificationController::class, 'markAllAsRead'])->name('markAllAsRead');
     });
     
     // Student Routes
@@ -118,8 +119,8 @@ Route::middleware([
         });
     });
     
-    // Counselor Routes
-    Route::middleware('role:counselor')->prefix('counselor')->name('counselor.')->group(function () {
+    // Counselor Routes (accessible by counselors and admins)
+    Route::middleware(['auth'])->prefix('counselor')->name('counselor.')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         
         Route::prefix('sessions')->name('sessions.')->group(function () {
@@ -154,6 +155,15 @@ Route::middleware([
         Route::prefix('reports')->name('reports.')->group(function () {
             Route::get('/', [AdminReportController::class, 'index'])->name('index');
             Route::get('/export', [AdminReportController::class, 'export'])->name('export');
+        });
+        
+        // Settings
+        Route::prefix('settings')->name('settings.')->group(function () {
+            Route::get('/', [AdminSettingsController::class, 'index'])->name('index');
+            Route::patch('/update', [AdminSettingsController::class, 'update'])->name('update');
+            Route::patch('/email/update', [AdminSettingsController::class, 'updateEmail'])->name('email.update');
+            Route::patch('/security/update', [AdminSettingsController::class, 'updateSecurity'])->name('security.update');
+            Route::patch('/content/update', [AdminSettingsController::class, 'updateContent'])->name('content.update');
         });
     });
 });

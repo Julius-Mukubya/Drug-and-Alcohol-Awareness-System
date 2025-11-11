@@ -40,9 +40,55 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display">
+    <!-- Mobile Overlay -->
+    <div id="mobileOverlay" class="lg:hidden fixed inset-0 bg-black/60 z-40 hidden transition-opacity duration-300"></div>
+
+    <!-- Mobile Header -->
+    <div class="lg:hidden sticky top-0 z-30 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-b border-emerald-100 dark:border-emerald-900/30 px-4 py-3 shadow-sm">
+        <div class="flex items-center gap-3">
+            <button id="mobileMenuBtn" class="text-gray-700 dark:text-gray-300 p-2.5 rounded-xl border border-gray-300 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200">
+                <span class="material-symbols-outlined text-xl">menu</span>
+            </button>
+            
+            <!-- Search Bar -->
+            <div class="flex-1 relative">
+                <span class="material-symbols-outlined absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400 text-lg">search</span>
+                <input class="w-full pl-9 pr-3 py-2 text-sm text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary focus:border-primary" placeholder="Search..." type="text"/>
+            </div>
+
+            <!-- Notifications Icon -->
+            <a href="{{ route('notifications.index') }}" class="p-2 text-gray-700 dark:text-gray-300 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20 relative">
+                <span class="material-symbols-outlined">notifications</span>
+                @if(auth()->user()->unreadNotificationsCount() > 0)
+                    <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+                        {{ auth()->user()->unreadNotificationsCount() }}
+                    </span>
+                @endif
+            </a>
+
+            <!-- Profile Icon -->
+            <div class="relative group">
+                <button class="p-2 text-gray-700 dark:text-gray-300 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-900/20">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </button>
+                <div class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                    <div class="p-3 border-b border-gray-200 dark:border-gray-700">
+                        <p class="text-sm font-medium text-gray-900 dark:text-white">{{ auth()->user()->name }}</p>
+                        <p class="text-xs text-gray-500 dark:text-gray-400">{{ auth()->user()->email }}</p>
+                    </div>
+                    <a href="{{ route('profile.edit') }}" class="block px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Profile</a>
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submit" class="w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="relative flex min-h-screen w-full">
-        <!-- SideNavBar -->
-        <aside class="sticky top-0 h-screen flex-col bg-white dark:bg-background-dark dark:border-r dark:border-gray-700 w-64 hidden lg:flex">
+        <!-- Enhanced Sidebar -->
+        <aside id="sidebar" class="fixed lg:sticky top-0 h-screen flex-col bg-white dark:bg-gray-900 border-r border-emerald-100 dark:border-emerald-900/30 w-64 flex transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out z-40 shadow-xl shadow-emerald-500/5">
             <div class="flex h-full flex-col justify-between p-4">
                 <div class="flex flex-col gap-4">
                     <div class="flex items-center gap-3 px-3">
@@ -87,16 +133,28 @@
                         </a>
                     </nav>
                 </div>
-                <div class="flex flex-col gap-2">
-                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10" href="{{ route('profile.edit') }}">
-                        <span class="material-symbols-outlined text-gray-700 dark:text-gray-300">settings</span>
-                        <p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Settings</p>
+                <div class="flex flex-col gap-2 border-t border-emerald-100 dark:border-emerald-900/30 pt-4">
+                    <!-- Dark Mode Toggle -->
+                    <button id="darkModeToggle" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all duration-200">
+                        <span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400" id="darkModeIcon">dark_mode</span>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm font-medium">Dark Mode</p>
+                        <div class="ml-auto">
+                            <div class="relative inline-block w-10 h-6 transition duration-200 ease-in-out bg-gray-300 dark:bg-emerald-600 rounded-full">
+                                <span class="absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform duration-200 dark:translate-x-4"></span>
+                            </div>
+                        </div>
+                    </button>
+
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all duration-200" href="{{ route('admin.settings.index') }}">
+                        <span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400">settings</span>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm font-medium">Settings</p>
                     </a>
+                    
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-white/10">
-                            <span class="material-symbols-outlined text-gray-700 dark:text-gray-300">logout</span>
-                            <p class="text-gray-700 dark:text-gray-300 text-sm font-medium leading-normal">Logout</p>
+                        <button type="submit" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-red-50 dark:hover:bg-red-900/20 transition-all duration-200">
+                            <span class="material-symbols-outlined text-red-600 dark:text-red-400">logout</span>
+                            <p class="text-gray-700 dark:text-gray-300 text-sm font-medium">Logout</p>
                         </button>
                     </form>
                 </div>
@@ -106,11 +164,8 @@
         <!-- Main Content -->
         <main class="flex-1 flex flex-col">
             <!-- ToolBar -->
-            <header class="sticky top-0 z-10 flex justify-between items-center gap-2 px-4 md:px-8 py-3 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700">
+            <header class="sticky top-0 z-10 flex justify-between items-center gap-2 px-4 md:px-8 py-3 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 hidden lg:flex">
                 <div class="flex items-center gap-4">
-                    <button class="p-2 text-gray-700 dark:text-gray-300 lg:hidden" onclick="toggleSidebar()">
-                        <span class="material-symbols-outlined">menu</span>
-                    </button>
                     <div class="relative">
                         <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
                         <input class="w-full max-w-xs pl-10 pr-4 py-2 text-sm text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-primary focus:border-primary" placeholder="Search..." type="text"/>
@@ -144,7 +199,7 @@
                 </div>
             </header>
 
-            <div class="flex-1 p-4 md:p-8 space-y-8 overflow-y-auto">
+            <div class="flex-1 p-4 md:p-6 lg:p-8 space-y-6 md:space-y-8 overflow-y-auto">
                 @if(session('success'))
                     <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                         <span class="block sm:inline">{{ session('success') }}</span>
@@ -163,11 +218,62 @@
     </div>
 
     <script>
-        function toggleSidebar() {
-            // Mobile sidebar toggle functionality
-            const sidebar = document.querySelector('aside');
-            sidebar.classList.toggle('hidden');
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+
+        function toggleMobileMenu() {
+            sidebar?.classList.toggle('-translate-x-full');
+            mobileOverlay?.classList.toggle('hidden');
         }
+
+        mobileMenuBtn?.addEventListener('click', toggleMobileMenu);
+        mobileOverlay?.addEventListener('click', toggleMobileMenu);
+
+        // Handle sidebar on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                // Desktop: show sidebar and hide overlay
+                sidebar?.classList.remove('-translate-x-full');
+                mobileOverlay?.classList.add('hidden');
+            } else {
+                // Mobile: hide sidebar
+                sidebar?.classList.add('-translate-x-full');
+                mobileOverlay?.classList.add('hidden');
+            }
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const mobileDarkModeToggle = document.getElementById('mobileDarkModeToggle');
+        const darkModeIcon = document.getElementById('darkModeIcon');
+        const mobileDarkModeIcon = document.getElementById('mobileDarkModeIcon');
+        const html = document.documentElement;
+
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            html.classList.add('dark');
+            if (darkModeIcon) darkModeIcon.textContent = 'light_mode';
+            if (mobileDarkModeIcon) mobileDarkModeIcon.textContent = 'light_mode';
+        }
+
+        function toggleDarkMode() {
+            html.classList.toggle('dark');
+            
+            if (html.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                if (darkModeIcon) darkModeIcon.textContent = 'light_mode';
+                if (mobileDarkModeIcon) mobileDarkModeIcon.textContent = 'light_mode';
+            } else {
+                localStorage.setItem('theme', 'light');
+                if (darkModeIcon) darkModeIcon.textContent = 'dark_mode';
+                if (mobileDarkModeIcon) mobileDarkModeIcon.textContent = 'dark_mode';
+            }
+        }
+
+        darkModeToggle?.addEventListener('click', toggleDarkMode);
     </script>
     @stack('scripts')
 </body>
