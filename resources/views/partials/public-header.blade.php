@@ -13,15 +13,65 @@
             <nav class="hidden md:flex items-center gap-9">
                 <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('home') }}">Home</a>
                 <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal {{ request()->routeIs('content.*') ? 'text-primary dark:text-primary font-bold' : '' }}" href="{{ route('content.index') }}">Educational Resources</a>
-                @auth
-                    @if(auth()->user()->role === 'student')
-                        <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('student.counseling.index') }}">Counseling</a>
-                    @else
-                        <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('content.index') }}">Counseling</a>
-                    @endif
-                @else
-                    <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('register') }}">Counseling</a>
-                @endauth
+                
+                <!-- Counseling Dropdown -->
+                <div class="relative group">
+                    <button class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal flex items-center gap-1 {{ request()->routeIs('public.counseling.*') || request()->routeIs('student.counseling.*') ? 'text-primary dark:text-primary font-bold' : '' }}">
+                        Counseling
+                        <span class="material-symbols-outlined text-sm">expand_more</span>
+                    </button>
+                    <div class="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                        <div class="p-2">
+                            <a href="{{ route('public.counseling.index') }}" class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-emerald-600">support_agent</span>
+                                    <div>
+                                        <div class="font-medium">Our Services</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400">Professional counseling support</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="{{ route('content.index') }}" class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-purple-600">library_books</span>
+                                    <div>
+                                        <div class="font-medium">Educational Resources</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400">Mental health articles and guides</div>
+                                    </div>
+                                </div>
+                            </a>
+                            @auth
+                                @if(auth()->user()->role === 'student')
+                                    <div class="border-t border-gray-200 dark:border-gray-600 my-2"></div>
+                                    <a href="{{ route('student.counseling.index') }}" class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <span class="material-symbols-outlined text-blue-600">psychology</span>
+                                            <div>
+                                                <div class="font-medium">My Sessions</div>
+                                                <div class="text-xs text-gray-500 dark:text-gray-400">View your counseling sessions</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="{{ route('student.counseling.create') }}" class="block px-4 py-3 text-sm text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors">
+                                        <div class="flex items-center gap-3">
+                                            <span class="material-symbols-outlined">add</span>
+                                            <div class="font-medium">Request Session</div>
+                                        </div>
+                                    </a>
+                                @endif
+                            @else
+                                <div class="border-t border-gray-200 dark:border-gray-600 my-2"></div>
+                                <button onclick="document.getElementById('loginModal').classList.remove('hidden')" class="w-full text-left px-4 py-3 text-sm text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors">
+                                    <div class="flex items-center gap-3">
+                                        <span class="material-symbols-outlined">login</span>
+                                        <div class="font-medium">Login to Get Help</div>
+                                    </div>
+                                </button>
+                            @endauth
+                        </div>
+                    </div>
+                </div>
+                
                 <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('campaigns.index') }}">Events</a>
                 <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('public.about') }}">About Us</a>
             </nav>
@@ -55,20 +105,25 @@
 <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
     <div class="px-4 py-2 space-y-2">
         <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('home') }}">Home</a>
-        <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('content.index') }}">Learn</a>
-        @auth
-            @if(auth()->user()->role === 'student')
-                <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('student.assessments.index') }}">Self-Assessment</a>
-                <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('student.counseling.index') }}">Get Help</a>
-            @else
-                <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('content.index') }}">Self-Assessment</a>
-                <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('content.index') }}">Get Help</a>
-            @endif
-        @else
-            <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('register') }}">Self-Assessment</a>
-            <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('register') }}">Get Help</a>
-        @endauth
-        <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="#about">About Us</a>
+        <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('content.index') }}">Educational Resources</a>
+        
+        <!-- Counseling Section -->
+        <div class="py-2">
+            <div class="text-[#111816] dark:text-gray-300 text-sm font-semibold mb-2">Counseling</div>
+            <div class="ml-4 space-y-1">
+                <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm py-1" href="{{ route('public.counseling.index') }}">Our Services</a>
+                <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm py-1" href="{{ route('content.index') }}">Educational Resources</a>
+                @auth
+                    @if(auth()->user()->role === 'student')
+                        <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm py-1" href="{{ route('student.counseling.index') }}">My Sessions</a>
+                        <a class="block text-primary dark:text-primary font-medium text-sm py-1" href="{{ route('student.counseling.create') }}">Request Session</a>
+                    @endif
+                @endauth
+            </div>
+        </div>
+        
+        <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('campaigns.index') }}">Events</a>
+        <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('public.about') }}">About Us</a>
         
         <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
             @guest

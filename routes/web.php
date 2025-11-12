@@ -65,6 +65,21 @@ Route::prefix('campaigns')->name('campaigns.')->group(function () {
     });
 });
 
+// Public Counseling Routes
+Route::prefix('counseling')->name('public.counseling.')->group(function () {
+    Route::get('/', function () {
+        return view('public.counseling.index');
+    })->name('index');
+    
+    Route::get('/resources', function () {
+        return view('public.counseling.resources');
+    })->name('resources');
+    
+    Route::get('/counselor/{slug}', function ($slug) {
+        return view('public.counseling.counselor', compact('slug'));
+    })->name('counselor');
+});
+
 // Authenticated Routes
 Route::middleware([
     'auth:sanctum',

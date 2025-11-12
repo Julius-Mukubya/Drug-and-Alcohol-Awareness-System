@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.counselor')
 
 @section('title', 'Counseling Sessions')
 

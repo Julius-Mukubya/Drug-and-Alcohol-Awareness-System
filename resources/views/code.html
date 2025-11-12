@@ -3,13 +3,22 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Mindful MUBS Week - MUBS Wellness</title>
+<title>MUBS D&amp;A Awareness - Counseling &amp; Support</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script>
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -18,328 +27,169 @@
               "primary": "#14eba3",
               "background-light": "#f6f8f7",
               "background-dark": "#10221c",
+              "content-light": "#ffffff",
+              "content-dark": "#1a2c26",
               "text-light": "#111816",
-              "text-dark": "#f0f4f3",
+              "text-dark": "#e1e3e2",
               "text-muted-light": "#61897c",
-              "text-muted-dark": "#a0b5ab",
-              "card-light": "#ffffff",
-              "card-dark": "#1a2e27",
+              "text-muted-dark": "#a0b5ae",
               "border-light": "#f0f4f3",
-              "border-dark": "#2a3f37",
+              "border-dark": "#2a3c36",
             },
             fontFamily: {
               "display": ["Lexend", "sans-serif"]
             },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px"},
           },
         },
       }
     </script>
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark">
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
-<div class="flex flex-1 justify-center py-5 sm:px-4 md:px-10 lg:px-20 xl:px-40">
-<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-
-<!-- TopNavBar -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-10 py-3">
+<header class="sticky top-0 z-10 w-full bg-content-light/80 dark:bg-content-dark/80 backdrop-blur-sm border-b border-border-light dark:border-border-dark">
+<div class="mx-auto flex max-w-7xl items-center justify-between whitespace-nowrap px-4 sm:px-6 lg:px-8 py-3">
 <div class="flex items-center gap-4 text-text-light dark:text-text-dark">
 <div class="size-6 text-primary">
 <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
+<path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
 </svg>
 </div>
-<h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em]">MUBS Wellness</h2>
+<h2 class="text-lg font-bold tracking-[-0.015em] text-text-light dark:text-text-dark">MUBS D&amp;A Awareness</h2>
 </div>
-<div class="flex flex-1 justify-end gap-2 sm:gap-4 md:gap-8">
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Home</a>
-<a class="text-primary text-sm font-bold leading-normal" href="#">Campaigns</a>
-<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Support</a>
-<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Resources</a>
-</nav>
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-border-light dark:bg-border-dark text-text-light dark:text-text-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
-<span class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark">notifications</span>
+<div class="hidden lg:flex items-center gap-9 text-sm font-medium text-text-light dark:text-text-dark">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<a class="hover:text-primary transition-colors" href="#">Resources</a>
+<a class="text-primary font-bold" href="#">Counselling</a>
+<a class="hover:text-primary transition-colors" href="#">Events</a>
+</div>
+<div class="flex flex-1 justify-end gap-3 sm:gap-4">
+<button class="flex cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined text-xl">notifications</span>
 </button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtG-etcMXBlqBxdd0qkvSCQ5c9wZtr890Q4PC9jto43yJqIXO4gx-JD3-XW08sPsP7lSTjtbZZiHgkzMLc8reQ7rR30ay0goM54gWEIVeGoyBm97_vDEXiuA6wGEVo60nJJqAwOKcQIsMrTqA4aGeYkWdh-FT-OppQR5ricAa5Y955B8ERNP5-QISF1eboHGLhAHKrQAcNfTDg3BHa1TJzvP--1NhMQKjUpHrUlQMAJEO79OCZro69_iLjJThs_Ygc2Ycw-O97Zw");'></div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCyvEq3GHh9CUEb42o9ycQavTbHSbd14AETvp6bbcQAQJca2o-KBF2IUZTItvyerN8vxxAoLxDh1ZncL4yCNNaVBRE0YdzWfS39dkoy2fSBNGIuQFnDjB6T8wfMq5zYcu17mfDavovJZVvj8cDbL4sGFAdvf17OCKaqUEHF95_XkC0YqmceTO4o55f5B_vKDrny9aBiAiGiF0MD24xvncJryduSeDM6OnUVu5HC81-RXm-XjHiYWw1M55BD0pZiSABGV2hV4wJPEA");'></div>
+</div>
 </div>
 </header>
-
-<!-- Breadcrumb -->
-<div class="flex items-center gap-2 text-sm text-text-muted-light dark:text-text-muted-dark px-4 py-3">
-<a href="#" class="hover:text-primary dark:hover:text-primary transition-colors">Campaigns</a>
-<span class="material-symbols-outlined text-base">chevron_right</span>
-<span class="text-text-light dark:text-text-dark font-medium">Mindful MUBS Week</span>
-</div>
-
-<!-- Hero Section -->
-<div class="relative w-full h-80 sm:h-96 overflow-hidden rounded-xl mx-4 mb-6">
-<div class="w-full h-full bg-center bg-no-repeat bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQdHhFVpCBX4Q5EGNw3RdftiN2fwUgFUS919IFT7JEBvjfXxPIBLTEnjQActl7TraQPUBgmXplBJb2Pjvz2itAZ1hermfsU0ydpI_hzG4SD45iK0ESo0hq-ZSEBIbIGJqJnfBCAEIxZv1hppVevdXx7NsVqIbBaAaHa6-BUr4RB9kZ90la4rHKRbSsyD3GpKnd6asNsz8liPiD_LAKttcKoOFbUTMtZqb2XMIQbYtyVxq35su6hMSca8rMoIouzXmiWHmUSQ11Pg");'></div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-<div class="absolute bottom-6 left-6 right-6 text-white">
-<div class="flex items-center gap-3 mb-4">
-<span class="inline-flex items-center rounded-full bg-green-500 px-3 py-1 text-xs font-bold text-white">Active Campaign</span>
-<span class="text-sm opacity-90">Oct 10 - Oct 17, 2024</span>
-</div>
-<h1 class="text-3xl sm:text-4xl font-black leading-tight mb-2">Mindful MUBS Week</h1>
-<p class="text-lg opacity-90 max-w-2xl">A week of workshops and activities focused on mindfulness and mental wellbeing for the entire MUBS community.</p>
-</div>
-</div>
-
-<!-- Campaign Stats -->
-<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 px-4 mb-8">
-<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 border border-border-light dark:border-border-dark text-center">
-<div class="text-2xl font-black text-text-light dark:text-text-dark mb-1">120</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">Participants</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 border border-border-light dark:border-border-dark text-center">
-<div class="text-2xl font-black text-text-light dark:text-text-dark mb-1">7</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">Days</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 border border-border-light dark:border-border-dark text-center">
-<div class="text-2xl font-black text-text-light dark:text-text-dark mb-1">12</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">Activities</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark rounded-xl p-4 border border-border-light dark:border-border-dark text-center">
-<div class="text-2xl font-black text-text-light dark:text-text-dark mb-1">5</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">Locations</div>
-</div>
-</div>
-
-<!-- Main Content -->
-<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4">
-
-<!-- Left Column - Main Content -->
-<div class="lg:col-span-2 space-y-8">
-
-<!-- About Section -->
-<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 border border-border-light dark:border-border-dark">
-<h2 class="text-2xl font-bold text-text-light dark:text-text-dark mb-4">About This Campaign</h2>
-<div class="prose prose-sm max-w-none text-text-muted-light dark:text-text-muted-dark space-y-4">
-<p>Mindful MUBS Week is our flagship wellness initiative designed to introduce students to the transformative power of mindfulness and mental wellness practices. This comprehensive week-long program combines evidence-based techniques with engaging activities to help students develop sustainable habits for managing stress and enhancing overall wellbeing.</p>
-<p>Throughout the week, participants will explore various mindfulness techniques including meditation, breathing exercises, mindful movement, and stress reduction strategies. Our expert facilitators will guide you through practical sessions that you can easily integrate into your daily student life.</p>
-<p>This campaign is particularly valuable for students facing academic pressure, social challenges, or anyone looking to develop better coping mechanisms and emotional resilience.</p>
-</div>
-</div>
-
-<!-- Schedule Section -->
-<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 border border-border-light dark:border-border-dark">
-<h2 class="text-2xl font-bold text-text-light dark:text-text-dark mb-6">Weekly Schedule</h2>
-<div class="space-y-4">
-<div class="flex items-start gap-4 p-4 bg-background-light dark:bg-background-dark rounded-lg">
-<div class="flex-shrink-0 w-16 text-center">
-<div class="text-sm font-bold text-primary">MON</div>
-<div class="text-xs text-text-muted-light dark:text-text-muted-dark">Oct 10</div>
-</div>
-<div class="flex-1">
-<h3 class="font-bold text-text-light dark:text-text-dark">Opening Ceremony & Introduction to Mindfulness</h3>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1">Main Auditorium • 2:00 PM - 4:00 PM</p>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Welcome session with overview of mindfulness principles and week activities.</p>
-</div>
-</div>
-<div class="flex items-start gap-4 p-4 bg-background-light dark:bg-background-dark rounded-lg">
-<div class="flex-shrink-0 w-16 text-center">
-<div class="text-sm font-bold text-primary">TUE</div>
-<div class="text-xs text-text-muted-light dark:text-text-muted-dark">Oct 11</div>
-</div>
-<div class="flex-1">
-<h3 class="font-bold text-text-light dark:text-text-dark">Breathing & Meditation Workshop</h3>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1">Wellness Center • 1:00 PM - 3:00 PM</p>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Learn fundamental breathing techniques and guided meditation practices.</p>
-</div>
-</div>
-<div class="flex items-start gap-4 p-4 bg-background-light dark:bg-background-dark rounded-lg">
-<div class="flex-shrink-0 w-16 text-center">
-<div class="text-sm font-bold text-primary">WED</div>
-<div class="text-xs text-text-muted-light dark:text-text-muted-dark">Oct 12</div>
-</div>
-<div class="flex-1">
-<h3 class="font-bold text-text-light dark:text-text-dark">Mindful Movement & Yoga</h3>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1">Sports Complex • 3:00 PM - 5:00 PM</p>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Gentle yoga and movement practices to connect mind and body.</p>
-</div>
-</div>
-<div class="flex items-start gap-4 p-4 bg-background-light dark:bg-background-dark rounded-lg">
-<div class="flex-shrink-0 w-16 text-center">
-<div class="text-sm font-bold text-primary">THU</div>
-<div class="text-xs text-text-muted-light dark:text-text-muted-dark">Oct 13</div>
-</div>
-<div class="flex-1">
-<h3 class="font-bold text-text-light dark:text-text-dark">Stress Management Techniques</h3>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1">Library Conference Room • 2:00 PM - 4:00 PM</p>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Practical strategies for managing academic and personal stress.</p>
-</div>
-</div>
-<div class="flex items-start gap-4 p-4 bg-background-light dark:bg-background-dark rounded-lg">
-<div class="flex-shrink-0 w-16 text-center">
-<div class="text-sm font-bold text-primary">FRI</div>
-<div class="text-xs text-text-muted-light dark:text-text-muted-dark">Oct 14</div>
-</div>
-<div class="flex-1">
-<h3 class="font-bold text-text-light dark:text-text-dark">Mindful Eating & Nutrition</h3>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1">Cafeteria • 12:00 PM - 2:00 PM</p>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Learn about conscious eating habits and nutrition awareness.</p>
+<main class="flex-1 px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
+<div class="mx-auto max-w-7xl">
+<div class="mb-8 lg:mb-12">
+<div class="flex flex-wrap justify-between gap-3">
+<div class="flex flex-col gap-2">
+<p class="text-4xl font-black leading-tight tracking-[-0.033em] text-text-light dark:text-text-dark">Counseling &amp; Support</p>
+<p class="text-base font-normal leading-normal text-text-muted-light dark:text-text-muted-dark">A safe and confidential space for students.</p>
 </div>
 </div>
 </div>
-</div>
-
-<!-- Resources Section -->
-<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 border border-border-light dark:border-border-dark">
-<h2 class="text-2xl font-bold text-text-light dark:text-text-dark mb-4">Resources & Materials</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<div class="flex items-center gap-3 p-3 bg-background-light dark:bg-background-dark rounded-lg">
-<span class="material-symbols-outlined text-primary">download</span>
-<div>
-<div class="font-medium text-text-light dark:text-text-dark">Mindfulness Guide</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">PDF • 2.3 MB</div>
-</div>
-</div>
-<div class="flex items-center gap-3 p-3 bg-background-light dark:bg-background-dark rounded-lg">
-<span class="material-symbols-outlined text-primary">play_circle</span>
-<div>
-<div class="font-medium text-text-light dark:text-text-dark">Meditation Audio</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">MP3 • 15 min</div>
-</div>
-</div>
-<div class="flex items-center gap-3 p-3 bg-background-light dark:bg-background-dark rounded-lg">
-<span class="material-symbols-outlined text-primary">article</span>
-<div>
-<div class="font-medium text-text-light dark:text-text-dark">Daily Journal</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">PDF • 1.1 MB</div>
-</div>
-</div>
-<div class="flex items-center gap-3 p-3 bg-background-light dark:bg-background-dark rounded-lg">
-<span class="material-symbols-outlined text-primary">video_library</span>
-<div>
-<div class="font-medium text-text-light dark:text-text-dark">Yoga Videos</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">Collection • 5 videos</div>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-<!-- Right Column - Sidebar -->
-<div class="lg:col-span-1 space-y-6">
-
-<!-- Registration Card -->
-<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 border border-border-light dark:border-border-dark">
-<h3 class="text-lg font-bold text-text-light dark:text-text-dark mb-4">Join This Campaign</h3>
-<div class="space-y-4">
-<div class="text-center">
-<div class="text-3xl font-black text-primary mb-1">FREE</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">Open to all MUBS students</div>
-</div>
-<button class="w-full bg-primary text-black font-bold py-3 px-4 rounded-lg hover:opacity-90 transition-opacity">
-Register Now
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+<div class="lg:col-span-2 flex flex-col gap-8">
+<div class="bg-content-light dark:bg-content-dark p-6 sm:p-8 rounded-xl border border-border-light dark:border-border-dark">
+<h1 class="text-2xl sm:text-3xl font-bold tracking-tight leading-tight text-text-light dark:text-text-dark pb-4">Ready to Talk? We're Here to Listen.</h1>
+<div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-2">
+<button class="flex w-full sm:w-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-text-light text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Request a Counseling Session</span>
 </button>
-<div class="text-center">
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">120 students already registered</div>
-<div class="w-full bg-border-light dark:bg-border-dark rounded-full h-2 mt-2">
-<div class="bg-primary h-2 rounded-full" style="width: 60%"></div>
-</div>
-<div class="text-xs text-text-muted-light dark:text-text-muted-dark mt-1">60% capacity reached</div>
-</div>
+<div class="px-0">
+<label class="flex items-center gap-x-3 py-3 flex-row cursor-pointer">
+<input class="h-5 w-5 rounded border-gray-300 dark:border-gray-600 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary checked:bg-[image:url('data:image/svg+xml,%3csvg_viewBox=%270_0_16_16%27_fill=%27rgb(17,24,22)%27_xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath_d=%27M12.207_4.793a1_1_0_010_1.414l-5_5a1_1_0_01-1.414_0l-2-2a1_1_0_011.414-1.414L6.5_9.086l4.293-4.293a1_1_0_011.414_0z%27/%3e%3c/svg%3e')] focus:ring-0 focus:ring-offset-0 focus:border-gray-400 dark:focus:border-gray-500 focus:outline-none" type="checkbox"/>
+<p class="text-base font-medium leading-normal text-text-light dark:text-text-dark">Request Anonymously</p>
+</label>
 </div>
 </div>
-
-<!-- Contact Info -->
-<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 border border-border-light dark:border-border-dark">
-<h3 class="text-lg font-bold text-text-light dark:text-text-dark mb-4">Campaign Organizers</h3>
-<div class="space-y-4">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">person</span>
+</div>
+<div class="bg-content-light dark:bg-content-dark p-6 sm:p-8 rounded-xl border border-border-light dark:border-border-dark">
+<h2 class="text-xl font-bold text-text-light dark:text-text-dark mb-4">My Counseling Sessions</h2>
+<div>
+<div class="border-b border-border-light dark:border-border-dark">
+<nav aria-label="Tabs" class="-mb-px flex space-x-6">
+<a class="whitespace-nowrap border-b-2 border-primary px-1 pb-3 text-sm font-bold text-primary" href="#">Active Sessions</a>
+<a class="whitespace-nowrap border-b-2 border-transparent px-1 pb-3 text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:border-gray-300 dark:hover:border-gray-600 hover:text-text-light dark:hover:text-text-dark" href="#">Past Sessions</a>
+</nav>
+</div>
+<div class="mt-6 space-y-4">
+<div class="flex items-center justify-between p-4 rounded-lg bg-background-light dark:bg-background-dark">
+<div class="flex items-center gap-4">
+<img class="h-12 w-12 rounded-full object-cover" data-alt="Profile picture of Dr. Emily Carter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQg195IDhzJ1yO30XvKFsAiQ-Hq6TvotlFEulrZgd-TKOY44DbewwN3JjuxALw8oMxiMloILKbxCGd_F-6pHw_KRqBGhXA99pEd861O4MSuVKzvzRfAyZdEmr_J5FlrK3zcUI4sJqJ39kQ_xfN4xj1WciNuN9fqDhk51v8GS6vb1tw586nhF-LgSqFOrpbDkkQTcJcfI559fpa0PBQ9G1z8oEjSXsPtguVuoJ5XQ6tdUJm1S0Tz0-Rup200U3p1tq2wx0LudbQcQ"/>
+<div>
+<p class="font-bold text-text-light dark:text-text-dark">Dr. Emily Carter</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Today at 2:00 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2.5 py-1 text-xs font-medium text-green-800 dark:text-green-300">Confirmed</span>
+<div class="relative">
+<span class="material-symbols-outlined text-2xl text-text-muted-light dark:text-text-muted-dark">chat_bubble</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-xs font-bold text-white">2</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between p-4 rounded-lg bg-background-light dark:bg-background-dark">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl text-gray-500 dark:text-gray-400">person_off</span>
 </div>
 <div>
-<div class="font-medium text-text-light dark:text-text-dark">Dr. Sarah Johnson</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">Wellness Coordinator</div>
+<p class="font-bold text-text-light dark:text-text-dark">Anonymous Session</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Tomorrow at 10:30 AM</p>
 </div>
 </div>
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">email</span>
+<div class="flex items-center gap-4">
+<span class="inline-flex items-center rounded-full bg-yellow-100 dark:bg-yellow-900/50 px-2.5 py-1 text-xs font-medium text-yellow-800 dark:text-yellow-300">Pending</span>
 </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<aside class="space-y-8">
+<div class="bg-content-light dark:bg-content-dark p-6 sm:p-8 rounded-xl border border-border-light dark:border-border-dark">
+<h2 class="text-xl font-bold text-text-light dark:text-text-dark">Meet Our Counselors</h2>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-2 mb-6">Our team of licensed professionals is here to support you with confidentiality and care.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<img class="h-16 w-16 rounded-full object-cover" data-alt="Profile picture of Johnathan B." src="https://lh3.googleusercontent.com/aida-public/AB6AXuACTFNyQ1mRfeXR9zWZtm4w1sG6bA2WJKKryUefAMOSlGp-MRYE-YnMhrMjLguCl7Zm57o3UmBMG-_t4yl7fzWktIHNmI9v4t2zplQIdBP5Srfpda9mn6OlHmbkmO9gCuIVcKLUhasK42FVV4dnB49FMFa5NghfSI6knW6l9qQK4xN574VrM-RsM4v606GxJPlvyUOSVozoXeLWndaF3d2qIlPjU-s0WmKS6BRevd26fBtBmuk1wGC3YyCXUZA_dpk9OBdtCR59Tw"/>
 <div>
-<div class="font-medium text-text-light dark:text-text-dark">wellness@mubs.ac.ug</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">Contact Email</div>
+<p class="font-bold text-text-light dark:text-text-dark">Johnathan B., LCSW</p>
+<p class="text-xs text-text-muted-light dark:text-text-muted-dark mt-1">Specializes in addiction &amp; peer pressure.</p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="h-2 w-2 rounded-full bg-green-500"></span>
+<p class="text-xs font-medium text-green-700 dark:text-green-400">Available this week</p>
 </div>
 </div>
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-<span class="material-symbols-outlined text-primary">phone</span>
 </div>
+<div class="flex items-start gap-4">
+<img class="h-16 w-16 rounded-full object-cover" data-alt="Profile picture of Dr. Emily Carter" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD66NQO82vlLM0Yo5qIJiBJ34JSgVu5csRK8jyMTzfn6RsPajaYs-pwi-6tuoTvsCYevBbImWMm5tg_o64Ht76JFCld0WDbd7IwVrDEBdwbsF5Q7yILa6eiZZ9NqrKm75PfQ-1_Q7IYbOV4TEXPgdwwtwcAQuGQN4jib6MozBjfr2OgsJ72DbTcp2QE1Nut8BV4zn8MqxiiNSgqq06UyDjR6yx1HXGhi0bWE5jXZwooInBjtd_avJEYO0xyxGHfTh8ngNCpJPMJfQ"/>
 <div>
-<div class="font-medium text-text-light dark:text-text-dark">+256 123 456 789</div>
-<div class="text-sm text-text-muted-light dark:text-text-muted-dark">Support Hotline</div>
+<p class="font-bold text-text-light dark:text-text-dark">Dr. Emily Carter, PhD</p>
+<p class="text-xs text-text-muted-light dark:text-text-muted-dark mt-1">Specializes in anxiety &amp; stress management.</p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="h-2 w-2 rounded-full bg-green-500"></span>
+<p class="text-xs font-medium text-green-700 dark:text-green-400">Available this week</p>
+</div>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<img class="h-16 w-16 rounded-full object-cover" data-alt="Profile picture of Sarah Jenkins" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoEVOA0ahCJiUdapPuul9OT5fzuw9mSU3P9XvnZM8NIrAOFQfhDIGKcHTiP-YDX4MGXGHrvceOTbBqLo4jEPj_aFSPrUpwoB4SKV5n9-3ZTu8fdOBQqdwrymc_1D9sDt01bE6-OC6t64F9bnt_H8ERLmxOaP4MhPrRvFZFkEqUrBwv3TjpP7fwGz31LPQDyuwYqxWzGgKuy1SNNB8DTE4lvIOudazuNwAqJK90Omk_GX6ZWETASIihd0VhKpDDVrxA0UF77POabA"/>
+<div>
+<p class="font-bold text-text-light dark:text-text-dark">Sarah Jenkins, M.A.</p>
+<p class="text-xs text-text-muted-light dark:text-text-muted-dark mt-1">Specializes in academic pressure &amp; family issues.</p>
+<div class="flex items-center gap-1.5 mt-2">
+<span class="h-2 w-2 rounded-full bg-gray-400"></span>
+<p class="text-xs font-medium text-gray-600 dark:text-gray-400">Booked this week</p>
 </div>
 </div>
 </div>
 </div>
-
-<!-- Share Campaign -->
-<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 border border-border-light dark:border-border-dark">
-<h3 class="text-lg font-bold text-text-light dark:text-text-dark mb-4">Share Campaign</h3>
-<div class="grid grid-cols-2 gap-3">
-<button class="flex items-center justify-center gap-2 p-3 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors text-sm font-medium">
-<span class="material-symbols-outlined text-base">share</span>
-Twitter
-</button>
-<button class="flex items-center justify-center gap-2 p-3 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-colors text-sm font-medium">
-<span class="material-symbols-outlined text-base">share</span>
-Facebook
-</button>
-<button class="flex items-center justify-center gap-2 p-3 bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors text-sm font-medium">
-<span class="material-symbols-outlined text-base">link</span>
-Copy Link
-</button>
-<button class="flex items-center justify-center gap-2 p-3 bg-gray-50 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors text-sm font-medium">
-<span class="material-symbols-outlined text-base">mail</span>
-Email
-</button>
 </div>
+</aside>
 </div>
-
-<!-- Related Campaigns -->
-<div class="bg-card-light dark:bg-card-dark rounded-xl p-6 border border-border-light dark:border-border-dark">
-<h3 class="text-lg font-bold text-text-light dark:text-text-dark mb-4">Related Campaigns</h3>
-<div class="space-y-4">
-<div class="flex gap-3">
-<div class="w-16 h-12 bg-center bg-no-repeat bg-cover rounded-lg flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrL5rYa5Fsgj4frnmmGoRtIwWcGZli8mm9qA-lxjAvnNKxnslyVciwpVTr8zRPVp2Gg6z4X-BxR_6MYWaU95sYdIe3yNYI8IL9QXQG1PdBifCZvegAZeHDIQnLd8mimOaw3mKgQfsuqQtA90HA-d6GPDKjJS9W8Q-B_0--DYJRXYAP_6zjxA9YtcVMCyXj--UnMCGlC-hNCcuf-oukgRYbYDKBTUhDk-z_QXnShiF0BdxTvVvH37PBbfZi_vohUT4Uqd6o33v2aw");'></div>
-<div class="flex-1">
-<div class="font-medium text-text-light dark:text-text-dark text-sm">Stress Less, Live More</div>
-<div class="text-xs text-text-muted-light dark:text-text-muted-dark">Oct 20 - Oct 27</div>
-<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-300 mt-1">Active</span>
+<footer class="mt-12 text-center text-xs text-text-muted-light dark:text-text-muted-dark border-t border-border-light dark:border-border-dark pt-6">
+<p>© 2024 MUBS D&amp;A Awareness Platform. All rights reserved.</p>
+<p class="mt-1">Your privacy is our priority. All counseling sessions are strictly confidential.</p>
+</footer>
 </div>
-</div>
-<div class="flex gap-3">
-<div class="w-16 h-12 bg-center bg-no-repeat bg-cover rounded-lg flex-shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvkUuNFWggMwp0Pqx1vORN9BGGMYwdsqeHGsPOldg4r5tkE28uGNdiE9yY_zYf1qX_-_66buXZ48u9CXcPCv-i3-T3S6mmmDVzXixcSJtJv3cZE4WGvTtAac3-B5vgj1qQuBBbrkTyD1rxZt-9g7C3JdD06ZUHfqUYvSet_lprDK5xMCeTr1HwE79QL0to803xWO5l55n3m0fCgR6L8gp9sfYwh-kq0QM6U6lx6qp5D5HZoHu1NcojHFlJXds6tzbFCWdG_gK6fg");'></div>
-<div class="flex-1">
-<div class="font-medium text-text-light dark:text-text-dark text-sm">Sober Socials Kick-off</div>
-<div class="text-xs text-text-muted-light dark:text-text-muted-dark">Nov 5, 2024</div>
-<span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/50 px-2 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-300 mt-1">Upcoming</span>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-</div>
-
-<!-- Back to Campaigns -->
-<div class="flex justify-center px-4 py-8">
-<a href="#" class="inline-flex items-center gap-2 px-6 py-3 bg-border-light dark:bg-border-dark text-text-light dark:text-text-dark rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors font-medium">
-<span class="material-symbols-outlined">arrow_back</span>
-Back to All Campaigns
-</a>
-</div>
-
-</div>
-</div>
+</main>
 </div>
 </div>
 </body></html>
