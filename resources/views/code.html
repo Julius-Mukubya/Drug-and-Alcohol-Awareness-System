@@ -3,243 +3,236 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>MUBS Wellness - Article</title>
+<title>Awareness Campaigns - MUBS Wellness</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script>
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#14eba3",
-                        "background-light": "#f6f8f7",
-                        "background-dark": "#10221c",
-                        "text-light": "#111816",
-                        "text-dark": "#f6f8f7",
-                        "text-muted-light": "#61897c",
-                        "text-muted-dark": "#a0b5ab",
-                        "surface-light": "#ffffff",
-                        "surface-dark": "#182c25",
-                        "border-light": "#f0f4f3",
-                        "border-dark": "#2a3f38",
-                    },
-                    fontFamily: {
-                        "display": ["Lexend", "sans-serif"]
-                    },
-                    borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "0.75rem",
-                        "xl": "1rem",
-                        "full": "9999px"
-                    },
-                },
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#14eba3",
+              "background-light": "#f6f8f7",
+              "background-dark": "#10221c",
+              "text-light": "#111816",
+              "text-dark": "#f0f4f3",
+              "text-muted-light": "#61897c",
+              "text-muted-dark": "#a0b5ab",
+              "card-light": "#ffffff",
+              "card-dark": "#1a2e27",
+              "border-light": "#f0f4f3",
+              "border-dark": "#2a3f37",
             },
-        }
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
     </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            font-size: 20px;
-        }
-    </style>
 </head>
-<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<body class="font-display bg-background-light dark:bg-background-dark">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
-<!-- TopNavBar Component -->
-<header class="sticky top-0 z-50 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40">
-<div class="flex items-center justify-between whitespace-nowrap h-16">
-<div class="flex items-center gap-8">
+<div class="flex flex-1 justify-center py-5 sm:px-4 md:px-10 lg:px-20 xl:px-40">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<!-- TopNavBar -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-10 py-3">
 <div class="flex items-center gap-4 text-text-light dark:text-text-dark">
 <div class="size-6 text-primary">
 <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
 <path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
 </svg>
 </div>
-<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">MUBS Wellness</h2>
+<h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em]">MUBS Wellness</h2>
 </div>
+<div class="flex flex-1 justify-end gap-2 sm:gap-4 md:gap-8">
 <nav class="hidden md:flex items-center gap-9">
-<a class="text-sm font-medium leading-normal text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark transition-colors" href="#">Home</a>
-<a class="text-sm font-medium leading-normal text-text-light dark:text-text-dark" href="#">Resources</a>
-<a class="text-sm font-medium leading-normal text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark transition-colors" href="#">Support</a>
-<a class="text-sm font-medium leading-normal text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark transition-colors" href="#">About</a>
+<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Home</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Campaigns</a>
+<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Support</a>
+<a class="text-text-light dark:text-text-dark text-sm font-medium leading-normal hover:text-primary dark:hover:text-primary" href="#">Resources</a>
 </nav>
-</div>
-<div class="flex items-center justify-end gap-2">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-border-light dark:hover:bg-border-dark transition-colors">
-<span class="truncate">Log In</span>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-border-light dark:bg-border-dark text-text-light dark:text-text-dark gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-text-muted-light dark:text-text-muted-dark">notifications</span>
 </button>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
-<span class="truncate">Sign Up</span>
-</button>
-</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDtG-etcMXBlqBxdd0qkvSCQ5c9wZtr890Q4PC9jto43yJqIXO4gx-JD3-XW08sPsP7lSTjtbZZiHgkzMLc8reQ7rR30ay0goM54gWEIVeGoyBm97_vDEXiuA6wGEVo60nJJqAwOKcQIsMrTqA4aGeYkWdh-FT-OppQR5ricAa5Y955B8ERNP5-QISF1eboHGLhAHKrQAcNfTDg3BHa1TJzvP--1NhMQKjUpHrUlQMAJEO79OCZro69_iLjJThs_Ygc2Ycw-O97Zw");'></div>
 </div>
 </header>
-<main class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5 md:py-10">
-<div class="layout-content-container flex flex-col w-full max-w-4xl flex-1 gap-8">
-<!-- Breadcrumbs -->
-<nav class="flex flex-wrap gap-2 text-sm">
-<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors font-medium leading-normal" href="#">Home</a>
-<span class="text-text-muted-light dark:text-text-muted-dark font-medium leading-normal">/</span>
-<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors font-medium leading-normal" href="#">Resources</a>
-<span class="text-text-muted-light dark:text-text-muted-dark font-medium leading-normal">/</span>
-<span class="text-text-light dark:text-text-dark font-medium leading-normal">The Impact of Alcohol...</span>
-</nav>
-<!-- Article Header Section -->
-<div class="flex flex-col gap-6">
-<!-- Category Badge / Chip -->
-<div class="flex gap-3">
-<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/20 dark:bg-primary/20 px-4">
-<p class="text-primary text-sm font-bold leading-normal">Alcohol Facts</p>
+<!-- PageHeading -->
+<div class="flex flex-wrap justify-between gap-3 p-4">
+<div class="flex min-w-72 flex-col gap-3">
+<p class="text-text-light dark:text-text-dark text-4xl font-black leading-tight tracking-[-0.033em]">Awareness Campaigns</p>
+<p class="text-text-muted-light dark:text-text-muted-dark text-base font-normal leading-normal">Join our initiatives to promote mental health and wellbeing</p>
 </div>
 </div>
-<!-- Headline and Body Text -->
-<h1 class="text-text-light dark:text-text-dark tracking-tight text-4xl md:text-5xl font-bold leading-tight">The Impact of Alcohol on Academic Performance</h1>
-<p class="text-text-muted-light dark:text-text-muted-dark text-lg font-normal leading-relaxed">A brief, concise summary exploring how alcohol consumption can affect a student's ability to succeed academically at MUBS.</p>
-<!-- Author Card -->
-<div class="flex items-center gap-4 pt-4">
-<img class="size-12 rounded-full object-cover" data-alt="A portrait of a male peer counselor, smiling gently." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpnsAydCy2vbjjonmn13i-sYtycMPOvN5HFH5TQzCV54VmZwHwY6awizTpQX2EqCtn7vV5Wjr1Pukedz7B9_WkbVkpcqIxAHPoyW0HcMAnQ9fLrjXFlxfw_1wbXKKpvlql6fKvM_KVmJuO9DL9dxZhJPfeIDBq9RYKz7rJkdO6MdUjQupzzOZBeUdvk_Mr3vLpnaTHQkABY8nsijJFTEjra3xmu6yADynYSLeYuHByV6rqmfUXje4ocK5koFMKJPqwXTXwd995iQ"/>
-<div class="flex flex-col">
-<p class="font-bold text-text-light dark:text-text-dark">Alex Kintu</p>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Peer Counselor, MUBS Wellness Center</p>
+<!-- SegmentedButtons -->
+<div class="flex px-4 py-3">
+<div class="flex h-10 flex-1 items-center justify-center rounded-lg bg-background-light dark:bg-card-dark p-1 border border-border-light dark:border-border-dark">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white has-[:checked]:dark:bg-border-dark has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-text-light has-[:checked]:dark:text-text-dark text-text-muted-light dark:text-text-muted-dark text-sm font-medium leading-normal">
+<span class="truncate">Active</span>
+<input checked="" class="invisible w-0" name="campaign_filter" type="radio" value="Active"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white has-[:checked]:dark:bg-border-dark has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-text-light has-[:checked]:dark:text-text-dark text-text-muted-light dark:text-text-muted-dark text-sm font-medium leading-normal">
+<span class="truncate">Upcoming</span>
+<input class="invisible w-0" name="campaign_filter" type="radio" value="Upcoming"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white has-[:checked]:dark:bg-border-dark has-[:checked]:shadow-[0_0_4px_rgba(0,0,0,0.1)] has-[:checked]:text-text-light has-[:checked]:dark:text-text-dark text-text-muted-light dark:text-text-muted-dark text-sm font-medium leading-normal">
+<span class="truncate">Past</span>
+<input class="invisible w-0" name="campaign_filter" type="radio" value="Past"/>
+</label>
 </div>
 </div>
+<!-- ImageGrid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
+<!-- Card 1 -->
+<div class="flex flex-col gap-3 rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm hover:shadow-lg transition-shadow duration-300 border border-border-light dark:border-border-dark">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Students participating in a wellness workshop" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQdHhFVpCBX4Q5EGNw3RdftiN2fwUgFUS919IFT7JEBvjfXxPIBLTEnjQActl7TraQPUBgmXplBJb2Pjvz2itAZ1hermfsU0ydpI_hzG4SD45iK0ESo0hq-ZSEBIbIGJqJnfBCAEIxZv1hppVevdXx7NsVqIbBaAaHa6-BUr4RB9kZ90la4rHKRbSsyD3GpKnd6asNsz8liPiD_LAKttcKoOFbUTMtZqb2XMIQbYtyVxq35su6hMSca8rMoIouzXmiWHmUSQ11Pg");'></div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<p class="text-text-muted-light dark:text-text-muted-dark text-xs font-medium">Oct 10 - Oct 17, 2024</p>
+<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-300">Active</span>
 </div>
-<!-- Metadata Bar -->
-<div class="flex items-center gap-6 border-y border-border-light dark:border-border-dark py-4 text-sm text-text-muted-light dark:text-text-muted-dark">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined">schedule</span>
-<span>8 min read</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined">visibility</span>
-<span>1.2k views</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined">calendar_month</span>
-<span>Published on Oct 26, 2023</span>
-</div>
-</div>
-<!-- Featured Media -->
-<div class="w-full aspect-video rounded-xl overflow-hidden bg-border-light dark:bg-border-dark">
-<img class="w-full h-full object-cover" data-alt="University students studying together in a well-lit library." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBErCpDPq3fSwkQvtDuCp-nwq6H5MEApI0DotNOZuIa7rmeRAzkM0kxm5LCQRu7fNf88WxFBtlgzXMtXnF5eUnJY6Csw_RPtStu01Bb1z11RovR48xtHM3dSy03u0zItlxRsjEwkXKie_Fs0yqllEcu9gIvQtuC3LlZ8LrYai5vKYUWpfRyCNZ8RGMxAnnozWKrZlepztPr0W5gJm1wUPF12a_zlDLhI2vlrVCP8b3MIBDFNlYTNM8chuV-xfMCvL3syipJPIA8-w"/>
-</div>
-<!-- Article Body -->
-<article class="prose prose-lg dark:prose-invert max-w-none prose-h2:font-bold prose-h2:text-text-light dark:prose-h2:text-text-dark prose-p:text-text-light dark:prose-p:text-text-dark prose-a:text-primary prose-strong:text-text-light dark:prose-strong:text-text-dark prose-li:marker:text-primary">
-<p>University life is often synonymous with new freedoms, social events, and academic challenges. For many students at Makerere University Business School (MUBS), this period can also involve experimentation with alcohol. While moderate consumption might be part of social gatherings, it's crucial to understand how alcohol can directly and indirectly impact academic performance. This article explores the connection between drinking habits and student success.</p>
-<h2>The Science Behind Alcohol's Effect on the Brain</h2>
-<p>Alcohol is a depressant, which means it slows down the central nervous system. This affects cognitive functions critical for learning:</p>
-<ul>
-<li><strong>Memory Formation:</strong> Heavy drinking can interfere with the brain's ability to transfer information from short-term to long-term memory. This is why you might struggle to recall information from a lecture after a night of drinking.</li>
-<li><strong>Concentration and Attention:</strong> Even moderate amounts of alcohol can impair focus and attention span, making it harder to engage in classes, study effectively, or complete complex assignments.</li>
-<li><strong>Sleep Disruption:</strong> While alcohol can make you feel drowsy, it disrupts the quality of your sleep, particularly REM sleep, which is vital for memory consolidation. Waking up tired can lead to a cycle of poor academic engagement.</li>
-</ul>
-<blockquote>"Success is the sum of small efforts, repeated day in and day out. Don't let short-term choices compromise your long-term goals."</blockquote>
-<h2>Direct Impacts on Academic Life</h2>
-<p>The consequences of alcohol consumption can manifest in several ways that directly hinder academic progress:</p>
-<ol>
-<li><strong>Missing Classes:</strong> Hangovers are a common reason for absenteeism. Missing lectures means falling behind on coursework and missing crucial announcements.</li>
-<li><strong>Poor Exam Performance:</strong> "Cramming" for an exam is already an ineffective study method, but doing so while under the influence or with a hangover significantly reduces information retention and critical thinking abilities.</li>
-<li><strong>Lower Grades:</strong> Studies consistently show a correlation between higher levels of alcohol consumption and lower Grade Point Averages (GPAs). The cumulative effect of missed classes, poor focus, and impaired memory naturally leads to poorer academic outcomes.</li>
-</ol>
-<p>At MUBS Wellness, we encourage students to make informed decisions. Understanding these effects is the first step toward balancing your social life with your academic responsibilities. If you feel your alcohol use is impacting your studies, support is available.</p>
-</article>
-<!-- Downloadable Resources -->
-<section class="py-8">
-<h3 class="text-2xl font-bold mb-4 text-text-light dark:text-text-dark">Downloadable Resources</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark p-4 rounded-lg flex items-center justify-between">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary text-3xl">picture_as_pdf</span>
 <div>
-<p class="font-semibold text-text-light dark:text-text-dark">Guide to Responsible Drinking.pdf</p>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark">1.2 MB</p>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-normal">Mindful MUBS Week</p>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal mt-1">A week of workshops and activities focused on mindfulness and mental wellbeing.</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-1.5 text-text-muted-light dark:text-text-muted-dark">
+<span class="material-symbols-outlined text-base">group</span>
+<p class="text-sm font-normal">120 Participants</p>
+</div>
+<button class="flex items-center justify-center rounded-lg h-9 bg-primary text-black gap-2 text-sm font-bold px-4 hover:opacity-90 transition-opacity">Learn More</button>
 </div>
 </div>
-<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/20 dark:bg-primary/20 text-primary hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined">download</span>
-</button>
 </div>
-<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark p-4 rounded-lg flex items-center justify-between">
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary text-3xl">contact_phone</span>
+<!-- Card 2 -->
+<div class="flex flex-col gap-3 rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm hover:shadow-lg transition-shadow duration-300 border border-border-light dark:border-border-dark">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Students enjoying a non-alcoholic social event" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBvkUuNFWggMwp0Pqx1vORN9BGGMYwdsqeHGsPOldg4r5tkE28uGNdiE9yY_zYf1qX_-_66buXZ48u9CXcPCv-i3-T3S6mmmDVzXixcSJtJv3cZE4WGvTtAac3-B5vgj1qQuBBbrkTyD1rxZt-9g7C3JdD06ZUHfqUYvSet_lprDK5xMCeTr1HwE79QL0to803xWO5l55n3m0fCgR6L8gp9sfYwh-kq0QM6U6lx6qp5D5HZoHu1NcojHFlJXds6tzbFCWdG_gK6fg");'></div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<p class="text-text-muted-light dark:text-text-muted-dark text-xs font-medium">Nov 5, 2024</p>
+<span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/50 px-2 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-300">Upcoming</span>
+</div>
 <div>
-<p class="font-semibold text-text-light dark:text-text-dark">MUBS Support Contacts.pdf</p>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark">450 KB</p>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-normal">Sober Socials Kick-off</p>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal mt-1">Join us for a fun, alcohol-free social event to connect with peers.</p>
 </div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-1.5 text-text-muted-light dark:text-text-muted-dark">
+<span class="material-symbols-outlined text-base">group</span>
+<p class="text-sm font-normal">85 Participants</p>
 </div>
-<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/20 dark:bg-primary/20 text-primary hover:bg-primary/30 transition-colors">
-<span class="material-symbols-outlined">download</span>
-</button>
-</div>
-</div>
-</section>
-<!-- Engagement & Feedback -->
-<div class="flex flex-col md:flex-row items-center justify-between gap-6 border-y border-border-light dark:border-border-dark py-6">
-<div class="flex items-center gap-2">
-<button class="flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-border-light dark:hover:bg-border-dark transition-colors">
-<span class="material-symbols-outlined">bookmark_add</span>
-<span class="truncate">Bookmark</span>
-</button>
-<button class="flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-border-light dark:hover:bg-border-dark transition-colors">
-<span class="material-symbols-outlined">share</span>
-<span class="truncate">Share</span>
-</button>
-</div>
-<div class="flex items-center gap-4">
-<p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Was this article helpful?</p>
-<div class="flex gap-2">
-<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-light dark:text-text-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors">
-<span class="material-symbols-outlined">thumb_up</span>
-</button>
-<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-light dark:text-text-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors">
-<span class="material-symbols-outlined">thumb_down</span>
-</button>
+<button class="flex items-center justify-center rounded-lg h-9 bg-primary text-black gap-2 text-sm font-bold px-4 hover:opacity-90 transition-opacity">Learn More</button>
 </div>
 </div>
 </div>
-<!-- Related Content -->
-<section class="py-8">
-<h3 class="text-2xl font-bold mb-6 text-text-light dark:text-text-dark">Related Content</h3>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<div class="flex flex-col rounded-xl overflow-hidden bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark group">
-<a class="block" href="#">
-<img class="w-full h-40 object-cover group-hover:opacity-90 transition-opacity" data-alt="Abstract image representing mental health with soothing colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDewZ-EUq-4jS7Pkg4Tni355ixscruZEN2b_OpbWZ8dJoqFTipJD0D9CQG8IIvSdGs1-LO8xXhw5008hAoEp9hT-xzT_WUd6F0oZmVfBpHlyA4I5HsxQpY9z1N1DTT9A7Of9O0yo-PwIndTSpTH-RQx775r0D5j0YEfEaSHZ33Jth9QHd-zc39X8oKkRGsvrZb5nRq25TslY7GqcSBXCe4tHd9eSuy7Uv72zgbnY57yVZWha-LROtwEGVyhvzQ1i9naBqYkHZYZw"/>
-<div class="p-4 flex flex-col gap-2">
-<p class="text-xs font-bold text-primary">Mental Health</p>
-<h4 class="font-bold text-text-light dark:text-text-dark group-hover:text-primary transition-colors">Understanding Anxiety and Stress</h4>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Learn to identify triggers and coping mechanisms for common student stressors.</p>
+<!-- Card 3 -->
+<div class="flex flex-col gap-3 rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm hover:shadow-lg transition-shadow duration-300 border border-border-light dark:border-border-dark">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="A serene image representing stress relief" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCrL5rYa5Fsgj4frnmmGoRtIwWcGZli8mm9qA-lxjAvnNKxnslyVciwpVTr8zRPVp2Gg6z4X-BxR_6MYWaU95sYdIe3yNYI8IL9QXQG1PdBifCZvegAZeHDIQnLd8mimOaw3mKgQfsuqQtA90HA-d6GPDKjJS9W8Q-B_0--DYJRXYAP_6zjxA9YtcVMCyXj--UnMCGlC-hNCcuf-oukgRYbYDKBTUhDk-z_QXnShiF0BdxTvVvH37PBbfZi_vohUT4Uqd6o33v2aw");'></div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<p class="text-text-muted-light dark:text-text-muted-dark text-xs font-medium">Oct 20 - Oct 27, 2024</p>
+<span class="inline-flex items-center rounded-full bg-green-100 dark:bg-green-900/50 px-2 py-0.5 text-xs font-medium text-green-700 dark:text-green-300">Active</span>
 </div>
+<div>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-normal">Stress Less, Live More</p>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal mt-1">Learn effective stress management techniques for a balanced student life.</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-1.5 text-text-muted-light dark:text-text-muted-dark">
+<span class="material-symbols-outlined text-base">group</span>
+<p class="text-sm font-normal">95 Participants</p>
+</div>
+<button class="flex items-center justify-center rounded-lg h-9 bg-primary text-black gap-2 text-sm font-bold px-4 hover:opacity-90 transition-opacity">Learn More</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="flex flex-col gap-3 rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm hover:shadow-lg transition-shadow duration-300 border border-border-light dark:border-border-dark">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Mobile phones locked away in a box" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBSCcptM6GwMkNumHQPdEC8SeEYnjOgCYAzDHvg9TsKwqTTUYCaskM2Ui57GDIRLK1BqJqMVNbCXk86RhjttQHJdvyAXq4oNbTcPhhYdh9ZG9_Uw3syKCXxfQIJTA44SnwGcaU4npYDqPGEFDxPB5itp5dpuLWzX_wnvv--V_e3l-kbpwmfHY4WOD5S3tb1HLcfL1uVwWGlao8s3UcH78GcnX9EzpMgdai64qBYJqthjGyWR4bY4vAUoe1heyJTYJtwsQ4q6drNlQ");'></div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<p class="text-text-muted-light dark:text-text-muted-dark text-xs font-medium">Sep 1 - Sep 30, 2024</p>
+<span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-700/50 px-2 py-0.5 text-xs font-medium text-gray-600 dark:text-gray-300">Completed</span>
+</div>
+<div>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-normal">Digital Detox Challenge</p>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal mt-1">Take a break from screens and reconnect with yourself and others.</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-1.5 text-text-muted-light dark:text-text-muted-dark">
+<span class="material-symbols-outlined text-base">group</span>
+<p class="text-sm font-normal">210 Participants</p>
+</div>
+<button class="flex items-center justify-center rounded-lg h-9 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 gap-2 text-sm font-bold px-4 cursor-not-allowed">View Details</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="flex flex-col gap-3 rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm hover:shadow-lg transition-shadow duration-300 border border-border-light dark:border-border-dark">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="A fair with stalls about healthy habits" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAaeWCpyvTeQPPwGiANalR3DOyoZZjr2Y0D3GK8Yqsvuutz6luyO8SLWi9-OiGAdZJjkGD7aLu2XMdqivjE8jxHD1gX_cGnLuZlBZOXcebC-MHdlWbxrmuNwc3SIP7EsbKmHEd9mj60Zqz4u6zeUlPdnMd0f21aJyT77gMclB2n2kNsiKGMyKC6b8MWv10YMwKUm_yd4V1dDDBtKDW1_aJ9Hbg5aYa8_O1OaraLQxykgEfp95jd2VzhxhEqwurW9EMmsEOC1X6Og");'></div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<p class="text-text-muted-light dark:text-text-muted-dark text-xs font-medium">Nov 15, 2024</p>
+<span class="inline-flex items-center rounded-full bg-blue-100 dark:bg-blue-900/50 px-2 py-0.5 text-xs font-medium text-blue-700 dark:text-blue-300">Upcoming</span>
+</div>
+<div>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-normal">Healthy Habits Fair</p>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal mt-1">Explore various resources and tips for maintaining a healthy lifestyle.</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-1.5 text-text-muted-light dark:text-text-muted-dark">
+<span class="material-symbols-outlined text-base">group</span>
+<p class="text-sm font-normal">70 Participants</p>
+</div>
+<button class="flex items-center justify-center rounded-lg h-9 bg-primary text-black gap-2 text-sm font-bold px-4 hover:opacity-90 transition-opacity">Learn More</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="flex flex-col gap-3 rounded-xl overflow-hidden bg-card-light dark:bg-card-dark shadow-sm hover:shadow-lg transition-shadow duration-300 border border-border-light dark:border-border-dark">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="A speaker giving a talk to an audience" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCxZ1ucmJE8LB0F_2HMhNLYrY-NnbhvcjDVGyBfiEWw2pKqRiFfgyjDAqvvnxKH42hiK1co8_z8QgowJKzppJuYoINbDr8VTUDYEha81c1d9SFXPu6StMm4oHzH4gOCyNr2oT_Hn6SCoHsjxCdCWA8fH1HmrFeFZEsn_pvqrgJYunlZIN1-Ps3Wu6hpiDHU_W0jXsJkCwQNZVQdbVoAn2ZhiCxgWMCluC9ccb5RpMJCBMYWQ0KRjItJ4sTPcN9vkX2xgxQpfuZd9A");'></div>
+<div class="p-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<p class="text-text-muted-light dark:text-text-muted-dark text-xs font-medium">Aug 25, 2024</p>
+<span class="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-700/50 px-2 py-0.5 text-xs font-medium text-gray-600 dark:text-gray-300">Completed</span>
+</div>
+<div>
+<p class="text-text-light dark:text-text-dark text-base font-bold leading-normal">Know Your Limits Talk</p>
+<p class="text-text-muted-light dark:text-text-muted-dark text-sm font-normal leading-normal mt-1">An informative session on responsible drinking and substance use.</p>
+</div>
+<div class="flex items-center justify-between mt-2">
+<div class="flex items-center gap-1.5 text-text-muted-light dark:text-text-muted-dark">
+<span class="material-symbols-outlined text-base">group</span>
+<p class="text-sm font-normal">150 Participants</p>
+</div>
+<button class="flex items-center justify-center rounded-lg h-9 bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 gap-2 text-sm font-bold px-4 cursor-not-allowed">View Details</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center p-4">
+<a class="flex size-10 items-center justify-center rounded-lg hover:bg-border-light dark:hover:bg-border-dark text-text-muted-light dark:text-text-muted-dark" href="#">
+<span class="material-symbols-outlined">chevron_left</span>
+</a>
+<a class="text-sm font-bold leading-normal tracking-[0.015em] flex size-10 items-center justify-center text-black rounded-lg bg-primary" href="#">1</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-light dark:text-text-dark rounded-lg hover:bg-border-light dark:hover:bg-border-dark" href="#">2</a>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-light dark:text-text-dark rounded-lg hover:bg-border-light dark:hover:bg-border-dark" href="#">3</a>
+<span class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-light dark:text-text-dark rounded-lg">...</span>
+<a class="text-sm font-normal leading-normal flex size-10 items-center justify-center text-text-light dark:text-text-dark rounded-lg hover:bg-border-light dark:hover:bg-border-dark" href="#">8</a>
+<a class="flex size-10 items-center justify-center rounded-lg hover:bg-border-light dark:hover:bg-border-dark text-text-muted-light dark:text-text-muted-dark" href="#">
+<span class="material-symbols-outlined">chevron_right</span>
 </a>
 </div>
-<div class="flex flex-col rounded-xl overflow-hidden bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark group">
-<a class="block" href="#">
-<img class="w-full h-40 object-cover group-hover:opacity-90 transition-opacity" data-alt="A small group of friends talking and laughing together responsibly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDurI2PUxjmcuqYr6bLQ2p982sUbPqNXpCcwAN8FTWivZmasM1jIvyDj4HML9eeVSq3zMl8fJLTX5MOB9KVIdXYALjGXbBa16X03DpFQgHdCkRx9iUrpRB5OgdGKTNb1cKk71sEs3rKjhj3RJvJFCVATWMwpwpJOsj1n4ouPByBhxrDQg9NC4fIWUs-6tpfDxLcBG1TbWBVt3yoKAoq8aO7HrVvuuzRuf5_ERLv1s3SjFR9St67gt4Hr64eT7z1cr14ydLIFUjlMw"/>
-<div class="p-4 flex flex-col gap-2">
-<p class="text-xs font-bold text-primary">Peer Pressure</p>
-<h4 class="font-bold text-text-light dark:text-text-dark group-hover:text-primary transition-colors">Navigating Social Pressures at Uni</h4>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Strategies for staying true to yourself while building a healthy social life.</p>
-</div>
-</a>
-</div>
-<div class="flex flex-col rounded-xl overflow-hidden bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark group">
-<a class="block" href="#">
-<img class="w-full h-40 object-cover group-hover:opacity-90 transition-opacity" data-alt="A student sitting at a desk and making notes in a planner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb3YPAMXvEnEsDghcyfbcsP7u8GXdK3SNUzSUtRKWtf3DdarHuD8z3GlgdksbrUd4f7PgbHKcyoJwO3Mk3PtM3kPlNmXs_EijVFRQFuVJRVey3HDH4atNe99Q2TGguUJ46qtaTuunuRywkuk378sJcmsU5j3mAy9NaQqrRrcvHAyW8SOl3ar8V_QhDllhU56oPaER0n4IbZdrdQt4uXKhlgIWLxLNWAxPcHJcg6BUTdIWAoFvF5zIMsfz08PA5ZlzKLYOguQ-vJQ"/>
-<div class="p-4 flex flex-col gap-2">
-<p class="text-xs font-bold text-primary">Academic Success</p>
-<h4 class="font-bold text-text-light dark:text-text-dark group-hover:text-primary transition-colors">Effective Study Habits for MUBS Students</h4>
-<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Maximize your learning potential with these proven study techniques.</p>
-</div>
-</a>
 </div>
 </div>
-</section>
-</div>
-</main>
 </div>
 </div>
 </body></html>
