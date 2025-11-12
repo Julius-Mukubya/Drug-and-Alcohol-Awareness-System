@@ -83,27 +83,24 @@
                 
                 <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('campaigns.index') }}">Events</a>
                 <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('public.about') }}">About Us</a>
+                <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('public.contact') }}">Contact</a>
             </nav>
             
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
                 @guest
-                    <button onclick="openSignupModal()" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#111816] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
-                        <span class="truncate">Get Help</span>
+                    <button onclick="openLoginModal()" class="flex items-center justify-center rounded-lg h-10 px-5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-[#111816] dark:text-white text-sm font-medium hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                        Sign In
+                    </button>
+                    <button onclick="openSignupModal()" class="flex items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors">
+                        Sign Up
                     </button>
                 @else
-                    <a href="{{ route('dashboard') }}" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#111816] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
-                        <span class="truncate">Dashboard</span>
+                    <a href="{{ route('dashboard') }}" class="flex items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-colors">
+                        Dashboard
                     </a>
-                @endguest
-                
-                @auth
-                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" 
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" 
                          style="background-image: url('{{ auth()->user()->profile_photo_url }}')">
                     </div>
-                @else
-                    <button onclick="openLoginModal()" class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" 
-                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUs_nyfdaTz1rJOsdjwzXUOMy7IAOmqw-i-GHI276f78l9Czx9WvEvtyrHOH1IF8HMo_5VacCxVMQPMI1mZL0f8-z__LnnTRscJxdFzy3GNmuUXntry7t0TmhRPD_oRmnB8YFshm69l7SF9MD4j_m7XwNlCkCCtOfEb5aptFg6uyf19_gXGjKCVo_z3eQ_rrT9tBZFEKA-ub3YOcJSOWbSguqrwNi2GJipxaCn3bKOvCGgB1E0ypjWf0U2-u7B7NS7MN0viV5JrA')">
-                    </button>
                 @endauth
             </div>
         </div>
@@ -134,6 +131,7 @@
         
         <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('campaigns.index') }}">Events</a>
         <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('public.about') }}">About Us</a>
+        <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium py-2" href="{{ route('public.contact') }}">Contact</a>
         
         <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
             @guest

@@ -3,103 +3,87 @@
 @section('title', 'Counseling Services - MUBS Wellness Hub')
 
 @section('content')
-<!-- Hero Section -->
-<div class="relative bg-gradient-to-br from-primary/10 via-background-light to-emerald-500/10 dark:from-primary/20 dark:via-background-dark dark:to-emerald-500/20 py-20 sm:py-28 overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2314eba3" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
-    
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-4xl mx-auto">
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 bg-primary/20 dark:bg-primary/30 text-primary px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-sm">
-                <span class="material-symbols-outlined !text-lg">support_agent</span>
-                Professional Counseling
-            </div>
-            
-            <!-- Main Title -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#111816] dark:text-white leading-tight tracking-tight mb-6">
-                Your Mental Health
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-600">Matters</span>
-            </h1>
-            
-            <!-- Description -->
-            <p class="text-xl text-[#61897c] dark:text-gray-400 leading-relaxed max-w-3xl mx-auto mb-10">
-                Connect with licensed professional counselors who provide confidential, compassionate support for your mental health and wellbeing journey.
-            </p>
-            
-            <!-- CTA Buttons -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                @auth
-                    @if(auth()->user()->role === 'student')
-                        <a href="{{ route('student.counseling.create') }}" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:bg-primary/90 transition-all duration-200 transform hover:scale-105 shadow-lg">
-                            <span class="material-symbols-outlined !text-xl">add_circle</span>
-                            Request Counseling Session
-                        </a>
-                    @else
-                        <button onclick="document.getElementById('loginModal').classList.remove('hidden')" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:bg-primary/90 transition-all duration-200 transform hover:scale-105 shadow-lg">
-                            <span class="material-symbols-outlined !text-xl">login</span>
-                            Login to Get Help
-                        </button>
-                    @endif
-                @else
-                    <button onclick="document.getElementById('loginModal').classList.remove('hidden')" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:bg-primary/90 transition-all duration-200 transform hover:scale-105 shadow-lg">
-                        <span class="material-symbols-outlined !text-xl">login</span>
-                        Login to Get Help
-                    </button>
-                @endauth
-                
-                <a href="{{ route('content.index') }}" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white dark:bg-gray-800 border border-[#f0f4f3] dark:border-gray-700 text-[#111816] dark:text-white rounded-xl font-bold text-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-200 transform hover:scale-105">
-                    <span class="material-symbols-outlined !text-xl">library_books</span>
-                    Mental Health Resources
+<!-- Hero Banner -->
+<x-page-banner 
+    title="Your Mental Health Matters" 
+    subtitle="Connect with licensed professional counselors who provide confidential, compassionate support for your mental health and wellbeing journey."
+    badge="Professional Counseling"
+    badgeIcon="support_agent"
+>
+    <x-slot name="actions">
+        @auth
+            @if(auth()->user()->role === 'student')
+                <a href="{{ route('student.counseling.create') }}" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:bg-primary/90 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                    <span class="material-symbols-outlined !text-xl">add_circle</span>
+                    Request Counseling Session
                 </a>
+            @else
+                <button onclick="document.getElementById('loginModal').classList.remove('hidden')" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:bg-primary/90 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                    <span class="material-symbols-outlined !text-xl">login</span>
+                    Login to Get Help
+                </button>
+            @endif
+        @else
+            <button onclick="document.getElementById('loginModal').classList.remove('hidden')" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-bold text-lg hover:bg-primary/90 transition-all duration-200 transform hover:scale-105 shadow-lg">
+                <span class="material-symbols-outlined !text-xl">login</span>
+                Login to Get Help
+            </button>
+        @endauth
+        
+        <a href="{{ route('content.index') }}" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/20 backdrop-blur-sm border border-white/50 text-white rounded-xl font-bold text-lg hover:bg-white/30 transition-all duration-200 transform hover:scale-105">
+            <span class="material-symbols-outlined !text-xl">library_books</span>
+            Mental Health Resources
+        </a>
+    </x-slot>
+</x-page-banner>
+
+<!-- Stats Section -->
+<div class="bg-white dark:bg-gray-800/50 border-y border-[#f0f4f3] dark:border-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
+            <div class="flex items-center gap-3 text-[#61897c] dark:text-gray-400">
+                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary !text-xl">group</span>
+                </div>
+                <div class="text-left">
+                    <div class="text-2xl font-bold text-[#111816] dark:text-white">3</div>
+                    <div class="text-sm font-medium">Licensed Counselors</div>
+                </div>
             </div>
-            
-            <!-- Stats -->
-            <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
-                <div class="flex items-center gap-3 text-[#61897c] dark:text-gray-400">
-                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary !text-xl">group</span>
-                    </div>
-                    <div class="text-left">
-                        <div class="text-2xl font-bold text-[#111816] dark:text-white">3</div>
-                        <div class="text-sm font-medium">Licensed Counselors</div>
-                    </div>
+            <div class="hidden sm:block w-1 h-12 bg-[#61897c]/20 dark:bg-gray-600"></div>
+            <div class="flex items-center gap-3 text-[#61897c] dark:text-gray-400">
+                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary !text-xl">security</span>
                 </div>
-                <div class="hidden sm:block w-1 h-12 bg-[#61897c]/20 dark:bg-gray-600"></div>
-                <div class="flex items-center gap-3 text-[#61897c] dark:text-gray-400">
-                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary !text-xl">security</span>
-                    </div>
-                    <div class="text-left">
-                        <div class="text-2xl font-bold text-[#111816] dark:text-white">100%</div>
-                        <div class="text-sm font-medium">Confidential</div>
-                    </div>
+                <div class="text-left">
+                    <div class="text-2xl font-bold text-[#111816] dark:text-white">100%</div>
+                    <div class="text-sm font-medium">Confidential</div>
                 </div>
-                <div class="hidden sm:block w-1 h-12 bg-[#61897c]/20 dark:bg-gray-600"></div>
-                <div class="flex items-center gap-3 text-[#61897c] dark:text-gray-400">
-                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary !text-xl">schedule</span>
-                    </div>
-                    <div class="text-left">
-                        <div class="text-2xl font-bold text-[#111816] dark:text-white">24/7</div>
-                        <div class="text-sm font-medium">Crisis Support</div>
-                    </div>
+            </div>
+            <div class="hidden sm:block w-1 h-12 bg-[#61897c]/20 dark:bg-gray-600"></div>
+            <div class="flex items-center gap-3 text-[#61897c] dark:text-gray-400">
+                <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+                    <span class="material-symbols-outlined text-primary !text-xl">schedule</span>
+                </div>
+                <div class="text-left">
+                    <div class="text-2xl font-bold text-[#111816] dark:text-white">24/7</div>
+                    <div class="text-sm font-medium">Crisis Support</div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- Main Content Section -->
 <div class="py-16 bg-background-light dark:bg-background-dark">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column - Main Content -->
+            <div class="lg:col-span-2 flex flex-col gap-6">
 
-    <!-- Main Content Grid -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- Left Column - Main Content -->
-        <div class="lg:col-span-2 flex flex-col gap-6">
-
-            <!-- Services Overview -->
-            <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg overflow-hidden">
+                <!-- Services Overview -->
+                <div class="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-lg overflow-hidden">
                 <div class="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 px-6 py-5 border-b border-gray-200 dark:border-gray-700">
                     <h2 class="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
                         <span class="material-symbols-outlined text-emerald-600">psychology</span>
@@ -284,8 +268,7 @@
                 </div>
             </div>
         </aside>
-    </div>
-
+        </div>
     </div>
 </div>
 

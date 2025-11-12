@@ -4,33 +4,26 @@
 
 @section('content')
 <div class="w-full">
-    <!-- Hero Section -->
-    <div class="relative w-full py-20 sm:py-32">
-        <img alt="Abstract green leaves background" class="absolute inset-0 h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaei4zVm6LMjCzOVeGiCrhI7yoToYFSZ67NFRSOpSi2mS78a4OlW5SUWJ6pb6uehKbKJYkyLdYuWxLOLcYqgTxhJDdOV5-TGjhJGRIC6Mw6f0BpUtqOf2WUzvouDx1C-cX7IZq5sTR_0tZQY81G8hmA7w609vHtY53hIjl_Z7uKMuJtcfu9xj_w-h5h-tQzhnl1SKW4blx_rDkSirm7BB0IdRYU1p10v-DVIT3Qqi_xtXuBK_86-uuVTLeC4WFxj7_2DutIbO4XA"/>
-        <div class="absolute inset-0 bg-gradient-to-br from-mubs-blue/80 to-primary/60 dark:from-mubs-blue/90 dark:to-background-dark/70"></div>
-        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col gap-6 items-center justify-center text-center text-white">
-                <div class="flex flex-col gap-4 max-w-3xl">
-                    <h1 class="text-4xl font-black leading-tight tracking-tighter sm:text-5xl md:text-6xl">Your Wellbeing Matters</h1>
-                    <h2 class="text-gray-200 text-base font-normal leading-normal sm:text-lg">A confidential space for MUBS students to find support, information, and resources for drug and alcohol awareness.</h2>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4 mt-6">
-                    @guest
-                        <button onclick="openSignupModal()" class="flex min-w-[140px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-mubs-blue text-base font-bold leading-normal tracking-[0.015em] hover:bg-white transition-colors">
-                            <span class="truncate">Get Started</span>
-                        </button>
-                        <button onclick="openLoginModal()" class="flex min-w-[140px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white/20 text-white text-base font-bold leading-normal tracking-[0.015em] border border-white/50 hover:bg-white/30 transition-colors">
-                            <span class="truncate">Sign In</span>
-                        </button>
-                    @else
-                        <a class="flex min-w-[140px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-mubs-blue text-base font-bold leading-normal tracking-[0.015em] hover:bg-white transition-colors" href="{{ route('dashboard') }}">
-                            <span class="truncate">Go to Dashboard</span>
-                        </a>
-                    @endguest
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Hero Banner -->
+    <x-page-banner 
+        title="Your Wellbeing Matters" 
+        subtitle="A confidential space for MUBS students to find support, information, and resources for drug and alcohol awareness."
+    >
+        <x-slot name="actions">
+            @guest
+                <button onclick="openSignupModal()" class="flex min-w-[140px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-mubs-blue text-base font-bold leading-normal tracking-[0.015em] hover:bg-white transition-colors">
+                    <span class="truncate">Get Started</span>
+                </button>
+                <button onclick="openLoginModal()" class="flex min-w-[140px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white/20 text-white text-base font-bold leading-normal tracking-[0.015em] border border-white/50 hover:bg-white/30 transition-colors">
+                    <span class="truncate">Sign In</span>
+                </button>
+            @else
+                <a class="flex min-w-[140px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-mubs-blue text-base font-bold leading-normal tracking-[0.015em] hover:bg-white transition-colors" href="{{ route('dashboard') }}">
+                    <span class="truncate">Go to Dashboard</span>
+                </a>
+            @endguest
+        </x-slot>
+    </x-page-banner>
 
     <!-- Services Section -->
     <div class="w-full bg-background-light dark:bg-background-dark py-16 sm:py-24">

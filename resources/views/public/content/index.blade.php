@@ -3,36 +3,13 @@
 @section('title', 'Educational Resources - MUBS Wellness Hub')
 
 @section('content')
-<!-- Hero Section -->
-<div class="relative bg-gradient-to-br from-primary/10 via-background-light to-primary/5 dark:from-primary/20 dark:via-background-dark dark:to-primary/10 py-16 sm:py-20">
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2314eba3" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-4xl mx-auto">
-            <div class="inline-flex items-center gap-2 bg-primary/20 dark:bg-primary/30 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                <span class="material-symbols-outlined !text-lg">school</span>
-                Educational Resources
-            </div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#111816] dark:text-white leading-tight tracking-tight mb-6">
-                Learn, Grow, and 
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600">Thrive</span>
-            </h1>
-            <p class="text-xl text-[#61897c] dark:text-gray-400 leading-relaxed max-w-2xl mx-auto mb-8">
-                Discover evidence-based articles, engaging videos, and practical guides designed to support your journey toward wellness and informed decision-making.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <div class="flex items-center gap-2 text-[#61897c] dark:text-gray-400">
-                    <span class="material-symbols-outlined !text-lg">library_books</span>
-                    <span class="text-sm font-medium">{{ $contents->total() }} Resources Available</span>
-                </div>
-                <div class="hidden sm:block w-1 h-1 bg-[#61897c] dark:bg-gray-400 rounded-full"></div>
-                <div class="flex items-center gap-2 text-[#61897c] dark:text-gray-400">
-                    <span class="material-symbols-outlined !text-lg">category</span>
-                    <span class="text-sm font-medium">{{ $categories->count() }} Categories</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- Hero Banner -->
+<x-page-banner 
+    title="Learn, Grow, and Thrive" 
+    subtitle="Discover evidence-based articles, engaging videos, and practical guides designed to support your journey toward wellness and informed decision-making."
+    badge="Educational Resources"
+    badgeIcon="school"
+/>
 
 <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <div class="flex flex-col flex-1 gap-10">

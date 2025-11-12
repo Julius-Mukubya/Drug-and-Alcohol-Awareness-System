@@ -4,17 +4,13 @@
 
 @section('content')
 <div class="w-full">
-    <!-- Hero Section -->
-    <div class="relative w-full py-20 sm:py-32">
-        <img alt="Contact background" class="absolute inset-0 h-full w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaei4zVm6LMjCzOVeGiCrhI7yoToYFSZ67NFRSOpSi2mS78a4OlW5SUWJ6pb6uehKbKJYkyLdYuWxLOLcYqgTxhJDdOV5-TGjhJGRIC6Mw6f0BpUtqOf2WUzvouDx1C-cX7IZq5sTR_0tZQY81G8hmA7w609vHtY53hIjl_Z7uKMuJtcfu9xj_w-h5h-tQzhnl1SKW4blx_rDkSirm7BB0IdRYU1p10v-DVIT3Qqi_xtXuBK_86-uuVTLeC4WFxj7_2DutIbO4XA"/>
-        <div class="absolute inset-0 bg-gradient-to-br from-mubs-blue/80 to-primary/60 dark:from-mubs-blue/90 dark:to-background-dark/70"></div>
-        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center text-white">
-                <h1 class="text-4xl font-black leading-tight tracking-tighter sm:text-5xl md:text-6xl">Get in Touch</h1>
-                <p class="mt-6 text-xl text-gray-200 max-w-3xl mx-auto">We're here to help. Reach out to us for support, questions, or feedback.</p>
-            </div>
-        </div>
-    </div>
+    <!-- Hero Banner -->
+    <x-page-banner 
+        title="Get in Touch" 
+        subtitle="We're here to help. Reach out to us for support, questions, or feedback."
+        badge="Contact Us"
+        badgeIcon="mail"
+    />
 
     <!-- Contact Information -->
     <div class="w-full bg-background-light dark:bg-background-dark py-16 sm:py-24">

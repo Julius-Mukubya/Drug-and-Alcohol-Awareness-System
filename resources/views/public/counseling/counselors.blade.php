@@ -3,66 +3,13 @@
 @section('title', 'Our Counselors - MUBS Wellness Hub')
 
 @section('content')
-<!-- Hero Section -->
-<div class="relative bg-gradient-to-br from-primary/10 via-background-light to-purple-500/10 dark:from-primary/20 dark:via-background-dark dark:to-purple-500/20 py-20 sm:py-28 overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%2314eba3" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
-    
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center max-w-4xl mx-auto">
-            <!-- Badge -->
-            <div class="inline-flex items-center gap-2 bg-primary/20 dark:bg-primary/30 text-primary px-6 py-3 rounded-full text-sm font-semibold mb-8 shadow-sm">
-                <span class="material-symbols-outlined !text-lg">group</span>
-                Our Counseling Team
-            </div>
-            
-            <!-- Main Title -->
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-[#111816] dark:text-white leading-tight tracking-tight mb-6">
-                Meet Our
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-600">Professional</span>
-                Counselors
-            </h1>
-            
-            <!-- Description -->
-            <p class="text-xl text-[#61897c] dark:text-gray-400 leading-relaxed max-w-3xl mx-auto mb-10">
-                Our team of licensed mental health professionals brings years of experience and specialized training to support your wellbeing journey with compassion and confidentiality.
-            </p>
-            
-            <!-- Stats -->
-            <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
-                <div class="flex items-center gap-3 text-[#61897c] dark:text-gray-400">
-                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary !text-xl">verified</span>
-                    </div>
-                    <div class="text-left">
-                        <div class="text-2xl font-bold text-[#111816] dark:text-white">100%</div>
-                        <div class="text-sm font-medium">Licensed</div>
-                    </div>
-                </div>
-                <div class="hidden sm:block w-1 h-12 bg-[#61897c]/20 dark:bg-gray-600"></div>
-                <div class="flex items-center gap-3 text-[#61897c] dark:text-gray-400">
-                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary !text-xl">workspace_premium</span>
-                    </div>
-                    <div class="text-left">
-                        <div class="text-2xl font-bold text-[#111816] dark:text-white">25+</div>
-                        <div class="text-sm font-medium">Years Combined Experience</div>
-                    </div>
-                </div>
-                <div class="hidden sm:block w-1 h-12 bg-[#61897c]/20 dark:bg-gray-600"></div>
-                <div class="flex items-center gap-3 text-[#61897c] dark:text-gray-400">
-                    <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
-                        <span class="material-symbols-outlined text-primary !text-xl">diversity_3</span>
-                    </div>
-                    <div class="text-left">
-                        <div class="text-2xl font-bold text-[#111816] dark:text-white">6</div>
-                        <div class="text-sm font-medium">Specializations</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- Hero Banner -->
+<x-page-banner 
+    title="Meet Our Professional Counselors" 
+    subtitle="Our team of licensed mental health professionals brings years of experience and specialized training to support your wellbeing journey with compassion and confidentiality."
+    badge="Our Counseling Team"
+    badgeIcon="group"
+/>
 
 <!-- Filter Section -->
 <div class="bg-white dark:bg-gray-800/50 border-b border-[#f0f4f3] dark:border-gray-800 sticky top-16 z-30">
