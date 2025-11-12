@@ -26,6 +26,6 @@ class HomeController extends Controller
             ->take(3)
             ->get();
 
-        return view('home', compact('featuredContents', 'categories', 'activeCampaigns'));
+        return view('public.home', compact('featuredContents', 'categories', 'activeCampaigns'));
     }
 }

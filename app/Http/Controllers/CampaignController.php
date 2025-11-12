@@ -20,7 +20,7 @@ class CampaignController extends Controller
             ->take(6)
             ->get();
 
-        return view('campaigns.index', compact('activeCampaigns', 'upcomingCampaigns'));
+        return view('public.campaigns.index', compact('activeCampaigns', 'upcomingCampaigns'));
     }
 
     public function show(Campaign $campaign)
@@ -30,7 +30,7 @@ class CampaignController extends Controller
 
         $isRegistered = auth()->check() && $campaign->isUserRegistered(auth()->id());
 
-        return view('campaigns.show', compact('campaign', 'isRegistered'));
+        return view('public.campaigns.show', compact('campaign', 'isRegistered'));
     }
 
     public function register(Campaign $campaign)

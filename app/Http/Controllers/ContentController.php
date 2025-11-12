@@ -32,7 +32,7 @@ class ContentController extends Controller
         $contents = $query->latest('published_at')->paginate(12);
         $categories = Category::active()->get();
 
-        return view('content.index', compact('contents', 'categories'));
+        return view('public.content.index', compact('contents', 'categories'));
     }
 
     public function show(EducationalContent $content)
@@ -62,6 +62,6 @@ class ContentController extends Controller
             ->take(4)
             ->get();
 
-        return view('content.show', compact('content', 'relatedContents'));
+        return view('public.content.show', compact('content', 'relatedContents'));
     }
 }

@@ -1,59 +1,53 @@
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 px-4 sm:px-10 py-3 sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-50">
-    <div class="flex items-center gap-4 text-[#111816] dark:text-white">
-        <div class="size-6 text-primary">
-            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                <path d="M44 11.2727C44 14.0109 39.8386 16.3957 33.69 17.6364C39.8386 18.877 44 21.2618 44 24C44 26.7382 39.8386 29.123 33.69 30.3636C39.8386 31.6043 44 33.9891 44 36.7273C44 40.7439 35.0457 44 24 44C12.9543 44 4 40.7439 4 36.7273C4 33.9891 8.16144 31.6043 14.31 30.3636C8.16144 29.123 4 26.7382 4 24C4 21.2618 8.16144 18.877 14.31 17.6364C8.16144 16.3957 4 14.0109 4 11.2727C4 7.25611 12.9543 4 24 4C35.0457 4 44 7.25611 44 11.2727Z" fill="currentColor"></path>
-            </svg>
-        </div>
-        <h2 class="text-[#111816] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">MUBS D&A Awareness</h2>
-    </div>
-    
-    <div class="hidden lg:flex flex-1 justify-end gap-8">
-        <div class="flex items-center gap-9">
-            <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('home') }}">Home</a>
-            <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('content.index') }}">Learn</a>
-            @auth
-                @if(auth()->user()->role === 'student')
-                    <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('student.assessments.index') }}">Self-Assessment</a>
-                    <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('student.counseling.index') }}">Get Help</a>
+<header class="fixed top-0 left-0 right-0 z-50 w-full bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-md border-b border-[#f0f4f3] dark:border-gray-800 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between whitespace-nowrap py-3">
+            <div class="flex items-center gap-4 text-[#111816] dark:text-white">
+                <div class="size-6 text-primary">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                    </svg>
+                </div>
+                <h2 class="text-[#111816] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">MUBS Wellness Hub</h2>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-9">
+                <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('home') }}">Home</a>
+                <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal {{ request()->routeIs('content.*') ? 'text-primary dark:text-primary font-bold' : '' }}" href="{{ route('content.index') }}">Educational Resources</a>
+                @auth
+                    @if(auth()->user()->role === 'student')
+                        <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('student.counseling.index') }}">Counseling</a>
+                    @else
+                        <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('content.index') }}">Counseling</a>
+                    @endif
                 @else
-                    <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('content.index') }}">Self-Assessment</a>
-                    <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('content.index') }}">Get Help</a>
-                @endif
-            @else
-                <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('register') }}">Self-Assessment</a>
-                <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('register') }}">Get Help</a>
-            @endauth
-            <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#about">About Us</a>
-        </div>
-        
-        <div class="flex gap-2">
-            @guest
-                <button onclick="openSignupModal()" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#111816] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
-                    <span class="truncate">Get Started</span>
-                </button>
-                <button onclick="openLoginModal()" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-gray-800 text-[#111816] dark:text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
-                    <span class="truncate">Sign In</span>
-                </button>
-            @else
-                <a href="{{ route('dashboard') }}" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#111816] text-sm font-bold leading-normal tracking-[0.015em]">
-                    <span class="truncate">Dashboard</span>
-                </a>
-                <form method="POST" action="{{ route('logout') }}" class="inline">
-                    @csrf
-                    <button type="submit" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-gray-200 dark:bg-gray-800 text-[#111816] dark:text-white text-sm font-bold leading-normal tracking-[0.015em]">
-                        <span class="truncate">Logout</span>
+                    <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('register') }}">Counseling</a>
+                @endauth
+                <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('campaigns.index') }}">Events</a>
+                <a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="{{ route('public.about') }}">About Us</a>
+            </nav>
+            
+            <div class="flex items-center gap-4">
+                @guest
+                    <button onclick="openSignupModal()" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#111816] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                        <span class="truncate">Get Help</span>
                     </button>
-                </form>
-            @endguest
+                @else
+                    <a href="{{ route('dashboard') }}" class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#111816] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+                        <span class="truncate">Dashboard</span>
+                    </a>
+                @endguest
+                
+                @auth
+                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" 
+                         style="background-image: url('{{ auth()->user()->profile_photo_url }}')">
+                    </div>
+                @else
+                    <button onclick="openLoginModal()" class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" 
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDUs_nyfdaTz1rJOsdjwzXUOMy7IAOmqw-i-GHI276f78l9Czx9WvEvtyrHOH1IF8HMo_5VacCxVMQPMI1mZL0f8-z__LnnTRscJxdFzy3GNmuUXntry7t0TmhRPD_oRmnB8YFshm69l7SF9MD4j_m7XwNlCkCCtOfEb5aptFg6uyf19_gXGjKCVo_z3eQ_rrT9tBZFEKA-ub3YOcJSOWbSguqrwNi2GJipxaCn3bKOvCGgB1E0ypjWf0U2-u7B7NS7MN0viV5JrA')">
+                    </button>
+                @endauth
+            </div>
         </div>
-    </div>
-    
-    <!-- Mobile menu button -->
-    <div class="lg:hidden">
-        <button type="button" class="text-[#111816] dark:text-white" onclick="toggleMobileMenu()">
-            <span class="material-symbols-outlined">menu</span>
-        </button>
     </div>
 </header>
 

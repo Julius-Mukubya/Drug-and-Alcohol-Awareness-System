@@ -36,6 +36,12 @@ use App\Http\Controllers\Auth\RegisterController as AuthRegisterController;
 
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/about', function () {
+    return view('public.about');
+})->name('public.about');
+Route::get('/contact', function () {
+    return view('public.contact');
+})->name('public.contact');
 
 // AJAX Authentication Routes
 Route::post('/ajax/login', [AuthLoginController::class, 'ajaxLogin'])->name('ajax.login');

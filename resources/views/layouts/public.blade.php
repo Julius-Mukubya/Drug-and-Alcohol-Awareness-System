@@ -8,10 +8,12 @@
     <title>@yield('title', 'MUBS D&A Awareness Platform')</title>
     
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
     
-    <script id="tailwind-config">
+    <script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -20,21 +22,28 @@
                         "primary": "#14eba3",
                         "background-light": "#f6f8f7",
                         "background-dark": "#10221c",
-                        "mubs-red": "#da291c",
-                        "mubs-blue": "#003366",
                     },
                     fontFamily: {
-                        "display": ["Inter", "sans-serif"]
+                        "display": ["Lexend", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
                 },
             },
         }
     </script>
     
     <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
         }
     </style>
     
@@ -50,7 +59,7 @@
                     @include('partials.public-header')
                     
                     <!-- Main Content -->
-                    <main class="flex flex-col items-center">
+                    <main class="flex-1 pt-16">
                         @yield('content')
                     </main>
                     
