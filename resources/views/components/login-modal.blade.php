@@ -149,70 +149,87 @@ document.getElementById('loginModal').addEventListener('click', function(e) {
 });
 
 // Handle form submission
-document.getElementById('loginForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('loginForm');
+    if (!loginForm) return;
     
-    const submitBtn = document.getElementById('loginSubmitBtn');
-    const btnText = document.getElementById('loginBtnText');
-    const btnLoading = document.getElementById('loginBtnLoading');
-    const errorsDiv = document.getElementById('loginErrors');
-    const successDiv = document.getElementById('loginSuccess');
-    
-    // Show loading state
-    submitBtn.disabled = true;
-    btnText.classList.add('hidden');
-    btnLoading.classList.remove('hidden');
-    
-    // Hide previous messages
-    errorsDiv.classList.add('hidden');
-    successDiv.classList.add('hidden');
-    
-    try {
-        const formData = new FormData(this);
-        const response = await fetch('{{ route("ajax.login") }}', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-            }
-        });
+    loginForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
         
-        const data = await response.json();
+        console.log('Login form submitted');
         
-        if (response.ok) {
-            // Success - redirect to intended page or dashboard
-            if (data.redirect) {
-                window.location.href = data.redirect;
+        const submitBtn = document.getElementById('loginSubmitBtn');
+        const btnText = document.getElementById('loginBtnText');
+        const btnLoading = document.getElementById('loginBtnLoading');
+        const errorsDiv = document.getElementById('loginErrors');
+        const successDiv = document.getElementById('loginSuccess');
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        btnText.classList.add('hidden');
+        btnLoading.classList.remove('hidden');
+        
+        // Hide previous messages
+        errorsDiv.classList.add('hidden');
+        successDiv.classList.add('hidden');
+        
+        try {
+            const formData = new FormData(this);
+            console.log('Sending login request...');
+            
+            const response = await fetch('{{ route("ajax.login") }}', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json',
+                }
+            });
+            
+            console.log('Response status:', response.status);
+            const data = await response.json();
+            console.log('Response data:', data);
+            
+            if (response.ok) {
+                // Success - redirect to intended page or dashboard
+                console.log('Login successful, redirecting...');
+                if (data.redirect) {
+                    window.location.href = data.redirect;
+                } else {
+                    window.location.href = '{{ route("dashboard") }}';
+                }
             } else {
-                window.location.href = '{{ route("dashboard") }}';
+                // Handle validation errors
+                if (data.errors) {
+                    const errorsList = document.querySelector('#loginErrorsList ul');
+                    errorsList.innerHTML = '';
+                    
+                    Object.values(data.errors).flat().forEach(error => {
+                        const li = document.createElement('li');
+                        li.textContent = error;
+                        errorsList.appendChild(li);
+                    });
+                    
+                    errorsDiv.classList.remove('hidden');
+                } else if (data.message) {
+                    const errorsList = document.querySelector('#loginErrorsList ul');
+                    errorsList.innerHTML = `<li>${data.message}</li>`;
+                    errorsDiv.classList.remove('hidden');
+                }
             }
-        } else {
-            // Handle validation errors
-            if (data.errors) {
-                const errorsList = document.querySelector('#loginErrorsList ul');
-                errorsList.innerHTML = '';
-                
-                Object.values(data.errors).flat().forEach(error => {
-                    const li = document.createElement('li');
-                    li.textContent = error;
-                    errorsList.appendChild(li);
-                });
-                
-                errorsDiv.classList.remove('hidden');
-            }
+        } catch (error) {
+            console.error('Login error:', error);
+            // Show generic error
+            const errorsList = document.querySelector('#loginErrorsList ul');
+            errorsList.innerHTML = '<li>An error occurred. Please try again.</li>';
+            errorsDiv.classList.remove('hidden');
+        } finally {
+            // Reset loading state
+            submitBtn.disabled = false;
+            btnText.classList.remove('hidden');
+            btnLoading.classList.add('hidden');
         }
-    } catch (error) {
-        console.error('Login error:', error);
-        // Show generic error
-        const errorsList = document.querySelector('#loginErrorsList ul');
-        errorsList.innerHTML = '<li>An error occurred. Please try again.</li>';
-        errorsDiv.classList.remove('hidden');
-    } finally {
-        // Reset loading state
-        submitBtn.disabled = false;
-        btnText.classList.remove('hidden');
-        btnLoading.classList.add('hidden');
-    }
+    });
 });
 
 // Handle escape key

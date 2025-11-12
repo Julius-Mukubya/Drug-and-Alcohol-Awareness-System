@@ -25,12 +25,15 @@ class LoginController extends Controller
             $user = Auth::user();
             
             // Determine redirect URL based on user role
-            $redirectUrl = match($user->role) {
-                'admin' => route('admin.dashboard'),
-                'counselor' => route('counselor.dashboard'),
-                'student' => route('student.dashboard'),
-                default => route('dashboard')
-            };
+            if ($user->role === 'admin') {
+                $redirectUrl = route('admin.dashboard');
+            } elseif ($user->role === 'counselor') {
+                $redirectUrl = route('counselor.dashboard');
+            } elseif ($user->role === 'student') {
+                $redirectUrl = route('dashboard');
+            } else {
+                $redirectUrl = route('dashboard');
+            }
 
             return response()->json([
                 'success' => true,

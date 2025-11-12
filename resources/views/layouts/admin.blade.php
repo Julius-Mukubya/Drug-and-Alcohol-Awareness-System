@@ -76,10 +76,20 @@
                         <p class="text-sm font-medium text-gray-900 dark:text-white">{{ auth()->user()->name }}</p>
                         <p class="text-xs text-gray-500 dark:text-gray-400">{{ auth()->user()->email }}</p>
                     </div>
-                    <a href="{{ route('profile.edit') }}" class="block px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Profile</a>
+                    <a href="{{ route('home') }}" class="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <span class="material-symbols-outlined text-lg">public</span>
+                        View Site
+                    </a>
+                    <a href="{{ route('profile.edit') }}" class="flex items-center gap-2 px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">
+                        <span class="material-symbols-outlined text-lg">person</span>
+                        Profile
+                    </a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-                        <button type="submit" class="w-full text-left px-3 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Logout</button>
+                        <button type="submit" class="w-full text-left flex items-center gap-2 px-3 py-2 text-sm text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20">
+                            <span class="material-symbols-outlined text-lg">logout</span>
+                            Logout
+                        </button>
                     </form>
                 </div>
             </div>
@@ -144,6 +154,11 @@
                             </div>
                         </div>
                     </button>
+
+                    <a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200" href="{{ route('home') }}" target="_blank">
+                        <span class="material-symbols-outlined text-blue-600 dark:text-blue-400">public</span>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm font-medium">View Site</p>
+                    </a>
 
                     <a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition-all duration-200" href="{{ route('admin.settings.index') }}">
                         <span class="material-symbols-outlined text-emerald-600 dark:text-emerald-400">settings</span>
