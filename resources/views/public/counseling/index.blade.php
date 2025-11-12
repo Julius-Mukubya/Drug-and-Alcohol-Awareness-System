@@ -278,7 +278,7 @@
                 </div>
                 
                 <div class="px-6 pb-6">
-                    <a href="#" class="block w-full text-center px-4 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-emerald-500/30 transition-all">
+                    <a href="{{ route('public.counseling.counselors') }}" class="block w-full text-center px-4 py-3 bg-gradient-to-r from-emerald-500 to-teal-600 text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-emerald-500/30 transition-all">
                         View All Counselors
                     </a>
                 </div>

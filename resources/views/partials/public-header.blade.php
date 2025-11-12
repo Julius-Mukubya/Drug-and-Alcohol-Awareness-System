@@ -31,6 +31,15 @@
                                     </div>
                                 </div>
                             </a>
+                            <a href="{{ route('public.counseling.counselors') }}" class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-blue-600">group</span>
+                                    <div>
+                                        <div class="font-medium">Our Counselors</div>
+                                        <div class="text-xs text-gray-500 dark:text-gray-400">Meet our professional team</div>
+                                    </div>
+                                </div>
+                            </a>
                             <a href="{{ route('content.index') }}" class="block px-4 py-3 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors">
                                 <div class="flex items-center gap-3">
                                     <span class="material-symbols-outlined text-purple-600">library_books</span>
@@ -112,6 +121,7 @@
             <div class="text-[#111816] dark:text-gray-300 text-sm font-semibold mb-2">Counseling</div>
             <div class="ml-4 space-y-1">
                 <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm py-1" href="{{ route('public.counseling.index') }}">Our Services</a>
+                <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm py-1" href="{{ route('public.counseling.counselors') }}">Our Counselors</a>
                 <a class="block text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm py-1" href="{{ route('content.index') }}">Educational Resources</a>
                 @auth
                     @if(auth()->user()->role === 'student')

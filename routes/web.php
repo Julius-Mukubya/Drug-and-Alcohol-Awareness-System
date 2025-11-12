@@ -71,6 +71,10 @@ Route::prefix('counseling')->name('public.counseling.')->group(function () {
         return view('public.counseling.index');
     })->name('index');
     
+    Route::get('/counselors', function () {
+        return view('public.counseling.counselors');
+    })->name('counselors');
+    
     Route::get('/resources', function () {
         return view('public.counseling.resources');
     })->name('resources');
