@@ -3,7 +3,7 @@
 <html class="light" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Educational Resources - MUBS Wellness Hub</title>
+<title>MUBS Wellness - Article</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -18,14 +18,22 @@
                         "primary": "#14eba3",
                         "background-light": "#f6f8f7",
                         "background-dark": "#10221c",
+                        "text-light": "#111816",
+                        "text-dark": "#f6f8f7",
+                        "text-muted-light": "#61897c",
+                        "text-muted-dark": "#a0b5ab",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#182c25",
+                        "border-light": "#f0f4f3",
+                        "border-dark": "#2a3f38",
                     },
                     fontFamily: {
                         "display": ["Lexend", "sans-serif"]
                     },
                     borderRadius: {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
                         "full": "9999px"
                     },
                 },
@@ -33,234 +41,203 @@
         }
     </script>
 <style>
-        body {
-            font-family: 'Lexend', sans-serif;
-        }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             font-size: 20px;
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-[#111816] dark:text-gray-200">
+<body class="font-display bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
 <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
 <div class="layout-container flex h-full grow flex-col">
-<header class="sticky top-0 z-50 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-[#f0f4f3] dark:border-gray-800">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex items-center justify-between whitespace-nowrap py-3">
-<div class="flex items-center gap-4 text-[#111816] dark:text-white">
+<!-- TopNavBar Component -->
+<header class="sticky top-0 z-50 bg-surface-light/80 dark:bg-surface-dark/80 backdrop-blur-sm border-b border-solid border-border-light dark:border-border-dark px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40">
+<div class="flex items-center justify-between whitespace-nowrap h-16">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-text-light dark:text-text-dark">
 <div class="size-6 text-primary">
 <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+<path d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z" fill="currentColor"></path>
 </svg>
 </div>
-<h2 class="text-[#111816] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">MUBS Wellness Hub</h2>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">MUBS Wellness</h2>
 </div>
 <nav class="hidden md:flex items-center gap-9">
-<a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#">Home</a>
-<a class="text-primary dark:text-primary text-sm font-bold leading-normal" href="#">Educational Resources</a>
-<a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#">Counseling</a>
-<a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#">Events</a>
-<a class="text-[#111816] dark:text-gray-300 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal" href="#">About Us</a>
+<a class="text-sm font-medium leading-normal text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark transition-colors" href="#">Home</a>
+<a class="text-sm font-medium leading-normal text-text-light dark:text-text-dark" href="#">Resources</a>
+<a class="text-sm font-medium leading-normal text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark transition-colors" href="#">Support</a>
+<a class="text-sm font-medium leading-normal text-text-muted-light dark:text-text-muted-dark hover:text-text-light dark:hover:text-text-dark transition-colors" href="#">About</a>
 </nav>
-<div class="flex items-center gap-4">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-[#111816] text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
-<span class="truncate">Get Help</span>
-</button>
-<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUs_nyfdaTz1rJOsdjwzXUOMy7IAOmqw-i-GHI276f78l9Czx9WvEvtyrHOH1IF8HMo_5VacCxVMQPMI1mZL0f8-z__LnnTRscJxdFzy3GNmuUXntry7t0TmhRPD_oRmnB8YFshm69l7SF9MD4j_m7XwNlCkCCtOfEb5aptFg6uyf19_gXGjKCVo_z3eQ_rrT9tBZFEKA-ub3YOcJSOWbSguqrwNi2GJipxaCn3bKOvCGgB1E0ypjWf0U2-u7B7NS7MN0viV5JrA");'></div>
 </div>
+<div class="flex items-center justify-end gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Sign Up</span>
+</button>
 </div>
 </div>
 </header>
-<main class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-<div class="layout-content-container flex flex-col flex-1 gap-8">
-<div class="flex flex-wrap justify-between gap-4 items-center">
-<div class="flex min-w-72 flex-col gap-2">
-<p class="text-[#111816] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em]">Educational Resources</p>
-<p class="text-[#61897c] dark:text-gray-400 text-base font-normal leading-normal">Explore articles, videos, and guides to learn more about substance awareness and mental wellness.</p>
+<main class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5 md:py-10">
+<div class="layout-content-container flex flex-col w-full max-w-4xl flex-1 gap-8">
+<!-- Breadcrumbs -->
+<nav class="flex flex-wrap gap-2 text-sm">
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors font-medium leading-normal" href="#">Home</a>
+<span class="text-text-muted-light dark:text-text-muted-dark font-medium leading-normal">/</span>
+<a class="text-text-muted-light dark:text-text-muted-dark hover:text-primary transition-colors font-medium leading-normal" href="#">Resources</a>
+<span class="text-text-muted-light dark:text-text-muted-dark font-medium leading-normal">/</span>
+<span class="text-text-light dark:text-text-dark font-medium leading-normal">The Impact of Alcohol...</span>
+</nav>
+<!-- Article Header Section -->
+<div class="flex flex-col gap-6">
+<!-- Category Badge / Chip -->
+<div class="flex gap-3">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/20 dark:bg-primary/20 px-4">
+<p class="text-primary text-sm font-bold leading-normal">Alcohol Facts</p>
 </div>
 </div>
-<div class="flex flex-col sm:flex-row gap-4 items-center border-y border-[#f0f4f3] dark:border-gray-800 py-4">
-<div class="flex items-center gap-3 flex-wrap flex-1">
-<label class="text-sm font-medium text-[#111816] dark:text-gray-300" for="category-select">Category:</label>
-<select class="rounded-lg h-9 pl-3 pr-8 border-[#f0f4f3] dark:border-gray-700 bg-background-light dark:bg-background-dark text-sm focus:ring-primary focus:border-primary" id="category-select">
-<option>All Categories</option>
-<option>Alcohol Awareness</option>
-<option>Drug Information</option>
-<option>Mental Health</option>
-<option>Support &amp; Recovery</option>
-<option>Healthy Habits</option>
-</select>
-</div>
-<div class="flex gap-2 p-1 flex-wrap justify-start">
-<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-primary/20 dark:bg-primary/30 px-4 text-primary text-sm font-bold">All</button>
-<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f4f3] dark:bg-gray-800 px-4 text-[#111816] dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium">Articles</button>
-<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f4f3] dark:bg-gray-800 px-4 text-[#111816] dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium">Videos</button>
-<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f4f3] dark:bg-gray-800 px-4 text-[#111816] dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium">Infographics</button>
-<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-[#f0f4f3] dark:bg-gray-800 px-4 text-[#111816] dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 text-sm font-medium">Guides</button>
+<!-- Headline and Body Text -->
+<h1 class="text-text-light dark:text-text-dark tracking-tight text-4xl md:text-5xl font-bold leading-tight">The Impact of Alcohol on Academic Performance</h1>
+<p class="text-text-muted-light dark:text-text-muted-dark text-lg font-normal leading-relaxed">A brief, concise summary exploring how alcohol consumption can affect a student's ability to succeed academically at MUBS.</p>
+<!-- Author Card -->
+<div class="flex items-center gap-4 pt-4">
+<img class="size-12 rounded-full object-cover" data-alt="A portrait of a male peer counselor, smiling gently." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpnsAydCy2vbjjonmn13i-sYtycMPOvN5HFH5TQzCV54VmZwHwY6awizTpQX2EqCtn7vV5Wjr1Pukedz7B9_WkbVkpcqIxAHPoyW0HcMAnQ9fLrjXFlxfw_1wbXKKpvlql6fKvM_KVmJuO9DL9dxZhJPfeIDBq9RYKz7rJkdO6MdUjQupzzOZBeUdvk_Mr3vLpnaTHQkABY8nsijJFTEjra3xmu6yADynYSLeYuHByV6rqmfUXje4ocK5koFMKJPqwXTXwd995iQ"/>
+<div class="flex flex-col">
+<p class="font-bold text-text-light dark:text-text-dark">Alex Kintu</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Peer Counselor, MUBS Wellness Center</p>
 </div>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Card 1 -->
-<div class="flex flex-col gap-4 bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-[#f0f4f3] dark:border-gray-800">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Abstract image representing alcohol's effects" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3E_xhkBrjzUY_K6tz3-ZCnpCbeJg4Lp4-sEtNDKk073HOCQeGDZscoelmE2gVrmaI9f-gRqaCj-e5H04nmDs6KrpXFA-sfJFop8DLs_gGj6iS2a7u_27gGXiW_cH02tYuBSefMhdxgzvH4adqKAHR0q4R6b56M9C3qJYlcxmJuHmZb4POm39d9CCsJYGsib6GnXmPOSUTiD5M5jkkjc5W9fdj7Jz6FEO96GTzkuFRqwZB2NHxzdX-c0e0yYe0gi7xKjt2xqW_Ww");'></div>
-<div class="p-5 flex flex-col gap-3">
-<span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/50 px-2 py-1 rounded-full self-start">Alcohol Awareness</span>
-<h3 class="text-[#111816] dark:text-white text-lg font-bold leading-snug cursor-pointer hover:text-primary dark:hover:text-primary">Understanding Alcohol's Effects</h3>
-<p class="text-[#61897c] dark:text-gray-400 text-sm font-normal leading-normal">Learn about the short and long-term effects of alcohol consumption on your body and mind.</p>
 </div>
-<div class="px-5 pb-5 mt-auto">
-<div class="flex items-center justify-between text-xs text-[#61897c] dark:text-gray-500 border-t border-[#f0f4f3] dark:border-gray-700 pt-3">
+<!-- Metadata Bar -->
+<div class="flex items-center gap-6 border-y border-border-light dark:border-border-dark py-4 text-sm text-text-muted-light dark:text-text-muted-dark">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">schedule</span>
-<span>5 min read</span>
+<span class="material-symbols-outlined">schedule</span>
+<span>8 min read</span>
 </div>
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">visibility</span>
+<span class="material-symbols-outlined">visibility</span>
 <span>1.2k views</span>
 </div>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="flex flex-col gap-4 bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-[#f0f4f3] dark:border-gray-800">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Pills scattered on a surface to represent opioid risks" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDHAcklAoeWW6A_pBVvb6n0Z8B0RvZQ-XEFZ87G5AiGbyxQA3dHmyKSWc5rFD-Kn0HENRsNiFxgf7jdK9u8aICDI0r2ghk2fKLfVg1nC9QrC5Rf_W_HsMlIf4L9v4x2y9rCkbr0GzSY6qBFPxWYMaU4L6PknVNMgIjJGY8CtcZB6E3nYsvYBcQcPhsFRdjkB0_6gBnCT6oocQIeaIuc-zPdMDXflXLdA5n4MM--QyjKU-liATOMLs05Uy_KaA-RX29nKFaNCDtp5g");'></div>
-<div class="p-5 flex flex-col gap-3">
-<span class="text-xs font-bold uppercase tracking-wider text-orange-600 dark:text-orange-400 bg-orange-100 dark:bg-orange-900/50 px-2 py-1 rounded-full self-start">Drug Information</span>
-<h3 class="text-[#111816] dark:text-white text-lg font-bold leading-snug cursor-pointer hover:text-primary dark:hover:text-primary">The Risks of Opioid Misuse</h3>
-<p class="text-[#61897c] dark:text-gray-400 text-sm font-normal leading-normal">A deep dive into the dangers of prescription drug misuse and how to stay safe.</p>
-</div>
-<div class="px-5 pb-5 mt-auto">
-<div class="flex items-center justify-between text-xs text-[#61897c] dark:text-gray-500 border-t border-[#f0f4f3] dark:border-gray-700 pt-3">
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">schedule</span>
-<span>7 min read</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">visibility</span>
-<span>980 views</span>
+<span class="material-symbols-outlined">calendar_month</span>
+<span>Published on Oct 26, 2023</span>
 </div>
 </div>
+<!-- Featured Media -->
+<div class="w-full aspect-video rounded-xl overflow-hidden bg-border-light dark:bg-border-dark">
+<img class="w-full h-full object-cover" data-alt="University students studying together in a well-lit library." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBErCpDPq3fSwkQvtDuCp-nwq6H5MEApI0DotNOZuIa7rmeRAzkM0kxm5LCQRu7fNf88WxFBtlgzXMtXnF5eUnJY6Csw_RPtStu01Bb1z11RovR48xtHM3dSy03u0zItlxRsjEwkXKie_Fs0yqllEcu9gIvQtuC3LlZ8LrYai5vKYUWpfRyCNZ8RGMxAnnozWKrZlepztPr0W5gJm1wUPF12a_zlDLhI2vlrVCP8b3MIBDFNlYTNM8chuV-xfMCvL3syipJPIA8-w"/>
+</div>
+<!-- Article Body -->
+<article class="prose prose-lg dark:prose-invert max-w-none prose-h2:font-bold prose-h2:text-text-light dark:prose-h2:text-text-dark prose-p:text-text-light dark:prose-p:text-text-dark prose-a:text-primary prose-strong:text-text-light dark:prose-strong:text-text-dark prose-li:marker:text-primary">
+<p>University life is often synonymous with new freedoms, social events, and academic challenges. For many students at Makerere University Business School (MUBS), this period can also involve experimentation with alcohol. While moderate consumption might be part of social gatherings, it's crucial to understand how alcohol can directly and indirectly impact academic performance. This article explores the connection between drinking habits and student success.</p>
+<h2>The Science Behind Alcohol's Effect on the Brain</h2>
+<p>Alcohol is a depressant, which means it slows down the central nervous system. This affects cognitive functions critical for learning:</p>
+<ul>
+<li><strong>Memory Formation:</strong> Heavy drinking can interfere with the brain's ability to transfer information from short-term to long-term memory. This is why you might struggle to recall information from a lecture after a night of drinking.</li>
+<li><strong>Concentration and Attention:</strong> Even moderate amounts of alcohol can impair focus and attention span, making it harder to engage in classes, study effectively, or complete complex assignments.</li>
+<li><strong>Sleep Disruption:</strong> While alcohol can make you feel drowsy, it disrupts the quality of your sleep, particularly REM sleep, which is vital for memory consolidation. Waking up tired can lead to a cycle of poor academic engagement.</li>
+</ul>
+<blockquote>"Success is the sum of small efforts, repeated day in and day out. Don't let short-term choices compromise your long-term goals."</blockquote>
+<h2>Direct Impacts on Academic Life</h2>
+<p>The consequences of alcohol consumption can manifest in several ways that directly hinder academic progress:</p>
+<ol>
+<li><strong>Missing Classes:</strong> Hangovers are a common reason for absenteeism. Missing lectures means falling behind on coursework and missing crucial announcements.</li>
+<li><strong>Poor Exam Performance:</strong> "Cramming" for an exam is already an ineffective study method, but doing so while under the influence or with a hangover significantly reduces information retention and critical thinking abilities.</li>
+<li><strong>Lower Grades:</strong> Studies consistently show a correlation between higher levels of alcohol consumption and lower Grade Point Averages (GPAs). The cumulative effect of missed classes, poor focus, and impaired memory naturally leads to poorer academic outcomes.</li>
+</ol>
+<p>At MUBS Wellness, we encourage students to make informed decisions. Understanding these effects is the first step toward balancing your social life with your academic responsibilities. If you feel your alcohol use is impacting your studies, support is available.</p>
+</article>
+<!-- Downloadable Resources -->
+<section class="py-8">
+<h3 class="text-2xl font-bold mb-4 text-text-light dark:text-text-dark">Downloadable Resources</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark p-4 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">picture_as_pdf</span>
+<div>
+<p class="font-semibold text-text-light dark:text-text-dark">Guide to Responsible Drinking.pdf</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">1.2 MB</p>
 </div>
 </div>
-<!-- Card 3 -->
-<div class="flex flex-col gap-4 bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-[#f0f4f3] dark:border-gray-800">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="A person in deep thought, representing mental health" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA0POmr0zPTc7Wns0WtEiLyu6FshewU4E0xVYmI6mFTMu2R8S8AfG6KqLnkD93HN6FK4RwA98crsxHS6fM1MlZGM4A8YHxn13RVy7nSewdhrFJbySFSPnfccsMtUxoFzGl0lZQ32uROCb12Tfgb6vrvAwxdAyFKdEvwFgqZTxMt7NuGVszW0LOU0M5iGl3y7Ct4sWXhDtu0dXdcRR3YTZ7qFTWbkaiumjfbn7-yLbwz4ho-IurHyfus7YLy5ypy0j_rGmK-ouMhFw");'></div>
-<div class="p-5 flex flex-col gap-3">
-<span class="text-xs font-bold uppercase tracking-wider text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-900/50 px-2 py-1 rounded-full self-start">Mental Health</span>
-<h3 class="text-[#111816] dark:text-white text-lg font-bold leading-snug cursor-pointer hover:text-primary dark:hover:text-primary">Cannabis and Mental Health</h3>
-<p class="text-[#61897c] dark:text-gray-400 text-sm font-normal leading-normal">Exploring the complex relationship between cannabis use and its impact on mental well-being.</p>
-</div>
-<div class="px-5 pb-5 mt-auto">
-<div class="flex items-center justify-between text-xs text-[#61897c] dark:text-gray-500 border-t border-[#f0f4f3] dark:border-gray-700 pt-3">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">schedule</span>
-<span>6 min read</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">visibility</span>
-<span>2.1k views</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="flex flex-col gap-4 bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-[#f0f4f3] dark:border-gray-800">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="A video play button overlayed on a student's recovery story" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQdfcC1DhndTSmKuJpQOg63PJYUt3gEajddOhsbZdYLiUhO6P4T26KIcCGEOG7rhLn7F80VBXIqhC2gtKJLEyOuHKx1bCVtRljFOSSzdJmjztRL4zkGYO8Ki_jWIpaYpmfmLdtp_ZSXuh8EPb0cJ72zgDtkvD8CQDdaZGUrrCoMzfoMn5oxECmlBSFHlq0nlaqloMKuD5Ia2Ucntc0uE2EnPil5JUqevpTvFmAsakwfjErON7mQPZY_csAzkrk3lzx0eo_XbFXMA");'></div>
-<div class="p-5 flex flex-col gap-3">
-<span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-900/50 px-2 py-1 rounded-full self-start">Support &amp; Recovery</span>
-<h3 class="text-[#111816] dark:text-white text-lg font-bold leading-snug cursor-pointer hover:text-primary dark:hover:text-primary">Video: A Student's Recovery Story</h3>
-<p class="text-[#61897c] dark:text-gray-400 text-sm font-normal leading-normal">Watch an inspiring story of a peer who navigated the challenges of recovery.</p>
-</div>
-<div class="px-5 pb-5 mt-auto">
-<div class="flex items-center justify-between text-xs text-[#61897c] dark:text-gray-500 border-t border-[#f0f4f3] dark:border-gray-700 pt-3">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">play_circle</span>
-<span>12 min watch</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">visibility</span>
-<span>3.5k views</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Card 5 -->
-<div class="flex flex-col gap-4 bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-[#f0f4f3] dark:border-gray-800">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="A person jogging in a park to represent healthy habits" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA70WSDOBh1-lU8V95r8Y1NQ2UZFAr8DI_ZyVN0NnBCSJH0H83PW0mk2m66jTieNLK4ADr2YJHdpSgq2aQi_eTIOqXaYEWMIW7cSVy_NkRoYIbnlh6UjY2--S02TU61CtkzA1VmCD2dbp_yRh2Jk1-_ONXvAnaCtV62mDbA0lRJN9A1tvClzYVRZzkiV3P96GrMK5iJR6UQnhPwLX2eaQuFqRi__oNFeCH5b4AX05i_9euQXxk0y76OeNnivIk8OXh_Iv20-wJgVA");'></div>
-<div class="p-5 flex flex-col gap-3">
-<span class="text-xs font-bold uppercase tracking-wider text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/50 px-2 py-1 rounded-full self-start">Healthy Habits</span>
-<h3 class="text-[#111816] dark:text-white text-lg font-bold leading-snug cursor-pointer hover:text-primary dark:hover:text-primary">Creating Healthy Habits</h3>
-<p class="text-[#61897c] dark:text-gray-400 text-sm font-normal leading-normal">Practical tips for building a lifestyle that supports your physical and mental health.</p>
-</div>
-<div class="px-5 pb-5 mt-auto">
-<div class="flex items-center justify-between text-xs text-[#61897c] dark:text-gray-500 border-t border-[#f0f4f3] dark:border-gray-700 pt-3">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">schedule</span>
-<span>4 min read</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">visibility</span>
-<span>850 views</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Card 6 -->
-<div class="flex flex-col gap-4 bg-white dark:bg-gray-800/50 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 border border-[#f0f4f3] dark:border-gray-800">
-<div class="w-full bg-center bg-no-repeat aspect-video bg-cover" data-alt="Hands reaching out for support" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDKFNCoSAIX_EAsmmwEDCKPBzQg62QJVBo-0u4NcF56fgBMRKwc7HnkZRw2V2jOTpm4tsSG9gQPeQ6CubzuQsgDrzSgwFvvB6JuB7UJwDqStEIYaVMtboKcDGTmS6w8fXlbIl9gx0zRU19OVmbp7Sr5pUNGNql0fZ9z0kv8DlsNR7_Qg9RCKldmGC6EAhKugiGC0q271jiMnDVZewRGBgso2AUUNHgChX_qPemrwlAut5JwiP0IyEoq0rH0B7ogPQoCB_dUELO6gA");'></div>
-<div class="p-5 flex flex-col gap-3">
-<span class="text-xs font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-900/50 px-2 py-1 rounded-full self-start">Support &amp; Recovery</span>
-<h3 class="text-[#111816] dark:text-white text-lg font-bold leading-snug cursor-pointer hover:text-primary dark:hover:text-primary">How to Support a Friend</h3>
-<p class="text-[#61897c] dark:text-gray-400 text-sm font-normal leading-normal">Learn effective and compassionate ways to help a friend who may be struggling.</p>
-</div>
-<div class="px-5 pb-5 mt-auto">
-<div class="flex items-center justify-between text-xs text-[#61897c] dark:text-gray-500 border-t border-[#f0f4f3] dark:border-gray-700 pt-3">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">schedule</span>
-<span>5 min read</span>
-</div>
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined !text-base">visibility</span>
-<span>1.8k views</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Empty State Example (commented out or conditionally rendered) -->
-<!-- 
-                    <div class="flex flex-col items-center justify-center gap-6 py-16 text-center">
-                        <div class="text-primary">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-24 w-24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                            </svg>
-                        </div>
-                        <div class="flex max-w-md flex-col items-center gap-2">
-                            <p class="text-[#111816] dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">No Resources Found</p>
-                            <p class="text-[#61897c] dark:text-gray-400 text-sm font-normal leading-normal">We couldn't find any content matching your filters. Try adjusting your search to discover new resources.</p>
-                        </div>
-                        <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#f0f4f3] dark:bg-gray-800 text-[#111816] dark:text-gray-200 text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 dark:hover:bg-gray-700">
-                            <span class="truncate">Clear Filters</span>
-                        </button>
-                    </div>
-                    -->
-<div class="flex flex-col sm:flex-row items-center justify-between gap-4 py-6 border-t border-[#f0f4f3] dark:border-gray-800">
-<p class="text-sm text-[#61897c] dark:text-gray-400">Showing <span class="font-bold text-[#111816] dark:text-gray-200">1-6</span> of <span class="font-bold text-[#111816] dark:text-gray-200">50</span> results</p>
-<nav class="flex items-center gap-2">
-<button class="flex items-center justify-center size-9 rounded-lg border border-[#f0f4f3] dark:border-gray-700 bg-white dark:bg-gray-800 text-[#61897c] dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-<span class="material-symbols-outlined !text-xl">chevron_left</span>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/20 dark:bg-primary/20 text-primary hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined">download</span>
 </button>
-<button class="flex items-center justify-center size-9 rounded-lg border border-primary text-primary bg-primary/20 dark:bg-primary/30 font-bold text-sm">1</button>
-<button class="flex items-center justify-center size-9 rounded-lg border border-[#f0f4f3] dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111816] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-sm">2</button>
-<button class="flex items-center justify-center size-9 rounded-lg border border-[#f0f4f3] dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111816] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-sm">3</button>
-<span class="text-[#61897c] dark:text-gray-400">...</span>
-<button class="flex items-center justify-center size-9 rounded-lg border border-[#f0f4f3] dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111816] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors text-sm">9</button>
-<button class="flex items-center justify-center size-9 rounded-lg border border-[#f0f4f3] dark:border-gray-700 bg-white dark:bg-gray-800 text-[#111816] dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-<span class="material-symbols-outlined !text-xl">chevron_right</span>
-</button>
-</nav>
 </div>
+<div class="bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark p-4 rounded-lg flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">contact_phone</span>
+<div>
+<p class="font-semibold text-text-light dark:text-text-dark">MUBS Support Contacts.pdf</p>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">450 KB</p>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-primary/20 dark:bg-primary/20 text-primary hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Engagement & Feedback -->
+<div class="flex flex-col md:flex-row items-center justify-between gap-6 border-y border-border-light dark:border-border-dark py-6">
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined">bookmark_add</span>
+<span class="truncate">Bookmark</span>
+</button>
+<button class="flex items-center gap-2 min-w-[84px] cursor-pointer justify-center overflow-hidden rounded-lg h-10 px-4 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-light dark:text-text-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined">share</span>
+<span class="truncate">Share</span>
+</button>
+</div>
+<div class="flex items-center gap-4">
+<p class="text-sm font-medium text-text-muted-light dark:text-text-muted-dark">Was this article helpful?</p>
+<div class="flex gap-2">
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-light dark:text-text-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined">thumb_up</span>
+</button>
+<button class="flex items-center justify-center rounded-lg h-10 w-10 bg-background-light dark:bg-background-dark border border-border-light dark:border-border-dark text-text-light dark:text-text-dark hover:bg-border-light dark:hover:bg-border-dark transition-colors">
+<span class="material-symbols-outlined">thumb_down</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Related Content -->
+<section class="py-8">
+<h3 class="text-2xl font-bold mb-6 text-text-light dark:text-text-dark">Related Content</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="flex flex-col rounded-xl overflow-hidden bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark group">
+<a class="block" href="#">
+<img class="w-full h-40 object-cover group-hover:opacity-90 transition-opacity" data-alt="Abstract image representing mental health with soothing colors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDewZ-EUq-4jS7Pkg4Tni355ixscruZEN2b_OpbWZ8dJoqFTipJD0D9CQG8IIvSdGs1-LO8xXhw5008hAoEp9hT-xzT_WUd6F0oZmVfBpHlyA4I5HsxQpY9z1N1DTT9A7Of9O0yo-PwIndTSpTH-RQx775r0D5j0YEfEaSHZ33Jth9QHd-zc39X8oKkRGsvrZb5nRq25TslY7GqcSBXCe4tHd9eSuy7Uv72zgbnY57yVZWha-LROtwEGVyhvzQ1i9naBqYkHZYZw"/>
+<div class="p-4 flex flex-col gap-2">
+<p class="text-xs font-bold text-primary">Mental Health</p>
+<h4 class="font-bold text-text-light dark:text-text-dark group-hover:text-primary transition-colors">Understanding Anxiety and Stress</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Learn to identify triggers and coping mechanisms for common student stressors.</p>
+</div>
+</a>
+</div>
+<div class="flex flex-col rounded-xl overflow-hidden bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark group">
+<a class="block" href="#">
+<img class="w-full h-40 object-cover group-hover:opacity-90 transition-opacity" data-alt="A small group of friends talking and laughing together responsibly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDurI2PUxjmcuqYr6bLQ2p982sUbPqNXpCcwAN8FTWivZmasM1jIvyDj4HML9eeVSq3zMl8fJLTX5MOB9KVIdXYALjGXbBa16X03DpFQgHdCkRx9iUrpRB5OgdGKTNb1cKk71sEs3rKjhj3RJvJFCVATWMwpwpJOsj1n4ouPByBhxrDQg9NC4fIWUs-6tpfDxLcBG1TbWBVt3yoKAoq8aO7HrVvuuzRuf5_ERLv1s3SjFR9St67gt4Hr64eT7z1cr14ydLIFUjlMw"/>
+<div class="p-4 flex flex-col gap-2">
+<p class="text-xs font-bold text-primary">Peer Pressure</p>
+<h4 class="font-bold text-text-light dark:text-text-dark group-hover:text-primary transition-colors">Navigating Social Pressures at Uni</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Strategies for staying true to yourself while building a healthy social life.</p>
+</div>
+</a>
+</div>
+<div class="flex flex-col rounded-xl overflow-hidden bg-surface-light dark:bg-surface-dark border border-border-light dark:border-border-dark group">
+<a class="block" href="#">
+<img class="w-full h-40 object-cover group-hover:opacity-90 transition-opacity" data-alt="A student sitting at a desk and making notes in a planner." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb3YPAMXvEnEsDghcyfbcsP7u8GXdK3SNUzSUtRKWtf3DdarHuD8z3GlgdksbrUd4f7PgbHKcyoJwO3Mk3PtM3kPlNmXs_EijVFRQFuVJRVey3HDH4atNe99Q2TGguUJ46qtaTuunuRywkuk378sJcmsU5j3mAy9NaQqrRrcvHAyW8SOl3ar8V_QhDllhU56oPaER0n4IbZdrdQt4uXKhlgIWLxLNWAxPcHJcg6BUTdIWAoFvF5zIMsfz08PA5ZlzKLYOguQ-vJQ"/>
+<div class="p-4 flex flex-col gap-2">
+<p class="text-xs font-bold text-primary">Academic Success</p>
+<h4 class="font-bold text-text-light dark:text-text-dark group-hover:text-primary transition-colors">Effective Study Habits for MUBS Students</h4>
+<p class="text-sm text-text-muted-light dark:text-text-muted-dark">Maximize your learning potential with these proven study techniques.</p>
+</div>
+</a>
+</div>
+</div>
+</section>
 </div>
 </main>
 </div>
