@@ -25,6 +25,8 @@ use App\Http\Controllers\Admin\{
     SettingsController as AdminSettingsController
 };
 use App\Http\Controllers\Counselor\SessionController as CounselorSessionController;
+use App\Http\Controllers\Auth\LoginController as AuthLoginController;
+use App\Http\Controllers\Auth\RegisterController as AuthRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +36,10 @@ use App\Http\Controllers\Counselor\SessionController as CounselorSessionControll
 
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+// AJAX Authentication Routes
+Route::post('/ajax/login', [AuthLoginController::class, 'ajaxLogin'])->name('ajax.login');
+Route::post('/ajax/register', [AuthRegisterController::class, 'ajaxRegister'])->name('ajax.register');
 
 // Public Content Routes
 Route::prefix('content')->name('content.')->group(function () {
