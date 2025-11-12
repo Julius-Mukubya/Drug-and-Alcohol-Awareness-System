@@ -56,6 +56,7 @@ Route::prefix('content')->name('content.')->group(function () {
 // Public Campaign Routes
 Route::prefix('campaigns')->name('campaigns.')->group(function () {
     Route::get('/', [CampaignController::class, 'index'])->name('index');
+    Route::get('/sample/{slug}', [CampaignController::class, 'sample'])->name('sample');
     Route::get('/{campaign}', [CampaignController::class, 'show'])->name('show');
     
     Route::middleware('auth')->group(function () {

@@ -1,14 +1,27 @@
-<!-- Default campaign cards when no database campaigns exist -->
+<!-- Enhanced default campaign cards when no database campaigns exist -->
 <x-campaign-card 
-    title="#MUBSHealthyHabits"
-    description="Join our week-long challenge to build healthy habits, from mindfulness to physical activity."
-    image="https://lh3.googleusercontent.com/aida-public/AB6AXuAwMb1C6MtZohZ1eKj35TLv2GRwHxtebwwtcIyoiKVjFHFn_B9GvgNA4sAOEpEklaHgWJhvgYRFrxlrKsZYFL9EW7KMeKnDYhkx3SY2uLUF0PvOgmFKCJw2PZWnYEKqYydHlRUMP5uzn0tlgh57_Kdn8DD4cStq8lJxOdV2OVatvClqef6yur4lj7arsClsRFtvvwWDEj0VdbZpwtP76ebmYNeatBGOTQzbreTDo1BrztNhb3ruUgMB2GOgaUYgkKIFa_ybhunxUA"
-    url="{{ route('campaigns.index') }}"
+    title="Mindful MUBS Week"
+    description="A week of workshops and activities focused on mindfulness and mental wellbeing for the entire MUBS community."
+    image="https://lh3.googleusercontent.com/aida-public/AB6AXuCQdHhFVpCBX4Q5EGNw3RdftiN2fwUgFUS919IFT7JEBvjfXxPIBLTEnjQActl7TraQPUBgmXplBJb2Pjvz2itAZ1hermfsU0ydpI_hzG4SD45iK0ESo0hq-ZSEBIbIGJqJnfBCAEIxZv1hppVevdXx7NsVqIbBaAaHa6-BUr4RB9kZ90la4rHKRbSsyD3GpKnd6asNsz8liPiD_LAKttcKoOFbUTMtZqb2XMIQbYtyVxq35su6hMSca8rMoIouzXmiWHmUSQ11Pg"
+    url="{{ route('campaigns.sample', 'mindful-mubs-week') }}"
+    status="sample"
+    participants="120"
 />
 
 <x-campaign-card 
-    title="Awareness Week 2024"
-    description="Sign up for workshops, talks, and events during our annual Drug & Alcohol Awareness Week."
-    image="https://lh3.googleusercontent.com/aida-public/AB6AXuDuXoSapEBaja_kQ1hrYBGTGOGzYhm8hAs4J1cnbzKK5K4J3XnDAZgVzVLDrTSqsLKear5TspYM6ur2y5JoX9vXUlm6wR287hGWzn1-HvqOtuRpyVefLK8NtI5ORkjQFiB6MBqwd8fwMNkEHk84VAS-lbFQyOMpL7VoHohpIb_HpqXUYCS7bIDxZU8Xf5CN7riZcvzO2voJDsPEsy3bKcGBVfn1UoAm23rLIjMHroTlkiDHVGlaEGfPWH-OE908XwE3hynanLtD3w"
-    url="{{ route('campaigns.index') }}"
+    title="Sober Socials Kick-off"
+    description="Join us for a fun, alcohol-free social event to connect with peers and build meaningful relationships."
+    image="https://lh3.googleusercontent.com/aida-public/AB6AXuBvkUuNFWggMwp0Pqx1vORN9BGGMYwdsqeHGsPOldg4r5tkE28uGNdiE9yY_zYf1qX_-_66buXZ48u9CXcPCv-i3-T3S6mmmDVzXixcSJtJv3cZE4WGvTtAac3-B5vgj1qQuBBbrkTyD1rxZt-9g7C3JdD06ZUHfqUYvSet_lprDK5xMCeTr1HwE79QL0to803xWO5l55n3m0fCgR6L8gp9sfYwh-kq0QM6U6lx6qp5D5HZoHu1NcojHFlJXds6tzbFCWdG_gK6fg"
+    url="{{ route('campaigns.sample', 'sober-socials-kickoff') }}"
+    status="sample"
+    participants="85"
+/>
+
+<x-campaign-card 
+    title="Stress Less, Live More"
+    description="Learn effective stress management techniques for a balanced student life through interactive workshops."
+    image="https://lh3.googleusercontent.com/aida-public/AB6AXuCrL5rYa5Fsgj4frnmmGoRtIwWcGZli8mm9qA-lxjAvnNKxnslyVciwpVTr8zRPVp2Gg6z4X-BxR_6MYWaU95sYdIe3yNYI8IL9QXQG1PdBifCZvegAZeHDIQnLd8mimOaw3mKgQfsuqQtA90HA-d6GPDKjJS9W8Q-B_0--DYJRXYAP_6zjxA9YtcVMCyXj--UnMCGlC-hNCcuf-oukgRYbYDKBTUhDk-z_QXnShiF0BdxTvVvH37PBbfZi_vohUT4Uqd6o33v2aw"
+    url="{{ route('campaigns.sample', 'stress-less-live-more') }}"
+    status="sample"
+    participants="95"
 />
